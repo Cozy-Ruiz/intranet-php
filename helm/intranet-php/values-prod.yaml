@@ -1,0 +1,9 @@
+replicaCount: 3
+
+appEnv: "PROD"
+
+image:
+  tag: "1.3"
+
+ingress:
+  host: intranet.prod
