@@ -13,7 +13,6 @@ concurrency:
 env:
   IMAGE_NAME: cozyruiz/intranet-php
 
-
 jobs:
 
   # =========================
@@ -41,7 +40,7 @@ jobs:
 
       - name: Build Image
         run: |
-          docker build -t $IMAGE_NAME:${{ steps.meta.outputs.tag }} .
+          docker build -t $IMAGE_NAME:${{ steps.meta.outputs.tag }} -f docker/Dockerfile .
 
       - name: Push Image
         run: |
