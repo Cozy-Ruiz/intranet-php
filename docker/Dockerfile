@@ -4,6 +4,7 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli
 
 WORKDIR /var/www/html
 COPY src/ /var/www/html/
+COPY vendor/ /var/www/vendor/
 
 RUN chown -R www-data:www-data /var/www/html
 

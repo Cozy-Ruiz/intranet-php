@@ -3,7 +3,7 @@ replicaCount: 1
 appEnv: "DEV"
 
 image:
-  tag: "1.3"
+  tag: "1.8"
 
 ingress:
   host: intranet.local
