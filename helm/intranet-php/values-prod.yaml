@@ -6,4 +6,6 @@ image:
   tag: "1.8"
 
 ingress:
+  enabled: true
+  className: nginx
   host: intranet.prod
