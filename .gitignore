@@ -1,0 +1,8 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# GitHub Actions self-hosted runner: instalación y credenciales locales
+actions-runner/
+
+# Metadatos/forks de recursos de macOS
+._*
+.DS_Store
