@@ -28,6 +28,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Eliminar metadatos de macOS
+        run: |
+          find "$GITHUB_WORKSPACE" -type f -name '._*' -delete
+          find "$GITHUB_WORKSPACE" -type f -name '.DS_Store' -delete
+
       - name: Set image tag
         id: meta
         run: echo "tag=${GITHUB_SHA}" >> $GITHUB_OUTPUT
@@ -59,6 +64,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+       name: Configurar Helm
+        uses: azure/setup-helm@v5
+        with:
+          version: v3.18.4
+
+      - name: Verificar Helm
+        run: helm version
+
+      - name: Configurar acceso a Kubernetes
+        run: |
+          export KUBECONFIG="${KUBECONFIG:-$HOME/.kube/config}"
+          if [[ ! -f "$KUBECONFIG" ]]; then
+            echo "No se encontró el kubeconfig en $KUBECONFIG"
+            exit 1
+          fi
+          echo "KUBECONFIG=$KUBECONFIG" >> "$GITHUB_ENV"
+          kubectl config current-context
+          kubectl cluster-info
+
+      - name: Ensure ingress-nginx is installed
+        run: |
+          if ! kubectl get deployment ingress-nginx-controller -n ingress-nginx >/dev/null 2>&1; then
+            kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+          fi
+          kubectl wait --namespace ingress-nginx \
+            --for=condition=ready pod \
+            --selector=app.kubernetes.io/component=controller \
+            --timeout=120s
+          kubectl get pods,svc,ingress -A
+
       - name: Deploy with Helm (DEV)
         run: |
           helm upgrade --install intranet-php-dev ./helm/intranet-php \
@@ -77,6 +112,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+       name: Configurar Helm
+        uses: azure/setup-helm@v5
+        with:
+          version: v3.18.4
+
+      - name: Verificar Helm
+        run: helm version
+
+      - name: Configurar acceso a Kubernetes
+        run: |
+          export KUBECONFIG="${KUBECONFIG:-$HOME/.kube/config}"
+          if [[ ! -f "$KUBECONFIG" ]]; then
+            echo "No se encontró el kubeconfig en $KUBECONFIG"
+            exit 1
+          fi
+          echo "KUBECONFIG=$KUBECONFIG" >> "$GITHUB_ENV"
+          kubectl config current-context
+          kubectl cluster-info
+
+      - name: Ensure ingress-nginx is installed
+        run: |
+          if ! kubectl get deployment ingress-nginx-controller -n ingress-nginx >/dev/null 2>&1; then
+            kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+          fi
+          kubectl wait --namespace ingress-nginx \
+            --for=condition=ready pod \
+            --selector=app.kubernetes.io/component=controller \
+            --timeout=120s
+          kubectl get pods,svc,ingress -A
 
       - name: Deploy with Helm (PROD)
         run: |
