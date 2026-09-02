@@ -113,7 +113,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-       name: Configurar Helm
+      - name: Configurar Helm
         uses: azure/setup-helm@v5
         with:
           version: v3.18.4
