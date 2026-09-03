@@ -6,7 +6,8 @@ WORKDIR /var/www/html
 COPY src/ /var/www/html/
 COPY vendor/ /var/www/vendor/
 
-RUN chown -R www-data:www-data /var/www/html
+RUN chown -R www-data:www-data /var/www/html /var/www/vendor \
+	&& chmod -R a+rX /var/www/vendor
 
 EXPOSE 80
 
