@@ -94,11 +94,38 @@ jobs:
             --timeout=120s
           kubectl get pods,svc,ingress -A
 
+      - name: Verify ServiceMonitor support
+        run: |
+          kubectl create namespace monitoring --dry-run=client -o yaml | kubectl apply -f -
+          helm repo add prometheus-community https://prometheus-community.github.io/helm-charts --force-update
+          helm repo update
+          helm upgrade --install monitoring prometheus-community/kube-prometheus-stack \
+            --namespace monitoring \
+            --set grafana.enabled=true \
+            --set grafana.ingress.enabled=true \
+            --set grafana.ingress.ingressClassName=nginx \
+            --set grafana.ingress.hosts[0]=grafana.local \
+            --set prometheus.ingress.enabled=true \
+            --set prometheus.ingress.ingressClassName=nginx \
+            --set prometheus.ingress.hosts[0]=prometheus.local \
+            --set alertmanager.enabled=false \
+            --set nodeExporter.enabled=false \
+            --set kubeStateMetrics.enabled=false \
+            --wait \
+            --timeout 5m
+          kubectl wait --for=condition=Established \
+            crd/servicemonitors.monitoring.coreos.com \
+            --timeout=120s
+
       - name: Deploy with Helm (DEV)
         run: |
           helm upgrade --install intranet-php-dev ./helm/intranet-php \
             -f helm/intranet-php/values-dev.yaml \
             --set image.tag=${{ needs.build.outputs.image_tag }}
+          kubectl wait --namespace monitoring \
+            --for=create \
+            servicemonitor/intranet-php-dev-monitor \
+            --timeout=30s
 
   # =========================
   # CD - Deploy to PROD
@@ -143,8 +170,35 @@ jobs:
             --timeout=120s
           kubectl get pods,svc,ingress -A
 
+      - name: Verify ServiceMonitor support
+        run: |
+          kubectl create namespace monitoring --dry-run=client -o yaml | kubectl apply -f -
+          helm repo add prometheus-community https://prometheus-community.github.io/helm-charts --force-update
+          helm repo update
+          helm upgrade --install monitoring prometheus-community/kube-prometheus-stack \
+            --namespace monitoring \
+            --set grafana.enabled=true \
+            --set grafana.ingress.enabled=true \
+            --set grafana.ingress.ingressClassName=nginx \
+            --set grafana.ingress.hosts[0]=grafana.local \
+            --set prometheus.ingress.enabled=true \
+            --set prometheus.ingress.ingressClassName=nginx \
+            --set prometheus.ingress.hosts[0]=prometheus.local \
+            --set alertmanager.enabled=false \
+            --set nodeExporter.enabled=false \
+            --set kubeStateMetrics.enabled=false \
+            --wait \
+            --timeout 5m
+          kubectl wait --for=condition=Established \
+            crd/servicemonitors.monitoring.coreos.com \
+            --timeout=120s
+
       - name: Deploy with Helm (PROD)
         run: |
           helm upgrade --install intranet-php-prod ./helm/intranet-php \
             -f helm/intranet-php/values-prod.yaml \
             --set image.tag=${{ needs.build.outputs.image_tag }}
+          kubectl wait --namespace monitoring \
+            --for=create \
+            servicemonitor/intranet-php-prod-monitor \
+            --timeout=30s

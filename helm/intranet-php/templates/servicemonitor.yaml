@@ -9,7 +9,7 @@ metadata:
 spec:
   namespaceSelector:
     matchNames:
-      - ingress-nginx
+      - default
   selector:
     matchLabels:
       app: {{ .Release.Name }}
