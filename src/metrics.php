@@ -3,20 +3,26 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Prometheus\CollectorRegistry;
 use Prometheus\RenderTextFormat;
-use Prometheus\Storage\InMemory;
+use Prometheus\Storage\APCng;
 
-$registry = new CollectorRegistry(new InMemory());
+$registry = new CollectorRegistry(new APCng());
 
-$counter = $registry->getOrRegisterCounter(
+$requests = $registry->getOrRegisterCounter(
     'intranet',
     'http_requests_total',
-    'Total HTTP Requests',
-    ['method']
+    'Total HTTP requests',
+    ['method', 'route', 'status', 'environment']
 );
 
-$counter->inc([$_SERVER['REQUEST_METHOD']]);
+$requests->inc([
+    $_SERVER['REQUEST_METHOD'] ?? 'GET',
+    '/metrics.php',
+    '200',
+    getenv('APP_ENV') ?: 'unknown',
+]);
+
+$renderer = new RenderTextFormat();
 
 header('Content-Type: ' . RenderTextFormat::MIME_TYPE);
-$renderer = new RenderTextFormat();
 echo $renderer->render($registry->getMetricFamilySamples());
 ?>
