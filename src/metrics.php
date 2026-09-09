@@ -1,25 +1,26 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/metrics_registry.php';
 
 use Prometheus\CollectorRegistry;
 use Prometheus\RenderTextFormat;
-use Prometheus\Storage\APCng;
 
-$registry = new CollectorRegistry(new APCng());
+$registry = metrics_registry();
 
-$requests = $registry->getOrRegisterCounter(
+record_http_request($registry);
+
+$memory = $registry->getOrRegisterGauge(
     'intranet',
-    'http_requests_total',
-    'Total HTTP requests',
-    ['method', 'route', 'status', 'environment']
+    'php_memory_usage_bytes',
+    'Current PHP memory usage in bytes'
 );
+$memory->set(memory_get_usage(true));
 
-$requests->inc([
-    $_SERVER['REQUEST_METHOD'] ?? 'GET',
-    '/metrics.php',
-    '200',
-    getenv('APP_ENV') ?: 'unknown',
-]);
+$peakMemory = $registry->getOrRegisterGauge(
+    'intranet',
+    'php_memory_peak_usage_bytes',
+    'Peak PHP memory usage in bytes'
+);
+$peakMemory->set(memory_get_peak_usage(true));
 
 $renderer = new RenderTextFormat();
 
