@@ -1,0 +1,671 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	font-family:Lucida Sans, Arial;
+	font-size:13px;
+	color:#FFFFFF;
+	background: #2F2F2F;
+	
+}
+
+#titulo1{
+	font-family:Century Gothic;
+	font-size:48px;
+	color:#FFFFFF;
+
+}
+#titulo12{
+	font-family:Century Gothic;
+	font-size:16px;
+	color:#FFFFFF;
+
+}
+#titulo18{
+	font-family:Century Gothic;
+	font-size:18px;
+	color:#FFFFFF;
+
+}
+#iconosTexto{
+	font-family:Lucida Sans, Arial;
+	font-size:14px;
+	color:#FFFFFF;
+	decoration:none;
+	text-decoration:none;
+}
+#iconosTexto2{
+	font-family:Lucida Sans;
+	font-size:14px;
+	color:#007cbd;
+
+}
+
+#iconosTexto3{
+	font-family:Lucida Sans, Arial;
+	font-size:12px;
+	color:#FFFFFF;
+
+}
+#iconosTexto4{
+	font-family:Lucida Sans;
+	font-size:12px;
+	color:#007cbd;
+
+}
+#iconosTexto5{
+	font-family:Lucida Sans;
+	font-size:10px;
+	color:#000 cbd;
+
+}
+#iconosTexto6{
+	font-family:Lucida Sans, Arial;
+	font-size:10px;
+	color:#FFFFFF;
+
+}
+
+#textoActividad{
+	font-family:Arial;
+	font-size:10px;
+	color:#FFFFFF;
+	decoration:none;
+	text-decoration:none;
+}
+
+#titulo3Azul{
+	font-family:Lucida Sans, Arial;
+	font-size:18px;
+	color:#007cbd;
+	font-weight:bold;
+
+
+}
+
+#titulo3Azul{
+	font-family:Lucida Sans, Arial;
+	font-size:18px;
+	color:#007cbd;
+	font-weight:bold;
+
+
+}
+
+#tituloAzul14B{
+	font-family:Lucida Sans, Arial;
+	font-size:14px;
+	color:#007cbd;
+	font-weight:bold;
+}
+
+#titulo2{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#007cbd;
+}
+
+#titulo2Blanco{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#fff;
+}
+#titulo3{
+	font-family:Century Gothic;
+	font-size:35px;
+	color:#2F2F2;
+
+}
+#titulo30Blanco{
+	font-family:Lucida Sans, Arial;
+	font-size:30px;
+	color:#fff;
+}
+
+#breadcrumbs{
+	font-family:Lucida Sans, Arial;
+	font-size:12px;
+	color:#007cbd;
+	text-decoration:none;	
+}
+
+#nota_al_pie{
+	font-family:Lucida Sans, Arial;
+	font-size:10px;
+	color:#007cbd;	
+}
+
+#wrapper{
+	width: 800px;
+	margin:auto;
+	margin-top:230px;
+}
+#wrapperVisitas{
+	width: 1100px;
+	margin:auto;
+	margin-top:230px;
+}
+#wrapperBoletin{
+	width: 950px;
+	margin-right:300px;
+}
+
+#wrapperFicha{
+	width: 800px;
+	margin:auto;
+	margin-top:120px;
+}
+#wrapperFichaCorrectivasPreventivas{
+	width: 1200px;
+	margin:auto;
+	margin-top:120px;
+}
+#wrapperFichaHallazgos{
+	width: 800px;
+	margin:auto;
+	margin-top:120px;
+}
+
+#wrapperRiesgos{
+	width: 950px;
+	margin:auto;
+	margin-top:120px;
+}
+
+#wrapperPopUp{
+	
+	margin:auto;
+	margin-top:30px;
+}
+#wrapperRiesgos{
+	width: 1310px;
+	margin:auto;
+	margin-top:230px;
+}
+
+#titleBlueLineTop{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#007cbd;
+	border-style:solid;
+	border-color:#007cbd;
+	border-top-width:1px;
+	border-bottom:none;
+	border-left:none;
+	border-right:none;
+}
+
+#titleBlueLineBottom{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#007cbd;
+	border-style:solid;
+	border-color:#007cbd;
+	border-top:none;
+	border-bottom-width:1px;
+	border-left:none;
+	border-right:none;
+}
+
+#titleBlueLineBottomAlta{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#007cbd;
+	border-style:solid;
+	border-color:#007cbd;
+	border-top:none;
+	border-bottom-width:.5px;
+	border-left:none;
+	border-right:none;
+}
+
+
+#textIntro{
+	font-family:Lucida Sans, Arial;
+	font-size:10px;
+	color:#fff;
+}
+
+#fileItem{
+	font-family:Lucida Sans, Arial;
+	font-size:12px;
+	color:#fff;
+}
+
+#texto10Blanco{
+	font-family:Lucida Sans, Arial;
+	font-size:10px;
+	color:#ffffff;
+}
+
+#fileItemNegro{
+	font-family:Lucida Sans, Arial;
+	font-size:12px;
+	color:#000;
+}
+
+#manualVinculo{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#fff;
+	text-decoration:none;
+}
+
+#manualVinculo2{
+	font-family:Arial;
+	font-size:20px;
+	color:#fff;
+	text-decoration:none;
+}
+
+
+
+#searchbar{
+	width:425px;
+	float:left; padding: 20px 150px 20px 40px;
+	background:#ededed;
+	border: 3px solid #c7c7c7;
+	border-radius: 100px; -moz-border-radius: 100px; -webkit-border-radius: 100px;
+	font: none;
+	
+}
+
+#searchbtn{
+	width: 67px; height: 70px; float: left; margin: 18px 0 0 -115px;
+	background:url(../Imagenes/ICN_BotonEnviar.png); text-indent: -999px;
+	padding: 0 0 0 67px;
+	cursor: pointer;
+
+}
+
+#searchbtn:hover{
+	background-position: o -70px;
+}
+
+
+#fichaRef{
+	font-family:Lucida Sans, Arial;
+	font-size:14px;
+	color:#fff;
+	text-decoration:none;
+}
+
+#loginEstilo{
+	font-family:Lucida Sans, Arial;
+	font-size:18px;
+	color: #2F2F2F;
+}
+
+#form input[type="text"]{
+	height: 30px;
+	width: 200px;
+	font-family:Lucida Sans, Arial;
+	font-size:16px;
+	font-weight: bold;
+	color: #2F2F2F;
+}
+
+#infoGeneral{
+ visibility:hidden;
+ position:absolute;
+ text-align:center;
+ z-index: 100;
+ background-color:rgba(58,135,189,0.5);
+ padding:5px;
+ border:#FFF 1px solid;
+ -moz-border-radius:3px;
+ -webkit-border-radius:3px;
+ border-radius:3px; 
+}
+#ico_info{
+ clear:both;
+ width:auto;
+ margin-top:20px;
+ margin-right:0;
+}
+#infoGeneral1{
+ visibility:hidden;
+ position:absolute;
+ text-align:center;
+ z-index: 100;
+ background-color:rgba(58,135,189,0.5);
+ padding:5px;
+ border:#FFF 1px solid;
+ -moz-border-radius:3px;
+ -webkit-border-radius:3px;
+ border-radius:3px; 
+}
+
+a{text-decoration:none; color:white;}
+
+.titulo1{
+	font-family:Century Gothic;
+	font-size:48px;
+	color:#FFFFFF;
+
+}
+
+.titulo12{
+	font-family:Century Gothic;
+	font-size:16px;
+	color:#FFFFFF;
+
+}
+
+.titulo18{
+	font-family:Century Gothic;
+	font-size:18px;
+	color:#FFFFFF;
+
+}
+
+.iconosTexto{
+	font-family:Lucida Sans, Arial;
+	font-size:14px;
+	color:#FFFFFF;
+	decoration:none;
+	text-decoration:none;
+}
+
+.iconosTexto2{
+	font-family:Lucida Sans;
+	font-size:14px;
+	color:#007cbd;
+
+}
+
+.iconosTexto3{
+	font-family:Lucida Sans, Arial;
+	font-size:12px;
+	color:#FFFFFF;
+
+}
+
+.iconosTexto4{
+	font-family:Lucida Sans;
+	font-size:12px;
+	color:#007cbd;
+
+}
+
+.iconosTexto5{
+	font-family:Lucida Sans;
+	font-size:10px;
+	color:#000 cbd;
+
+}
+.iconosTexto6{
+	font-family:Lucida Sans, Arial;
+	font-size:10px;
+	color:#FFFFFF;
+
+}
+
+.textoActividad{
+	font-family:Arial;
+	font-size:10px;
+	color:#FFFFFF;
+	decoration:none;
+	text-decoration:none;
+}
+
+.titulo3Azul{
+	font-family:Lucida Sans, Arial;
+	font-size:18px;
+	color:#007cbd;
+	font-weight:bold;
+
+
+}
+
+.titulo3Azul{
+	font-family:Lucida Sans, Arial;
+	font-size:18px;
+	color:#007cbd;
+	font-weight:bold;
+
+
+}
+
+.tituloAzul14B{
+	font-family:Lucida Sans, Arial;
+	font-size:14px;
+	color:#007cbd;
+	font-weight:bold;
+}
+
+.titulo2{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#007cbd;
+}
+
+.titulo2Blanco{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#fff;
+}
+
+.titulo3{
+	font-family:Century Gothic;
+	font-size:35px;
+	color:#2F2F2;
+
+}
+
+.titulo30Blanco{
+	font-family:Lucida Sans, Arial;
+	font-size:30px;
+	color:#fff;
+}
+
+.breadcrumbs{
+	font-family:Lucida Sans, Arial;
+	font-size:12px;
+	color:#007cbd;
+	text-decoration:none;	
+}
+
+.nota_al_pie{
+	font-family:Lucida Sans, Arial;
+	font-size:10px;
+	color:#007cbd;	
+}
+
+.wrapper{
+	width: 800px;
+	margin:auto;
+	margin-top:230px;
+}
+.wrapperVisitas{
+	width: 1100px;
+	margin:auto;
+	margin-top:230px;
+}
+.wrapperBoletin{
+	width: 950px;
+	margin-right:300px;
+}
+
+.wrapperFicha{
+	width: 800px;
+	margin:auto;
+	margin-top:120px;
+}
+.wrapperFichaCorrectivasPreventivas{
+	width: 1200px;
+	margin:auto;
+	margin-top:120px;
+}
+.wrapperFichaHallazgos{
+	width: 800px;
+	margin:auto;
+	margin-top:120px;
+}
+
+.wrapperRiesgos{
+	width: 950px;
+	margin:auto;
+	margin-top:120px;
+}
+
+.wrapperPopUp{
+	
+	margin:auto;
+	margin-top:30px;
+}
+.wrapperRiesgos{
+	width: 1310px;
+	margin:auto;
+	margin-top:230px;
+}
+
+.titleBlueLineTop{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#007cbd;
+	border-style:solid;
+	border-color:#007cbd;
+	border-top-width:1px;
+	border-bottom:none;
+	border-left:none;
+	border-right:none;
+}
+
+.titleBlueLineBottom{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#007cbd;
+	border-style:solid;
+	border-color:#007cbd;
+	border-top:none;
+	border-bottom-width:1px;
+	border-left:none;
+	border-right:none;
+}
+
+.titleBlueLineBottomAlta{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#007cbd;
+	border-style:solid;
+	border-color:#007cbd;
+	border-top:none;
+	border-bottom-width:.5px;
+	border-left:none;
+	border-right:none;
+}
+
+
+.textIntro{
+	font-family:Lucida Sans, Arial;
+	font-size:10px;
+	color:#fff;
+}
+
+.fileItem{
+	font-family:Lucida Sans, Arial;
+	font-size:12px;
+	color:#fff;
+}
+
+.texto10Blanco{
+	font-family:Lucida Sans, Arial;
+	font-size:10px;
+	color:#ffffff;
+}
+
+.fileItemNegro{
+	font-family:Lucida Sans, Arial;
+	font-size:12px;
+	color:#000;
+}
+
+.manualVinculo{
+	font-family:Lucida Sans, Arial;
+	font-size:20px;
+	color:#fff;
+	text-decoration:none;
+}
+.manualVinculo2{
+	font-family:Arial;
+	font-size:20px;
+	color:#fff;
+	text-decoration:none;
+}
+.searchbar{
+	width:425px;
+	float:left; padding: 20px 150px 20px 40px;
+	background:#ededed;
+	border: 3px solid #c7c7c7;
+	border-radius: 100px; -moz-border-radius: 100px; -webkit-border-radius: 100px;
+	font: none;
+	
+}
+
+.searchbtn{
+	width: 67px; height: 70px; float: left; margin: 18px 0 0 -115px;
+	background:url(../Imagenes/ICN_BotonEnviar.png); text-indent: -999px;
+	padding: 0 0 0 67px;
+	cursor: pointer;
+
+}
+
+.searchbtn:hover{
+	background-position: o -70px;
+}
+
+.fichaRef{
+	font-family:Lucida Sans, Arial;
+	font-size:14px;
+	color:#fff;
+	text-decoration:none;
+}
+
+.loginEstilo{
+	font-family:Lucida Sans, Arial;
+	font-size:18px;
+	color: #2F2F2F;
+}
+
+.form input[type="text"]{
+	height: 30px;
+	width: 200px;
+	font-family:Lucida Sans, Arial;
+	font-size:16px;
+	font-weight: bold;
+	color: #2F2F2F;
+}
+
+.infoGeneral{
+ visibility:hidden;
+ position:absolute;
+ text-align:center;
+ z-index: 100;
+ background-color:rgba(58,135,189,0.5);
+ padding:5px;
+ border:#FFF 1px solid;
+ -moz-border-radius:3px;
+ -webkit-border-radius:3px;
+ border-radius:3px; 
+}
+
+.ico_info{
+ clear:both;
+ width:auto;
+ margin-top:20px;
+ margin-right:0;
+}
+
+.infoGeneral1{
+ visibility:hidden;
+ position:absolute;
+ text-align:center;
+ z-index: 100;
+ background-color:rgba(58,135,189,0.5);
+ padding:5px;
+ border:#FFF 1px solid;
+ -moz-border-radius:3px;
+ -webkit-border-radius:3px;
+ border-radius:3px; 
+}
