@@ -1,8 +1,5 @@
+<?php error_reporting(0); ?>
 <?php
-error_reporting(0);
-
-session_start();
-
 /*
  *@author Cosijopi Richard Ruiz Avendaño
  *@version 1.0
@@ -10,6 +7,8 @@ session_start();
  */
 
 require_once("ConexionDBT.php");
+
+session_start();
 if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"]== "SI"){
 	
 	$sesionUsuario = $_SESSION["sesionUsuario"];
@@ -21,6 +20,7 @@ if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"]== "SI"){
 	$s = $INTRANET->Execute("select kp_sesionId from IntranetGEA_SESIONES_USUARIOS where kf_usuario = '$sesionUsuario' and xd_fechaEntrada = '$sesionFechaEntrada' and xt_horaEntrada = '$sesionHoraEntrada' ") or die ("Error al seleccionar la session <br>");
 	$r = $s->fetchRow();
 	
+		echo "select kp_sesionId from IntranetGEA_SESIONES_USUARIOS where kf_usuario = '$sesionUsuario' and xd_fechaEntrada = '$sesionFechaEntrada' and xt_horaEntrada = '$sesionHoraEntrada' ";
 	$_SESSION["sesionIntranetId"] = $r[0];
 	$_SESSION["sesionIntranetUsuario"] = $_SESSION["sesionUsuario"];
 	$_SESSION["sesionIntranetCategoria"] = $_SESSION["sesionCategoria"];
@@ -53,6 +53,7 @@ if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"]== "SI"){
 	
 	$status = false;
 	while($r = $s->fetchRow()){
+		session_start();
 		$sesionId = $_SESSION["sesionIntranetId"];
 		$sesionUsuario = $_SESSION["sesionIntranetUsuario"];
 		$sesionEstilo = $r[2];
@@ -99,6 +100,7 @@ if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"]== "SI"){
 		
 	}else{
 		
+		session_start();
 		session_destroy(); 
 		unset($sesionUsuario);
 		header("Location: https://escalante.com.mx/Sistemas/");
