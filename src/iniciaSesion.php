@@ -1,6 +1,5 @@
 <?php
 error_reporting(0);
-
 session_start();
 
 /*
@@ -10,6 +9,7 @@ session_start();
  */
 
 require_once("ConexionDBT.php");
+
 if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"]== "SI"){
 	
 	$sesionUsuario = $_SESSION["sesionUsuario"];
@@ -21,64 +21,65 @@ if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"]== "SI"){
 	$s = $INTRANET->Execute("select kp_sesionId from IntranetGEA_SESIONES_USUARIOS where kf_usuario = '$sesionUsuario' and xd_fechaEntrada = '$sesionFechaEntrada' and xt_horaEntrada = '$sesionHoraEntrada' ") or die ("Error al seleccionar la session <br>");
 	$r = $s->fetchRow();
 	
-	$_SESSION["sesionIntranetId"] = $r[0];
-	$_SESSION["sesionIntranetUsuario"] = $_SESSION["sesionUsuario"];
-	$_SESSION["sesionIntranetCategoria"] = $_SESSION["sesionCategoria"];
-	$_SESSION["sesionIntranetHoraAcceso"] = date('H:i:s'); 
-	$_SESSION["sesionIntranetEstilo"] = $_SESSION["sesionEstilo"];
+	$_SESSION["sesionId"] = $r[0];
 	
-	//echo "Categoria".$_SESSION["categoria"];
-	if($_SESSION["sesionIntranetCategoria"] == 'Administrador'){
+	if($_SESSION["sesionCategoria"] == 'Administrador'){
 		header ("Location: Home.php");
-	}else if($_SESSION["sesionIntranetCategoria"] == 'Inhouse'){
+	}else if($_SESSION["sesionCategoria"] == 'Inhouse'){
 		header ("Location: Home.php");
-	}else if($_SESSION["sesionIntranetCategoria"] == 'Cliente'){
+	}else if($_SESSION["sesionCategoria"] == 'Cliente'){
 		header ("Location: Home.php");
-	}else if($_SESSION["sesionIntranetCategoria"] == 'Empleado'){
+	}else if($_SESSION["sesionCategoria"] == 'Empleado'){
 		header ("Location: Home.php");
-	}else if($_SESSION["sesionIntranetCategoria"] == 'Proveedor'){
+	}else if($_SESSION["sesionCategoria"] == 'Proveedor'){
 		header ("Location: Home.php");
 	}
 
-}else if($_POST['usuario'] == '' || $_POST['contraseña'] == ''){
+}else if($_POST['usuario'] == '' || $_POST['password'] == ''){
 	
-	header ("Location: https://escalante.com.mx/Sistemas");
+	header ("Location: index.php");
 	
-}else if(($_POST['usuario'] && $_POST['contraseña']) != ''){
+}else if($_POST['usuario'] !== '' && $_POST['password'] !== ''){
+
+	$patrones = array(' OR ', ' AND ', ' or ', ' and ', '<', '>', '(', ')', "'", '"');
 	
-	$usuario = trim($_POST['usuario']);
-	$password = trim($_POST['contraseña']);
+	$usuario = str_replace($patrones, "", htmlspecialchars(trim($_POST['usuario']), ENT_QUOTES, 'UTF-8'));
+    $password = str_replace($patrones, "", htmlspecialchars(trim($_POST['password']), ENT_QUOTES, 'UTF-8'));
 	
-	$s = $INTRANET->execute("select xt_usuario, xt_categoria, xn_estilo, (SELECT xn_foto FROM SGI_EMPLEADOS WHERE kf_usuario = xt_usuario LIMIT 1 ) as xt_foto from PERFILES.USUARIOS where xt_usuario='$usuario' and xt_password='$password' ");
-	
+	$query = "SELECT u.xt_usuario, u.xt_categoria, u.xn_estilo, u.xt_estatus, u.xt_correo, u.xt_puesto, (SELECT cp.xt_categoria FROM perfiles.catalogo_puestos cp WHERE cp.xt_puesto = u.xt_puesto LIMIT 1) as xt_puestoCategoria, ( SELECT e.kp_personalId FROM intranetgea.sgi_empleados e WHERE e.kf_usuario = u.xt_usuario) AS xt_personalId, (SELECT e.xn_foto FROM intranetgea.SGI_EMPLEADOS e WHERE e.kf_usuario = u.xt_usuario LIMIT 1 ) as xt_foto  from PERFILES.USUARIOS u where u.xt_usuario='$usuario' and u.xt_password='$password' AND u.xt_estatus ='Activo' ";
+	$s = $INTRANET->execute($query);
+
 	$status = false;
 	while($r = $s->fetchRow()){
-		session_start();
-		$sesionId = $_SESSION["sesionIntranetId"];
-		$sesionUsuario = $_SESSION["sesionIntranetUsuario"];
-		$sesionEstilo = $r[2];
-		$sesionFoto = $r[3];
-		$sesionFechaSalida = date('Y-m-d');
-		$sesionHoraSalida = date('H:i:s');	
-		$INTRANET->Execute("update IntranetGEA_SESIONES_USUARIOS set xd_fechaSalida = '$sesionFechaSalida', xt_horaSalida = '$sesionHoraSalida' where kp_sesionId = $sesionId and kf_usuarioId = $sesionUsuario ");
-		session_destroy();
-		
-		$status = true;
-		$sesionUsuario = $r[0];
+
+        $sesionUsuario = $r[0];
 		$sesionCategoria = $r[1];
-		$sesionEstilo = $r[2];
+        $sesionEstilo = $r[2];
+        $sesionFechaSalida = date('Y-m-d');
+        $sesionHoraSalida = date('H:i:s');
+        $sesionCorreo = $r[4];
+        $sessionPuesto = $r[5];
+        $sessionPuestoCategoria = $r[6];
+        $sessionPersonalId = $r[7];
+		$sesionFoto = $r[8];
+
+		$status = true;
 	}
 	
 	if($status == true){
 		
-		session_start();
+		//session_start();
 		
-		$_SESSION["autentificado"]= "SI";
-		$_SESSION["sesionIntranetUsuario"] = $sesionUsuario;
-		$_SESSION["sesionIntranetCategoria"] = $sesionCategoria;
-		$_SESSION["sesionIntranetHoraAcceso"] = date('H:i:s'); 
-		$_SESSION["sesionIntranetEstilo"] = $sesionEstilo;
-		$_SESSION["sesionIntranetFoto"] = $sesionFoto;
+		$_SESSION["autentificado"] = "SI";
+        $_SESSION["sesionUsuario"] = $sesionUsuario;
+        $_SESSION["sesionCategoria"] = $sesionCategoria;
+        $_SESSION["sesionEstilo"] = $sesionEstilo;
+        $_SESSION["sesionCorreo"] = $sesionCorreo;
+        $_SESSION["sesionPuesto"] = $sessionPuesto;
+        $_SESSION["sesionPuestoCategoria"] = $sessionPuestoCategoria;
+        $_SESSION["sessionPersonalId"] = $sessionPersonalId;
+		$_SESSION["sesionFoto"] = $sesionFoto;
+		$_SESSION["sesionHoraAcceso"] = date('H:i:s');
 		
 		$sesionFechaEntrada = date('Y-m-d');
 		$sesionHoraEntrada = date('H:i:s');
@@ -88,22 +89,26 @@ if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"]== "SI"){
 		$s = $INTRANET->Execute("select kp_sesionId from IntranetGEA_SESIONES_USUARIOS where kf_usuario = '$sesionUsuario' and xd_fechaEntrada = '$sesionFechaEntrada' and xt_horaEntrada = '$sesionHoraEntrada' ");
 		$r = $s->fetchRow();
 		
-		$_SESSION["sesionIntranetId"] = $r[0];
+		$_SESSION["sesionId"] = $r[0];
 		
-		if($_SESSION["sesionIntranetCategoria"] == 'Administrador'){
+		if($_SESSION["sesionCategoria"] == 'Administrador'){
 			header ("Location: Home.php");
-		}else if($_SESSION["sesionIntranetCategoria"] == 'Inhouse'){
+		}else if($_SESSION["sesionCategoria"] == 'Inhouse'){
 			header ("Location: Home.php");
-		}else if($_SESSION["sesionIntranetCategoria"] == 'Cliente'){
+		}else if($_SESSION["sesionCategoria"] == 'Cliente'){
+			header ("Location: Home.php");
+		}else if($_SESSION["sesionCategoria"] == 'Empleado'){
+			header ("Location: Home.php");
+		}else if($_SESSION["sesionCategoria"] == 'Proveedor'){
 			header ("Location: Home.php");
 		}
 		
 	}else{
 		
-		session_start();
-		session_destroy(); 
+		//session_start();
+		//session_destroy(); 
 		unset($sesionUsuario);
-		header("Location: https://escalante.com.mx/Sistemas/");
+		header("Location: index.php");
 		
 	}	
 }

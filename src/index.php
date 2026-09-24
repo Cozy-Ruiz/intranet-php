@@ -61,7 +61,7 @@ echo"<div id='wrapper' align='center'>";
 			
 			echo "<tr>";
 				echo "<td align='center'>";
-					echo "<input type='password' name='contraseña' placeholder='contraseña'>";
+					echo "<input type='password' name='password' placeholder='contraseña'>";
 				echo "</td>";
 			echo "</tr>";
 			
