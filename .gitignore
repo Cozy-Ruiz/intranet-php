@@ -6,3 +6,8 @@ actions-runner/
 # Metadatos/forks de recursos de macOS
 ._*
 .DS_Store
+
+# Certificados y llaves privadas locales
+*.pem
+*.crt
+*.key

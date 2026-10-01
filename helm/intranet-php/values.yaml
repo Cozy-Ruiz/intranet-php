@@ -15,4 +15,10 @@ monitoring:
 ingress:
   enabled: true
   className: nginx
-  host: intranet.local
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  tls:
+    - secretName: escalante-wildcard-tls
+      hosts:
+        - intranet-php-dev.escalante.com.mx
+  host: intranet-php-dev.escalante.com.mx

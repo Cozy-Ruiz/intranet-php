@@ -8,7 +8,13 @@ image:
 ingress:
   enabled: true
   className: nginx
-  host: intranet.prod
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  tls:
+    - secretName: escalante-wildcard-tls
+      hosts:
+        - intranet-php-prod.escalante.com.mx
+  host: intranet-php-prod.escalante.com.mx
 
 autoscaling:
   enabled: true

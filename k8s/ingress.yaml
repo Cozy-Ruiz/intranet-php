@@ -2,10 +2,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: intranet-php-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: nginx
+  tls:
+    - secretName: escalante-wildcard-tls
+      hosts:
+        - intranet-php-dev.escalante.com.mx
   rules:
-    - host: intranet.local
+    - host: intranet-php-dev.escalante.com.mx
       http:
         paths:
           - path: /
