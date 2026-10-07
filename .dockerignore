@@ -1,0 +1,13 @@
+.git
+.github
+actions-runner
+helm
+k8s
+.DS_Store
+**/.DS_Store
+*.log
+.env
+.env.*
+*.key
+*.pem
+*.crt

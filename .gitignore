@@ -11,3 +11,6 @@ actions-runner/
 *.pem
 *.crt
 *.key
+
+# Dependencias de PHP instaladas localmente
+/vendor/
