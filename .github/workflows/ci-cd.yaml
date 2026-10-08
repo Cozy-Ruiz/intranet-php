@@ -46,13 +46,11 @@ jobs:
 
       - name: Build Image
         run: |
-          docker build \
-            -f docker/Dockerfile \
+          docker buildx build \
+            --file docker/Dockerfile \
             --tag "$IMAGE_NAME:${{ steps.meta.outputs.tag }}" \
+            --push \
             .
-
-      - name: Push Image
-        run: docker push "$IMAGE_NAME:${{ steps.meta.outputs.tag }}"
 
   # =========================
   # CD - Deploy to DEV
