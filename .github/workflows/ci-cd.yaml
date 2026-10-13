@@ -47,6 +47,7 @@ jobs:
       - name: Build Image
         run: |
           docker buildx build \
+            --platform linux/amd64,linux/arm64 \
             --file docker/Dockerfile \
             --tag "$IMAGE_NAME:${{ steps.meta.outputs.tag }}" \
             --push \
