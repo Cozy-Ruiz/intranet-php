@@ -10,8 +10,8 @@ service:
   port: 80
 
 sharedStorage:
-  hostPath: /var/www/html
-  mountPath: /var/www/html
+  hostPath: /var/www/html/FILES
+  mountPath: /var/www/html/FILES
 
 monitoring:
   enabled: false
