@@ -45,8 +45,8 @@ spec:
             limits:
               cpu: 500m
               memory: 512Mi
-          volumes:
-            - name: shared-storage
-              hostPath:
-                path: {{ .Values.sharedStorage.hostPath | quote }}
-                type: DirectoryOrCreate
+      volumes:
+        - name: shared-storage
+          hostPath:
+            path: {{ .Values.sharedStorage.hostPath | quote }}
+            type: DirectoryOrCreate
