@@ -9,6 +9,10 @@ service:
   type: ClusterIP
   port: 80
 
+sharedStorage:
+  hostPath: /var/www/html
+  mountPath: /var/www/html
+
 monitoring:
   enabled: false
 

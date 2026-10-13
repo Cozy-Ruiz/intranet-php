@@ -19,6 +19,9 @@ spec:
           env:
             - name: APP_ENV
               value: {{ .Values.appEnv | quote }}
+          volumeMounts:
+            - name: shared-storage
+              mountPath: {{ .Values.sharedStorage.mountPath | quote }}
           ports:
             - containerPort: 80
           livenessProbe:
@@ -42,3 +45,8 @@ spec:
             limits:
               cpu: 500m
               memory: 512Mi
+          volumes:
+            - name: shared-storage
+              hostPath:
+                path: {{ .Values.sharedStorage.hostPath | quote }}
+                type: DirectoryOrCreate
