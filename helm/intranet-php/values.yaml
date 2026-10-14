@@ -15,10 +15,10 @@ sharedStorage:
   - name: comunicacion-interna
     path: /var/www/html/ComunicacionInterna/Personal/FILES
   - name: expedientes
-    path: /var/www/html/ComunicacionInterna/Personal/FILES
-  - name: carta_compromiso
+    path: /var/www/html/ComunicacionInterna/Personal/Expedientes
+  - name: carta-compromiso
     path: /var/www/html/ComunicacionInterna/Personal/CartaCompromisoSGI
-  - name: perfiles_puestos
+  - name: perfiles-puestos
     path: /var/www/html/ComunicacionInterna/Personal/perfiles_puestos
 
 monitoring:
