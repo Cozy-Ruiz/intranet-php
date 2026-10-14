@@ -38,6 +38,9 @@ jobs:
         run: echo "tag=${GITHUB_SHA}" >> $GITHUB_OUTPUT
         #run: printf 'tag=%s\n' "$GITHUB_SHA" >> "$GITHUB_OUTPUT"
 
+      #Para generar imágenes multiplataforma, se requiere QEMU y Docker Buildx.
+      #QEMU permite emular arquitecturas diferentes, mientras que Docker Buildx es una extensión de Docker que permite construir imágenes para múltiples plataformas.
+      #En este caso, se construirá la imagen para las plataformas linux/amd64 y linux/arm64, lo que permite que la imagen se ejecute en servidores con diferentes arquitecturas de CPU, como x86_64 y ARM64
       #- name: Set up QEMU
       #  uses: docker/setup-qemu-action@v3
 
@@ -50,10 +53,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      #para generar imágenes multiplataforma, se requiere QEMU y Docker Buildx.
+      #--platform linux/amd64,linux/arm64 \
       - name: Build Image
         run: |
           docker buildx build \
-            --platform linux/amd64,linux/arm64 \
+            --platform linux/amd64 \
             --file docker/Dockerfile \
             --tag "$IMAGE_NAME:${{ steps.meta.outputs.tag }}" \
             --push \

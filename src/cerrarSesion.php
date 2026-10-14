@@ -10,14 +10,14 @@ require_once("ConexionDBT.php");
 
 session_start();
 
-$sesionId = $_SESSION["sesionIntranetId"];
-$sesionUsuario = $_SESSION["sesionIntranetUsuario"];
+$sesionId = $_SESSION["sesionId"];
+$sesionUsuario = $_SESSION["sesionUsuario"];
 $sesionFechaSalida = date('Y-m-d');
 $sesionHoraSalida = date('H:i:s');
 
 $INTRANET->Execute("update IntranetGEA_SESIONES_USUARIOS set xd_fechaSalida = '$sesionFechaSalida', xt_horaSalida = '$sesionHoraSalida' where kp_sesionId = $sesionId and kf_usuario = '$sesionUsuario' ");
 
-unset($_SESSION["sesionIntranetId"], $_SESSION["sesionIntranetUsuario"], $_SESSION["sesionIntranetCategoria"], $_SESSION["sesionIntranetHoraAcceso"], $_SESSION["sesionIntranetEstilo"]);
+unset($_SESSION["sesionId"], $_SESSION["sesionUsuario"], $_SESSION["sesionCategoria"], $_SESSION["sesionHoraAcceso"], $_SESSION["sesionEstilo"]);
 
 header("Location: index.php");
 
