@@ -20,13 +20,10 @@ spec:
             - name: APP_ENV
               value: {{ .Values.appEnv | quote }}
           volumeMounts:
-            - name: shared-storage
-              mountPath: /var/www/html/FILES
-              subPath: FILES
-
-            - name: shared-storage
-              mountPath: /var/www/html/ComunicacionInterna/Personal/FILES
-              subPath: ComunicacionInterna/Personal/FILES
+            {{- range .Values.sharedStorage }}
+            - name: {{ .name | quote }}
+              mountPath: {{ .path | quote }}
+            {{- end }}
           ports:
             - containerPort: 80
           livenessProbe:
@@ -51,6 +48,9 @@ spec:
               cpu: 500m
               memory: 512Mi
       volumes:
-        - name: shared-storage
-          persistentVolumeClaim:
-            claimName: intranet-files-pvc
+        {{- range .Values.sharedStorage }}
+        - name: {{ .name | quote }}
+          hostPath:
+            path: {{ .path | quote }}
+            type: DirectoryOrCreate
+        {{- end }}

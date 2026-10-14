@@ -10,8 +10,10 @@ service:
   port: 80
 
 sharedStorage:
-  hostPath: /var/www/html/FILES
-  mountPath: /var/www/html/FILES
+  - name: fotos
+    path: /var/www/html/FILES
+  - name: comunicacion-interna
+    path: /var/www/html/ComunicacionInterna/Personal/FILES
 
 monitoring:
   enabled: false
