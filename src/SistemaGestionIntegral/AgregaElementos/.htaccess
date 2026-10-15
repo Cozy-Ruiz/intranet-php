@@ -1,0 +1,17 @@
+
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+suPHP_ConfigPath /home/escalant/public_html/Sistemas/INTRANET_GEA/AgregaElementos/SistemaGestionIntegral/
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthName escalante.com.mx
+max_execution_time = 30
+max_input_time = 60
+memory_limit = 128M

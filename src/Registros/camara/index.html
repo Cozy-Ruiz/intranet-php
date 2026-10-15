@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<!--
+		Tomar una fotografía y guardarla en un archivo
+	    @date 2017-11-22
+	    @author parzibyte
+	    @web parzibyte.me/blog
+	-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Tomar foto con Javascript y PHP</title>
+</head>
+<body>
+
+
+	<!-- Stream video via webcam -->
+<div class="video-wrap">
+    <video id="video" playsinline autoplay></video>
+</div>
+
+<!-- Trigger canvas web API -->
+<div class="controller">
+    <button id="snap">Capture</button>
+</div>
+
+<!-- Webcam video snapshot -->
+<canvas id="canvas" width="640" height="480"></canvas>
+
+
+	  
+</body>
+<script src="script.js"></script>
+</html>

@@ -1038,7 +1038,7 @@ if($accesoExpediente != ""){
 				echo $registro['xd_fechaRecepcion'] != '' ? "<td align='center'>".$registro['xd_fechaRecepcion']."</td>" : "<td align='center'><a href='fichaArticuloResguardo.php?articuloId=".$registro["xn_index"]."&tipoMovimiento=Recepción' target='popup' onclick=\"window.open(this.href,this.target,'width=700,height=800,scrollbars=yes')\"><img src='../../img/boton1.png' height='15' width='15'></a></td>";
 				echo $registro['xd_fechaEntrega'] != '' ? "<td align='center'>".$registro['xd_fechaEntrega']."</td>" : "<td align='center'><a href='fichaArticuloResguardo.php?articuloId=".$registro["xn_index"]."&tipoMovimiento=Devolución' target='popup' onclick=\"window.open(this.href,this.target,'width=700,height=800,scrollbars=yes')\"><img src='../../img/boton1.png' height='15' width='15'></td>";
 				echo $registro['xd_fechaAceptacion'] != '' ? "<td align='center'>".$registro['xd_fechaAceptacion']."</td>" : "<td align='center'><a href='fichaArticuloResguardo.php?articuloId=".$registro["xn_index"]."&tipoMovimiento=Aceptación' target='popup' onclick=\"window.open(this.href,this.target,'width=700,height=800,scrollbars=yes')\"><img src='../../img/boton1.png' height='15' width='15'></td>";
-				echo "<td align='center'><img src='../../Imagenes/ICN_BotonBasura.png' height='15' width='15' onclick=\"confirmDelete('".$registro['xn_index']."')\"></td>";
+				//echo "<td align='center'><img src='../../Imagenes/ICN_BotonBasura.png' height='15' width='15' onclick=\"confirmDelete('".$registro['xn_index']."')\"></td>";
 			echo "</tr>";
 		}
 
