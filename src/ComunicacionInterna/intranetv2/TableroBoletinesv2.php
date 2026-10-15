@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $nombrephp = 'TableroBoletines.php';
 require_once("../../ConexionDBT.php");
