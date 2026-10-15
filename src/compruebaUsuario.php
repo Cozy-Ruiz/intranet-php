@@ -4,10 +4,10 @@
  *@version 1.0
  *@copyright Copyright (c) 2015, Grupo Escalante Agencias Aduanales S.C.
  */
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+ 
 //Inicio la sesión
 session_start();
-
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 //COMPRUEBA QUE EL USUARIO ESTA AUTENTIFICADO
 if (!isset($_SESSION["autentificado"]) || $_SESSION["autentificado"] != "SI") {
