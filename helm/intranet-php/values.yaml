@@ -20,6 +20,22 @@ sharedStorage:
     path: /var/www/html/ComunicacionInterna/Personal/CartaCompromisoSGI
   - name: perfiles-puestos
     path: /var/www/html/ComunicacionInterna/Personal/perfiles_puestos
+  - name: boletines
+    path: /var/www/html/ComunicacionInterna/Boletines
+  - name: seguimiento-etapas
+    path: /var/www/html/ComunicacionInterna/SeguimientoEtapas
+  - name: sugerencias-quejas
+    path: /var/www/html/ComunicacionInterna/SugerenciaQueja
+  - name: simulacros-archivos
+    path: /var/www/html/SistemaGestionIntegral/SimulacroArchivos
+  - name: sgi-seguimiento-etapas
+    path: /var/www/html/SistemaGestionIntegral/SeguimientoEtapas
+  - name: reuniones-archivos
+    path: /var/www/html/SistemaGestionIntegral/ReunionArchivo
+  - name: procesos-archivos
+    path: /var/www/html/SistemaGestionIntegral/ProcesoArchivos
+  - name: preventiva-correctiva
+    path: /var/www/html/SistemaGestionIntegral/PreventivaCorrectiva
 
 monitoring:
   enabled: false
