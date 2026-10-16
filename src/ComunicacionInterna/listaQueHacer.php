@@ -1,5 +1,4 @@
 <?php error_reporting(0); ?>
-<?php error_reporting(0); ?>
 <?php
 /*
  *@author Samantha Abam 
@@ -137,12 +136,12 @@ echo "<div id='wrapperFicha' align='center'>";
                                         </a>
                                     </li>
                                     <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>
@@ -356,97 +355,97 @@ echo "<div id='wrapperFicha' align='center'>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0070' id='manualVinculo'>Plan de contingencia y/o emergencia de inundación</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0070' id='manualVinculo'>Plan de contingencia y/o emergencia de inundación</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0071' id='manualVinculo'>Plan de contingencia y/o emergencia de erupción volcánica</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0071' id='manualVinculo'>Plan de contingencia y/o emergencia de erupción volcánica</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0072' id='manualVinculo'>Plan de contingencia y/o emergencia de sismo</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0072' id='manualVinculo'>Plan de contingencia y/o emergencia de sismo</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0073' id='manualVinculo'>Plan de contingencia y/o emergencia de incendio</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0073' id='manualVinculo'>Plan de contingencia y/o emergencia de incendio</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0074' id='manualVinculo'>Plan de contingencia y/o emergencia de huracán</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0074' id='manualVinculo'>Plan de contingencia y/o emergencia de huracán</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov3.php?id=0228' id='manualVinculo'>Atención urgente a falla de sistemas</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov3.php?id=0228' id='manualVinculo'>Atención urgente a falla de sistemas</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0267' id='manualVinculo'>Plan de contingencia y/o emergencia extorsión o fraude</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0267' id='manualVinculo'>Plan de contingencia y/o emergencia extorsión o fraude</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0272' id='manualVinculo'>Plan de contingencia y/o emergencia de mercancías prohíbidas</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0272' id='manualVinculo'>Plan de contingencia y/o emergencia de mercancías prohíbidas</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0277' id='manualVinculo'>Plan de contingencia y/o emergencia de ataque cibernético</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0277' id='manualVinculo'>Plan de contingencia y/o emergencia de ataque cibernético</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0295' id='manualVinculo'>Plan de contingencia y/o emergencia de tornado</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0295' id='manualVinculo'>Plan de contingencia y/o emergencia de tornado</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0296' id='manualVinculo'>Plan de contingencia y/o emergencia de secuestro</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0296' id='manualVinculo'>Plan de contingencia y/o emergencia de secuestro</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0437' id='manualVinculo'>Plan de contingencia y/o emergencia de robo de mercancía</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0437' id='manualVinculo'>Plan de contingencia y/o emergencia de robo de mercancía</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0531' id='manualVinculo'>Plan de contingencia y/o emergencia de amenaza de bomba</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0531' id='manualVinculo'>Plan de contingencia y/o emergencia de amenaza de bomba</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0533' id='manualVinculo'>Plan de contingencia y/o emergencia de actos de terrorismo</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0533' id='manualVinculo'>Plan de contingencia y/o emergencia de actos de terrorismo</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0534' id='manualVinculo'>Plan de contingencia y/o emergencia de actos de falla de suministro eléctrico</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0534' id='manualVinculo'>Plan de contingencia y/o emergencia de actos de falla de suministro eléctrico</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0535' id='manualVinculo'>Plan de contingencia y/o emergencia de accidentes</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0535' id='manualVinculo'>Plan de contingencia y/o emergencia de accidentes</a>";
 			echo "</td>";
 		echo "</tr>";
 
@@ -454,19 +453,19 @@ echo "<div id='wrapperFicha' align='center'>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0536' id='manualVinculo'>Plan de contingencia y/o emergencia de suspensión o cancelación de patente</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0536' id='manualVinculo'>Plan de contingencia y/o emergencia de suspensión o cancelación de patente</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0537' id='manualVinculo'>Plan de contingencia y/o emergencia de cierre de aduana</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0537' id='manualVinculo'>Plan de contingencia y/o emergencia de cierre de aduana</a>";
 			echo "</td>";
 		echo "</tr>";
 
 		echo "<tr>";
 			echo "<td align='center' id='titulo2Blanco'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0538' id='manualVinculo'Plan de contingencia y/o emergencia de cierre de vialidades</a>";
+				echo "<a href='../SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=0538' id='manualVinculo'Plan de contingencia y/o emergencia de cierre de vialidades</a>";
 			echo "</td>";
 		echo "</tr>";
 		

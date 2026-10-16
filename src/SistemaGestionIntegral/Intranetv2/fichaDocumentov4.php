@@ -510,7 +510,7 @@ if($tipoDocumento == "L" || $tipoDocumento == "P" || $tipoDocumento == "F" || $t
 		
 	}unset($o); unset($p);
 
-	
+	$codDoctos = [];
 	
 	if($banderaExiste == 1){
 		 

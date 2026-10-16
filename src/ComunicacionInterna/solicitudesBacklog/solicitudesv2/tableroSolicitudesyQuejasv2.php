@@ -1,6 +1,5 @@
 <?php error_reporting(0); ?>
-﻿<?php
-
+<?php
 
 $nombrephp = 'tableroSolicitudesyQuejas.php';
 require_once("../../../ConexionDBT.php");
