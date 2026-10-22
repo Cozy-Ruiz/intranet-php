@@ -10,7 +10,7 @@ $usuario = $_POST['usuario'];
 $password = $_POST['password'];
 
 if(($usuario == ("" || NULL)) || $password == (("" || NULL))){
-	
+
 ?>
 <!doctype html>
 <html>
