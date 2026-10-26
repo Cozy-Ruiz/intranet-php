@@ -1,0 +1,60 @@
+-- Standard format for the unit testing
+-- All drivers must have the same table and column structure
+-- so that all tests run the same way
+-- but this is native inserts so the column types may differ across databases
+
+DROP VIEW IF EXISTS testtable_1_view;
+
+-- insertion_table will be built by createTable tests
+DROP TABLE IF EXISTS insertion_table;
+DROP TABLE IF EXISTS insertion_table_renamed;
+
+DROP TABLE IF EXISTS testtable_3;
+
+DROP TABLE IF EXISTS testtable_1;
+-- This table will be built by XMLschema tests
+DROP TABLE IF EXISTS xml_schema_test;
+
+DROP TABLE IF EXISTS custom_metatype_test;
+
+-- Testtable_1 is used to test the basic functionality of the meta functions
+-- It has a variety of data types but contains no data
+-- Comment on index vdx1 is read by the index comment test
+
+CREATE TABLE testtable_1 (
+	id INT NOT NULL AUTO_INCREMENT,
+	varchar_field VARCHAR(20),
+	datetime_field DATETIME,
+	date_field DATE,
+	integer_field INT(2) DEFAULT 0,
+	decimal_field decimal(12.2) DEFAULT 0,
+	boolean_field BOOLEAN DEFAULT 0,
+	empty_field VARCHAR(240) DEFAULT '',
+	number_run_field INT(4) DEFAULT 0,
+	PRIMARY KEY(id,integer_field),
+	UNIQUE INDEX vdx1 (varchar_field) COMMENT '1234567890',
+	UNIQUE INDEX vdx2 (integer_field,date_field),
+	UNIQUE INDEX vdx3 (number_run_field)
+) ENGINE=INNODB;
+
+CREATE VIEW testtable_1_view AS 
+	SELECT id,varchar_field
+	FROM testtable_1
+	WHERE varchar_field IS NOT NULL;
+
+-- Testtable_3 is loaded with data for testing the cache and sql functions
+-- It must be innodb else we cannot test transaction scoping
+CREATE TABLE testtable_3 (
+	id INT NOT NULL AUTO_INCREMENT,
+	varchar_field VARCHAR(20),
+	datetime_field DATETIME,
+	date_field DATE,
+	integer_field INT(2) DEFAULT 0,
+	decimal_field decimal(12.2) DEFAULT 0,
+	boolean_field BOOLEAN DEFAULT 0,
+	empty_field VARCHAR(240) DEFAULT '',
+	number_run_field INT(4) DEFAULT 0,
+	PRIMARY KEY(id,integer_field),
+	UNIQUE INDEX vdx31 (varchar_field),
+	UNIQUE INDEX vdx33 (number_run_field)
+) ENGINE=INNODB;

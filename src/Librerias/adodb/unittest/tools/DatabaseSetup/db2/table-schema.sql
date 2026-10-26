@@ -1,0 +1,67 @@
+-- Standard format for the unit testing
+-- All drivers must have the same table and column structure
+-- so that all tests run the same way
+-- but this is native inserts so the column types may differ across databases
+
+-- READ <<
+--#SET TERMINATOR @
+
+BEGIN --ATOMIC
+    IF EXISTS (SELECT 1 FROM SYSCAT.VIEWS WHERE (VIEWSCHEMA, VIEWNAME) = ('YOUR_VIEW_SCHEMA', 'YOUR_VIEW_NAME')) 
+    THEN 
+        EXECUTE IMMEDIATE 'DROP VIEW YOUR_VIEW_SCHEMA.YOUR_VIEW_NAME';
+    END IF;
+END@
+-- <<
+-- DROP VIEW IF EXISTS testtable_1_view;
+
+-- insertion_table will be built by createTable tests
+DROP TABLE IF EXISTS insertion_table;
+DROP TABLE IF EXISTS insertion_table_renamed;
+
+DROP TABLE IF EXISTS testtable_3;
+
+
+DROP TABLE IF EXISTS testtable_1;
+-- This table will be built by XMLschema tests
+DROP TABLE IF EXISTS xml_schema_test;
+
+-- Testtable_1 is used to test the basic functionality of the meta functions
+-- It has a variety of data types but contains no data
+CREATE TABLE TESTTABLE_1 (
+	id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1),
+	varchar_field VARCHAR(20),
+	datetime_field DATETIME,
+	date_field DATE DEFAULT CURRENT DATE,
+	integer_field SMALLINT NOT NULL DEFAULT 0,
+	decimal_field DECIMAL(12,2) DEFAULT 0,
+	boolean_field SMALLINT DEFAULT 0,
+    empty_field VARCHAR(240) DEFAULT '',
+	number_run_field INTEGER NOT NULL DEFAULT 0,
+	PRIMARY KEY (id,integer_field)
+);
+CREATE	UNIQUE INDEX vdx1 ON testtable_1 (varchar_field);
+CREATE	UNIQUE INDEX vdx2 ON testtable_1 (integer_field,date_field);
+CREATE	UNIQUE INDEX vdx3 ON testtable_1 (number_run_field);
+
+
+-- Simple View onto testtable 1
+CREATE VIEW testtable_1_view AS 
+	SELECT id,varchar_field
+	FROM testtable_1
+	WHERE varchar_field IS NOT NULL;
+
+-- Testtable_3 is loaded with data for testing the cache and sql functions
+CREATE TABLE testtable_3 (
+	id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1),
+	varchar_field VARCHAR(20),
+	datetime_field DATETIME,
+	date_field DATE DEFAULT CURRENT DATE,
+	integer_field SMALLINT NOT NULL DEFAULT 0,
+	decimal_field DECIMAL(12,2) DEFAULT 0,
+	boolean_field SMALLINT DEFAULT 0,
+    empty_field VARCHAR(240) DEFAULT '',
+	number_run_field INTEGER NOT NULL DEFAULT 0
+);
+CREATE	UNIQUE INDEX vdx31 ON testtable_3 (varchar_field);
+CREATE	UNIQUE INDEX vdx33 ON testtable_3 (number_run_field);

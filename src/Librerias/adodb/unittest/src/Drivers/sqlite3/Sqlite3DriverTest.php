@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * Tests cases for the sqlite3 driver of ADOdb.
+ * Try to write database-agnostic tests where possible.
+ *
+ * This file is part of ADOdb-unittest, a PHPUnit test suite for
+ * the ADOdb Database Abstraction Layer library for PHP.
+ *
+ * PHP version 8.0.0+
+ *
+ * @category  Library
+ * @package   ADOdb-unittest
+ * @author    Mark Newnham <mnewnham@github.com>
+ * @copyright 2025,2026 Mark Newnham
+ * @license   MIT https://en.wikipedia.org/wiki/MIT_License
+ *
+ * @link https://github.com/mnewnham/adodb-unittest This projects home site
+ * @link https://adodb.org ADOdbProject's web site and documentation
+ * @link https://github.com/ADOdb/ADOdb Source code and issue tracker
+ */
+
+namespace MNewnham\ADOdbUnitTest\Drivers;
+
+use MNewnham\ADOdbUnitTest\ADOdbTestCase;
+
+/**
+ * Class Sqlite3DriverTest
+ *
+ * Test cases for the ADOdb Sqlite3 Driver
+ */
+class Sqlite3DriverTest extends ADOdbTestCase
+{
+    /**
+     * The DB Physical identifier must be set in the
+     * overload class
+     *
+     * @var     mixed $physicalType
+     */
+    protected mixed $physicalType = 'TEXT';
+
+    /**
+     * The DB Field identifier
+     *
+     * @example JSON
+     * @var     mixed $columnType
+     */
+    protected ?string $columnType = 'JSON';
+
+    /**
+     * The expected result from the qstr test which has
+     * database-specific escaping. This is sqlite3-specific
+     * which users single quotes escaped by doubling them.
+     *
+     * @var     string $qStrExpectedResult
+     */
+    protected string $qStrExpectedResult = "Famed author James O''Sullivan";
+    /**
+     * Set up the test environment
+     *
+     * @return void
+     */
+    public function setup(): void
+    {
+
+        parent::setup();
+
+        if ($this->adoDriver !== 'sqlite3') {
+            $this->skipFollowingTests = true;
+            $this->markTestSkipped(
+                'This test is only applicable for the sqlite3 driver'
+            );
+        }
+    }
+}
