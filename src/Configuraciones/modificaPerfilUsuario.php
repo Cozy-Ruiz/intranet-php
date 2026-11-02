@@ -1,29 +1,24 @@
 <?php error_reporting(0); ?>
 <?php
-$moduloScript = "Configuracion";
-$oficinaScrpt = "";
 
-require_once("../conexionMasterDB.php");
+$nombrephp = 'modificaPerfilUsuario.php';
+require_once("../ConexionDBT.php");
 require_once('../compruebaUsuario.php');
-
-if(! in_array("modificaPerfil", $listaFuncionalidades)){
-	header("Location: https://escalante.com.mx/INTRA/error.php"); 
-}
+error_reporting(E_PARSE);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="shortcut icon" type="image/x-icon" href="../Imagenes/ICN_PestanaWebGE.png">
-        <title>Alta Funcionalidad Usuario</title>
+        <title>Modifica Perfil Usuario</title>
         <?php
-		if($sesionEstilo == 1){
+		if($estiloUsuario == 1){
 			echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage.css'/>";
-		}else if($sesionEstilo == 2){
+		}else if($estiloUsuario == 2){
 			echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage2.css'/>";
 		}
 		?>
-        <script language="javascript" src="../js/jquery-1.2.6.min.js"></script>
         <script>
 			function showBanana(valor){
 				if(valor == 1){
@@ -37,26 +32,6 @@ if(! in_array("modificaPerfil", $listaFuncionalidades)){
 				}
 			}
 		</script>
-        
-	
-        <script language="javascript">
-            $(document).ready(function(){
-            $("#oficina").change(function () {
-            $("#oficina option:selected").each(function () {
-	            oficina=$("#oficina").val();
-				usuario=$("#usuario").val();
-	            $.post("modulosPermisos.php", { oficina: oficina, usuario : usuario }, function(data){
-		            $("#lista").html(data);
-                    //alert(usuario);
-		            
-	            });            
-            });
-           })  
-       
-        });
-    </script>
-   
-        
     </head>
     <body>
 <?php
@@ -66,14 +41,14 @@ if($_SESSION["categoria"] == 'Administrador'){
 	echo '<a href="administradorPerfiles.php"></a>';
 }
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/seleccionaSistema.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/Sistemas/Configuraciones/configuraciones.php' id='breadcrumbs'> Configuraciones /</a>
-<a href='https://escalante.com.mx/Sistemas/Configuraciones/administradorPerfiles.php' id='breadcrumbs'> Administrador de Perfiles</a> ";
+$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='configuraciones.php' id='breadcrumbs'> Configuraciones /</a>
+<a href='AdministradorPerfiles.php' id='breadcrumbs'> Administrador de Perfiles</a> ";
 
 echo "<div id='wrapper'>";
 	echo "<table border='0' align='center' name='Encabezado'>";
 		echo"<tr>";
 			echo"<td align='center' id='titulo1'>";
-			echo "<font> Alta Funcionalidad Usuario</font>";
+			echo "<font> Modifica Perfil de Usuario</font>";
 			echo"</td>";
 		echo"</tr>";
 		
@@ -121,7 +96,7 @@ echo "<div id='wrapper'>";
                                     </a>
                                 </li>
                                 <li>
-                                    <a href='../ComunicacionInterna/tableroSolicitudesyQuejas.php' id='breadcrumbs'>
+                                    <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         Solicitudes y Quejas
                                     </a>
                                 </li>
@@ -318,14 +293,14 @@ echo "<div id='wrapper'>";
 			echo "</td>";
 		echo "</tr>";
 	echo "</table>";
-	   
-echo "<FORM name='form1' ACTION='modificaPerfilUsuario.php?modificaPerfil=true'  METHOD='POST'>";	
+		
 	echo "<table border='0' align='center'>";
 		echo "<tr height='100'><td></td></tr>";
 	echo "</table>";
 	
 		if($_GET['administra'] == 'true'){
-		
+			
+			echo "<FORM name='form1' ACTION='modificaPerfilUsuario.php?modificaPerfil=true'  METHOD='POST'>";
 				echo "<table border='0' align='center' name='Encabezado'>";
 					echo"<tr>";
 						echo"<td align='center' id='iconosTexto2'>";
@@ -337,7 +312,7 @@ echo "<FORM name='form1' ACTION='modificaPerfilUsuario.php?modificaPerfil=true' 
 					
 					echo"<tr>";
 						echo"<td align='center'>";
-							$s = $MASTER_GE->Execute('SELECT PU.xt_usuario, PU.xt_nombre FROM PERFILES.USUARIOS PU');
+							$s = $INTRANET->Execute('select kp_usuario, xt_nombre from IntranetGEA_USUARIOS');
 							echo "<select name='usuario'>";
 								echo "<option value='' SELECTED>";
 								while($r = $s->fetchRow()){
@@ -356,163 +331,129 @@ echo "<FORM name='form1' ACTION='modificaPerfilUsuario.php?modificaPerfil=true' 
 							echo "<input type='image' onclick='SubmitForm(this.form);' src='../Imagenes/ICN_BotonEnviar.png' width='90' height='29'>";
 						echo"</td>";
 					echo"</tr>";
-		
+			echo "</form>";
 			
 		}else if($_GET['modificaPerfil'] == true){
-			echo "<table border='0' align='center' name='Encabezado'>";			
-				$usuario = $_POST['usuario'];
-                echo "<input type='hidden' name='usuario' id='usuario' value='$usuario'>";
-				
-				echo"<tr>";
-					echo "<td align='center' id='titulo30Blanco'> $usuario </td>";
-				echo"</tr>";
-				
-				echo"<tr height='20'></tr>";
-			
-				echo "<tr>";
-					echo "<td width='600' 	  
-						style='border-style:solid;border-color:#007cbd;border-top-width:1px;border-bottom:none;border-left:none;border-right:none;'> </td>";
-				echo "</tr>";
-				
-				echo"<tr height='20'></tr>";
-			echo"</table>";
-			
-			//OPCIONES DE LAS CIUDADES QUE EL USUARIO TIENE DADAS DE ALTA
-			echo "<table border='0' align='center' name='Encabezado'>";	
-			
-				echo"<tr>";
-					echo "<td align='center' id='iconosTexto'> Ciudad </td>";
-				echo"</tr>";
-				
-				echo"<tr height='5'>";
-				echo"</tr>";
-				
-				echo"<tr>";
-				$oficinas = $MASTER_GE->Execute("SELECT xt_oficina FROM PERFILES.OFICINAS where xt_usuario = '$usuario'");
-					echo"<td>";
-						echo"<select name='oficina' id='oficina'>";
-							echo "<option selected='selected'>Selecionar...</option>";
-							while($r = $oficinas->fetchRow()){
-								$oficinasDisponibles = $r[0];
-								echo "<option value='$oficinasDisponibles'>$oficinasDisponibles</option>";
-							}
-						
-						echo"</select>";		
-					echo"</td>";
-				echo"</tr>";
-                                
-                                echo"<tr height='40'></tr>";
-			
-			echo"</table>";
-			
-			//SE MUESTRAN LOS MODULOS UNA VES QUE SE ELEGIO LA CIUDAD
-			echo "<table border='0' align='center' name='Encabezado' id='lista'>";	
-				
-				echo"<tr height='20' aling = 'left'></tr>";
-				
-				echo "<tr>";
-					echo "<td width='600' style='border-style:solid;border-color:#007cbd;border-top-width:1px;border-bottom:none;border-left:none;border-right:none;'> </td>";
-				echo "</tr>";
-				
-				echo"<tr height='20' aling = 'left'></tr>";
-				
-			echo"</table>";
-						
-				
-					
-		}
-
-echo"</div>";
-    echo "</form>";
-
-        if(isset($_POST['Enviar'])){
-            $indice = 0;
-            foreach($_POST['valor'] as $color => $valor){
-				   
-				   $data = explode("-", $valor);
-				  // strtoupper($oficina[0]."-".$cadena1[1]."-".$cadena1[2]."-".$cadena1[3]."-".$cadena1[4]."-".$cadena1[5]);
-				   $oficina[$indice] = $data[0];
-				   $rol[$indice]= $data[1];
-				   $modulo[$indice] = $data[2];
-				   $proceso[$indice] = $data[3];
-				   $actividad[$indice] = $data[4];
-				   $funcion[$indice] = $data[5];
-				   
-				   $indice++;
-				   
-			}
-				
-				$oficina1 = array_unique($oficina);//AICM
-				$roles    = $rol;//ROL
-				$modulos  = $modulo;//MODULOS
-				$procesos = $proceso;//PROCESO
-				$actividades = $actividad;
-              	$funcionalidadesSeleccionadas = $funcion;//Funcionalidades
-                $estatus = array();
-                $estatusIndex = 0;
-				
-                $string = "select xt_modulo from PERFILES.ACTIVIDADES where xt_oficina = '$oficina[0]' AND xt_usuario = '$usuario'";
-                $m = $MASTER_GE->Execute($string);
-                $index = 0;
-                $FuncionalidadesActivas = array();
-                
-                while($r = $m->fetchRow()){
-                     
-                     $ActivoModulos = $r[0];
-                    //echo "<br>";
-                    
-					//echo"SELECT xt_funcionalidad FROM PERFILES.FUNCIONALIDADES WHERE xt_modulo = '$ActivoModulos' AND xt_oficina = '$oficina[0]' AND xt_usuario= '$usuario' <br><br>";
-                    $string2 = "SELECT xt_funcionalidad FROM PERFILES.FUNCIONALIDADES WHERE xt_modulo = '$ActivoModulos' AND xt_oficina = '$oficina[0]' AND xt_usuario= '$usuario' ";
-                    //echo "<br>";    
-                    $u = $MASTER_GE->Execute ($string2);
-                    while($o = $u->fetchRow()){
-                        $FuncionalidadesActivas[$index] = $o[0];
-                        $index++;
-                    }   
-                    
-                     for($a=0; $a<count($FuncionalidadesActivas); $a++){
-						 
-                        if(array($FuncionalidadesActivas[$a],$funcionalidadesSeleccionadas[$a])){
+						echo "<table border='0' align='center' name='Encabezado'>";			
+							$usuario = $_POST['usuario'];
+							echo"<tr>";
+								echo "<td align='center' id='titulo30Blanco'> $usuario </td>";
+							echo"</tr>";
 							
-							echo"delete from PERFILES.FUNCIONALIDADES where xt_usuario = '$usuario' AND xt_oficina = '$oficina[$a]' AND xt_modulo = '$ActivoModulos' AND xt_funcionalidad = '$FuncionalidadesActivas[$a]' <br><br>";
+							echo"<tr height='20'></tr>";
+							
+							echo "<tr>";
+								echo "<td width='600' 	  
+									style='border-style:solid;border-color:#007cbd;border-top-width:1px;border-bottom:none;border-left:none;border-right:none;'> </td>";
+							echo "</tr>";
+							
+							echo"<tr height='20'></tr>";
+						echo"</table>";
+						
+						$s = $INTRANET->Execute("select kf_phpId from IntranetGEA_USUARIOS_CATALOGO_PHP where kf_usuarioId = '$usuario' ");
+						$index = 0;
+						$phpActivos = array();
+						while($r = $s->fetchRow()){
+							$phpActivos[$index] = $r[0];
+							$index++;
+						}
+						
+						echo "<FORM name='form1' ACTION='modificaPerfilUsuario.php?cargaPerfil=true'  METHOD='POST'>";
+							echo "<input type='hidden' class='LoginInicio' name='usuario' value='$usuario'/>";
+							
+							$s = $INTRANET->Execute("select kp_categoria from IntranetGEA_CATEGORIAS_PHP");
+							while($r = $s->fetchRow()){
+								$categoriaPhp = $r[0];
+								
+								echo '<div id="iconosTexto2" align="center">'.$categoriaPhp.'<br><br> </div>';
+								
+								echo '<div id="datos_tabla">';
 									
-                                 //   $string3 = "delete from PERFILES.FUNCIONALIDADES where xt_usuario = '$usuario' AND xt_oficina = '$oficina[0]' AND xt_modulo = '$ActivoModulos' 
-                                   // AND xt_funcionalidad = '$FuncionalidadesActivas[$a]' ";
-									
-                                   // echo "<br>";
-                                 /*   if($MASTER_GE->Execute($string3)){
-                                        $estatus[$estatusIndex] = "Correcto";
-                                        $estatusIndex++;    
-                                    }else{
-                                        $estatus[$estatusIndex] = "Error";
-                                        $estatusIndex++;
-                                    }*/
-                                } 
-                        }
-                        
-                }//fin primer whie*/
-               
-            for($a=0; $a<count($funcionalidadesSeleccionadas); $a++){
-                    if(array($funcionalidadesSeleccionadas[$a],$FuncionalidadesActivas[$a])){
-					
-					//echo"insert into PERFILES.FUNCIONALIDADES(xt_usuario,xt_oficina,xt_rol, xt_modulo, xt_proceso, xt_actividad, xt_funcionalidad) values ('$usuario','$oficina[$a]','$rol[$a]','$modulo[$a]','$proceso[$a]','$actividad[$a]','$funcionalidadesSeleccionadas[$a]') <br /><br />";
-					
-               $string4 =  "insert into PERFILES.FUNCIONALIDADES(xt_usuario,xt_oficina,xt_rol, xt_modulo, xt_proceso, xt_actividad, xt_funcionalidad) values ('$usuario','$oficina[$a]','$rol[$a]','$modulo[$a]','$proceso[$a]','$actividad[$a]','$funcionalidadesSeleccionadas[$a]')";
-					 
-                      if($MASTER_GE->Execute($string4)){
-                            $estatus[$estatusIndex] = "Correcto";
-                            $estatusIndex++;    
-                        }else{
-                            $estatus[$estatusIndex] = "Error";
-                            $estatusIndex++;
-                        }
-                  }
-			  }
-  		
-		
-		   }//fin del if del boton	
+									echo '<table class="datos" width="300" cellspacing="0" cellpadding="0" border="0" align="center">';											
+										$u = $INTRANET->Execute("select kp_nombre from IntranetGEA_CATALOGO_PHP where kf_categoria = '$categoriaPhp' ");
+										while($t = $u->fetchRow()){
+											$nombrePhp = $t[0];
+											echo '<tr id="fileItem">';
+												echo "<td>$nombrePhp</td>";
+												if(in_array($nombrePhp, $phpActivos)){
+													echo "<td><input type='checkbox' checked='true' class='LoginInicio' name='phpActivar[]' value='$nombrePhp'/></td>";
+												}else{
+													echo "<td><input type='checkbox' class='LoginInicio' name='phpActivar[]' value='$nombrePhp'/></td>";
+												}
+											echo '</tr>';
+										}
+									echo '</table>';
+										
+								echo '</div>';
+								
+								echo '<br><br>';
+							}
+							
+							echo "<table border='0' align='center' name='Encabezado'>";	
+								
+								echo "<tr>";
+									echo "<td width='600' 	  
+										style='border-style:solid;border-color:#007cbd;border-top-width:1px;border-bottom:none;border-left:none;border-right:none;'> </td>";
+								echo "</tr>";
+								
+								echo"<tr height='20'></tr>";
+								
+								echo "<tr>";
+									echo "<td> 
+								   		<input type='image' align='right' value='Cargar' onclick='SubmitForm(this.form);' 
+										src='../Imagenes/ICN_BotonEnviar.png' width='90' height='29'>
+										</td>";
+								echo "</tr>";
+							echo "</table>";
+							
+							//echo "<input type='submit' value='Cargar'/>";
+							
+						echo "</form>";
+						}else if($_GET['cargaPerfil'] == true){
+						
+						$usuario = $_POST['usuario'];
+						$phpActivar = $_POST['phpActivar'];
+						$estatus = array();
+						$estatusIndex = 0;
+						
+						$s = $INTRANET->Execute("select kf_phpId from IntranetGEA_USUARIOS_CATALOGO_PHP where kf_usuarioId = '$usuario' ");
+						$index = 0;
+						$phpActivos = array();
+						while($r = $s->fetchRow()){
+							$phpActivos[$index] = $r[0];
+							if(! in_array($phpActivos[$index], $phpActivar)){
+								if($INTRANET->Execute("delete from IntranetGEA_USUARIOS_CATALOGO_PHP where kf_phpId = '$phpActivos[$index]' AND kf_usuarioId = '$usuario'  ")){
+									$estatus[$estatusIndex] = "Correcto";
+									$estatusIndex++;	
+								}else{
+									$estatus[$estatusIndex] = "Error";
+									$estatusIndex++;
+								}
+							} 
+							$index++;
+						}
+						
+						for($a=0; $a<count($phpActivar); $a++){
+							if(! in_array($phpActivar[$a], $phpActivos)){
+								if($INTRANET->Execute("insert into IntranetGEA_USUARIOS_CATALOGO_PHP (kf_phpId, kf_usuarioId) values ('$phpActivar[$a]', '$usuario') ")){
+									$estatus[$estatusIndex] = "Correcto";
+									$estatusIndex++;	
+								}else{
+									$estatus[$estatusIndex] = "Error";
+									$estatusIndex++;
+								}
+							}
+						}
+						
+						if(in_array("Error", $estatus)){
+							echo "Hubo algun error en la modificacion del Perfil !! <br>";
+						}else{
+							echo "Modificacion de Perfil Completada !! <br>";
+						}
+						
+					}
 
-
+echo"</div>";		
 ?>
 </body>
 </html>
