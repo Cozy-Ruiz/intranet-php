@@ -2,7 +2,7 @@
 <?php
 $nombrephp='fichaSolicitudv2.php';
 require_once("../../../ConexionDBT.php");
-require_once("../../../ConexionIntranet2.php");
+//require_once("../../../ConexionIntranet2.php");
 require_once("../../../compruebaUsuario.php");
 require_once("MailSolicitudAsignarAdm.php");
 require_once("MailSolicitudRevisar.php");
