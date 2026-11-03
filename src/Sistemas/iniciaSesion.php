@@ -70,8 +70,9 @@ if (isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI") {
         //var_dump($r);
 
         //session_start();
-        $sesionId = $_SESSION["sesionId"];
-        $sesionUsuario = $_SESSION["sesionUsuario"];
+        //$sesionId = $_SESSION["sesionId"];
+        $sesionUsuario = $r["xt_usuario"];
+        $sesionCategoria = $r[1];
         $sesionEstilo = $r[2];
         $sesionFechaSalida = date('Y-m-d');
         $sesionHoraSalida = date('H:i:s');
@@ -81,14 +82,11 @@ if (isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI") {
         $sessionPersonalId = $r[7];
 
         //echo "UPDATE PERFILES.SESIONES_USUARIOS set xd_fechaSalida = '" . $sesionFechaSalida . "', xt_horaSalida = '" . $sesionHoraSalida . "' where xn_sesionId = '" . $sesionId . "' and xt_usuarioId = '" . $sesionUsuario . "' ";
-        $MASTER_GE->execute("UPDATE PERFILES.SESIONES_USUARIOS set xd_fechaSalida = '" . $sesionFechaSalida . "', xt_horaSalida = '" . $sesionHoraSalida . "' where xn_sesionId = '" . $sesionId . "' and xt_usuario = '" . $sesionUsuario . "' ");
+        //$MASTER_GE->execute("UPDATE PERFILES.SESIONES_USUARIOS set xd_fechaSalida = '" . $sesionFechaSalida . "', xt_horaSalida = '" . $sesionHoraSalida . "' where xn_sesionId = '" . $sesionId . "' and xt_usuario = '" . $sesionUsuario . "' ");
 
         //session_destroy();
 
         $status = true;
-        //echo "a" . $sesionUsuario = $r[0];
-        //echo "b" . $sesionCategoria = $r[1];
-        $sesionEstilo = $r[2];
 
     }
 
