@@ -1,0 +1,473 @@
+<?php
+
+/**
+ * This is the unittest connection bootstrap file
+ *
+ * This file is part of ADOdb-unittest, a PHPUnit test suite for
+ * the ADOdb Database Abstraction Layer library for PHP.
+ *
+ * PHP version 8.0.0+
+ *
+ * @category  Library
+ * @package   ADOdb-unittest
+ * @author    Mark Newnham <mnewnham@github.com>
+ * @copyright 2025,2026 Mark Newnham
+ * @license   MIT https://en.wikipedia.org/wiki/MIT_License
+ *
+ * @link https://github.com/mnewnham/adodb-unittest This projects home site
+ * @link https://adodb.org ADOdbProject's web site and documentation
+ * @link https://github.com/ADOdb/ADOdb Source code and issue tracker
+ */
+
+set_include_path(__DIR__ . '/..' . PATH_SEPARATOR . get_include_path());
+
+$unitTestToolsDirectory = __DIR__;
+
+
+
+/**
+ * Reads an external SQL file and executes its statements against the database.
+ * The format of the SQL file must match the database's SQL dialect.
+ *
+ * @param object $db       The database connection object.
+ * @param string $fileName The name of the SQL file to read.
+ *
+ * @return mixed
+ *
+ * @example DatabaseSetup/db2/table-schema.sql
+*/
+function readSqlIntoDatabase(object $db, string $fileName): mixed
+{
+
+    if (!file_exists($fileName)) {
+        die('Schema ' . $fileName . ' file for unit testing not found');
+    }
+
+    $ok = false;
+
+    $filePointer = fopen($fileName, 'r');
+    $executionPoint = '';
+    $accumulatorString = '';
+    $accumulatorFlag   = false;
+
+    while ($filePointer && !feof($filePointer)) {
+        $line = fgets($filePointer);
+        $line = trim($line);
+        
+
+        if (!$line) {
+            continue; // skip empty lines
+        }
+
+        if ($line == '-- READ <<'){
+            $accumulatorFlag = true;
+            continue;
+        } elseif ($line == '-- <<') {
+            $accumulatorFlag = false;
+            
+            $line = $accumulatorString . ';';
+            $line = str_replace('<NL>', "\n", $line);
+        }
+
+
+        if ($accumulatorFlag) {
+            $accumulatorString .= $line . '<NL>';
+            continue;
+        }
+
+        if (substr($line, 0, 2) === '--') {
+            continue; // skip comments
+        }
+
+        $executionPoint .= $line;
+        if (preg_match('/;$/', $line)) {
+            $executionPoint = trim($executionPoint, ';');
+   
+            if ($executionPoint) {
+                $ok = $db->execute($executionPoint);
+            }
+            $executionPoint = ''; // reset for the next statement
+            continue;
+        }
+        $executionPoint .= ' ';
+    }
+    fclose($filePointer);
+
+    return $ok;
+}
+
+/*
+* What native mode driver provides the test
+* SQL files for the PDO drivers
+*/
+$pdoSqlProviders = [
+    'pdo-firebird' => 'firebird',
+    'pdo-ibm' => 'db2',
+    'pdo-informix' => 'pdo-informix',
+    'pdo-mssql' => 'mssqlnative',
+    'pdo-mysql' => 'mysqli',
+    'pdo-oci' => 'oci8',
+    'pdo-pgsql' => 'postgres9',
+    'pdo-sqlite' => 'sqlite3',
+    'pdo-sqlsrv' => 'mssqlnative'
+];
+
+
+$iniFile = stream_resolve_include_path('adodb-unittest.ini');
+
+if (!$iniFile) {
+    die('could not find adodb-unittest.ini in the PHP include_path');
+}
+
+$availableCredentials = parse_ini_file($iniFile, true);
+
+if (!array_key_exists('ADOdb', $availableCredentials)) {
+    /*
+    * If the ADOdb section is not present, we assume the directory is the
+    * parent of the current directory
+    */
+    $availableCredentials['ADOdb'] = array(
+        'directory' => dirname(__DIR__),
+        'casing' => 1, // 1= Upper Case
+
+    );
+}
+
+$ADOdbSettings        = $availableCredentials['ADOdb'];
+if (!array_key_exists('casing', $ADOdbSettings)) {
+    $ADOdbSettings['casing'] = 1; // 1= Upper Case
+    $availableCredentials['ADOdb']['casing'] = 1;
+}
+
+if (!array_key_exists('blob', $availableCredentials)) {
+    die(
+        'blob section not found in adodb-unittest.ini.' .
+        'See the documentation for details on how to set this up'
+    );
+}
+
+if (array_key_exists('xmlschema', $availableCredentials)) {
+    if (
+        array_key_exists('debug', $availableCredentials['xmlschema'])
+        && $availableCredentials['xmlschema']['debug']
+    ) {
+        define('XMLS_DEBUG', 1);
+    }
+}
+
+$arTypeLoad = 'record';
+$GLOBALS['skipActiveRecordTests'] = 0;
+global $ADODB_QUOTE_FIELDNAMES;
+
+if (array_key_exists('activerecord', $availableCredentials)) {
+    if (
+        array_key_exists('skipTests', $availableCredentials['activerecord'])
+        && $availableCredentials['activerecord']['skipTests']
+    ) {
+        $GLOBALS['skipActiveRecordTests'] = 1;
+    }
+
+    if (
+        array_key_exists('extended', $availableCredentials['activerecord'])
+        && $availableCredentials['activerecord']['extended']
+    ) {
+        $arTypeLoad = 'recordx';
+    }
+    $arInclude = "/adodb-active-$arTypeLoad.inc.php";
+    if (
+        array_key_exists('debug', $availableCredentials['xmlschema'])
+        && $availableCredentials['xmlschema']['debug']
+    ) {
+        //define('XMLS_DEBUG', 1);
+    }
+} else {
+    $GLOBALS['skipActiveRecordTests'] = 1;
+}
+
+$GLOBALS['skipStoredProcedureTests'] = 1;
+
+if (array_key_exists('storedprocedures', $availableCredentials)) {
+    $spParameters = $availableCredentials['storedprocedures'];
+    if (array_key_exists('skipTests', $spParameters)) {
+        $GLOBALS['skipStoredProcedureTests'] = $spParameters['skipTests'];
+    }
+}
+
+if (file_exists($ADOdbSettings['directory'] . '/adodb-compat.php')) {
+    require_once $ADOdbSettings['directory'] . '/adodb-compat.php';
+}
+require_once $ADOdbSettings['directory'] . '/adodb.inc.php';
+require_once $ADOdbSettings['directory'] . '/adodb-xmlschema03.inc.php';
+if (isset($arInclude)) {
+	require_once $ADOdbSettings['directory'] . $arInclude;
+}
+
+require_once __DIR__ . '/../tools/adodb-constants.inc';
+global $argv;
+global $db;
+
+$adoProfile = '';
+
+define('ADODB_ASSOC_CASE', $ADOdbSettings['casing']);
+
+
+/*
+* First try to use the active flag in the ini file because
+* Version 12 of PHPUnit does not support the unnammed parameters
+*/
+foreach ($availableCredentials as $profile => $driverOptions) {
+    if (isset($driverOptions['active']) && $driverOptions['active']) {
+        $adoProfile = $profile;
+        break;
+    }
+}
+
+if (!$adoProfile) {
+    die('unit tests must contain an active entry in the INI file');
+}
+
+/*
+* At the point we either have a driver via the active flog or the command line
+*/
+
+if (!isset($availableCredentials[$adoProfile])) {
+    die('login credentials not available for driver ' . $adoProfile);
+}
+
+/*
+* Push global settings into the ini file
+*/
+$iniParams = $availableCredentials['globals'] ?? [];
+if (is_array($iniParams)) {
+    foreach ($iniParams as $key => $value) {
+        ini_set($key, $value);
+    }
+}
+
+
+$template = array(
+    'driver'=> null,
+    'dsn' => '',
+    'host' => null,
+    'user' => null,
+    'password' => null,
+    'database' => null,
+    'parameters' => null,
+    'debug' => 0,
+    'legacy' => 0
+);
+
+
+$credentials = array_merge(
+    $template,
+    $availableCredentials[$adoProfile]
+);
+
+$pdoDriver  = '';
+$adoDriver  = $credentials['driver'];
+if (substr($adoDriver,0,3) == 'pdo') {
+    if ($credentials['legacy'] == 1) {
+        $loadDriver = 'PDO';
+        $pdoDriver  = str_replace('pdo-', '', $credentials['driver']);
+        $credentials['dsn'] = sprintf(
+            '%s:%s',
+            $pdoDriver,
+            $credentials['dsn']
+        );
+    } else {
+        $loadDriver = str_replace('pdo-', 'PDO\\', $credentials['driver']);
+    }
+} else {
+    $loadDriver = $credentials['driver'];
+}
+
+
+$db = newAdoConnection($loadDriver);
+$db->debug = $credentials['debug'];
+
+if ($credentials['parameters']) {
+    $p = explode(';', $credentials['parameters']);
+    $p = array_filter($p);
+    foreach ($p as $param) {
+        $scp = explode('=', $param);
+        if (preg_match('/^[0-9]+$/', $scp[0])) {
+            $scp[0] = (int)$scp[0];
+        }
+        if (preg_match('/^[0-9]+$/', $scp[1])) {
+            $scp[1] = (int)$scp[1];
+        }
+
+        $db->setConnectionParameter($scp[0], $scp[1]);
+    }
+}
+
+if ($credentials['dsn']) {
+    print $credentials['dsn'];
+    $db->connect(
+        $credentials['dsn'],
+        $credentials['user'],
+        $credentials['password'],
+        $credentials['database']
+    );
+} else {
+    $db->connect(
+        $credentials['host'],
+        $credentials['user'],
+        $credentials['password'],
+        $credentials['database']
+    );
+}
+
+if (!$db->isConnected()) {
+    die(sprintf('%s database connection not established', $adoDriver));
+}
+
+switch ($credentials['driver']) {
+    case 'mysqli':
+    case 'mssqlnative':
+    case 'db2':
+        $GLOBALS['schemaOwner'] = $db->database;
+        break;
+    
+    default:
+        $GLOBALS['schemaOwner'] = $credentials['user'];
+}
+
+
+
+$casingDescriptions = [
+    0 => 'ADODB_ASSOC_CASE_LOWER',
+    1 => 'ADODB_ASSOC_CASE_UPPER',
+    2 => 'ADODB_ASSOC_CASE_NATIVE'
+];
+
+print "
+PHP Version: " . PHP_VERSION . "
+Connected to profile: $adoProfile
+Connected to driver: $adoDriver
+Casing is set to {$casingDescriptions[$ADOdbSettings['casing']]}
+";
+
+/*
+* This is now available to unittests. The caching section will need this info
+*/
+$GLOBALS['ADOdbConnection'] = &$db;
+$GLOBALS['ADOdriver']       = $adoDriver;
+$GLOBALS['loadDriver']      = $loadDriver;
+$GLOBALS['ADOxmlSchema']    = new \adoSchema($db);
+$GLOBALS['TestingControl']  = $availableCredentials;
+$GLOBALS['globalTransOff']  = 0;
+
+$GLOBALS['unitTestToolsDirectory'] = $unitTestToolsDirectory;
+
+$GLOBALS['SqlProvider'] = $adoDriver;
+if (substr($adoDriver, 0, 3) == 'pdo') {
+    $GLOBALS['SqlProvider'] = $pdoSqlProviders[$adoDriver]; 
+}
+
+$tableSchema = sprintf(
+    '%s/DatabaseSetup/%s/table-schema.sql',
+    $GLOBALS['unitTestToolsDirectory'],
+    $GLOBALS['SqlProvider']
+);
+
+/*
+* Loads the schema based on the DB type
+*/
+
+readSqlIntoDatabase($db, $tableSchema);
+
+
+/*
+* Reads common format data and nserts it into the database
+*/
+$table3Data = sprintf('%s/../tools/DatabaseSetup/table3-data.sql', dirname(__FILE__));
+
+readSqlIntoDatabase($db, $table3Data);
+
+
+
+/*
+* Set up the data dictionary
+*/
+//$GLOBALS['ADOdataDictionary'] = NewDataDictionary($db, $credentials['driver']);
+$GLOBALS['ADOdataDictionary'] = NewDataDictionary($db);
+
+$ADODB_CACHE_DIR = '';
+if (array_key_exists('caching', $availableCredentials)) {
+    $cacheParams = $availableCredentials['caching'];
+    switch ($cacheParams['cacheMethod'] ?? 0) {
+        case 1:
+            $ADODB_CACHE_DIR = $cacheParams['cacheDir'] ?? '';
+            break;
+        case 2:
+            $db->memCache     = true;
+            $db->memCacheHost = $cacheParams['cacheHost'];
+            $db->memCachePort = 11211;
+            break;
+    }
+}
+/*
+* Must be available at root level
+*/
+global $ADODB_CACHE_DIR;
+
+
+/*
+* The base classes for Activw record testing
+*/
+if ($GLOBALS['skipActiveRecordTests'] == 0) {
+    
+    $_ADODB_ACTIVE_DBS = array();
+    class person extends \ADOdb_Active_Record
+    {
+    }
+    class child extends \ADOdb_Active_Record
+    {
+    }
+    
+
+    /*
+    $_ADODB_ACTIVE_DBS = array();
+    class person extends \ADOdb\Resources\ActiveRecord\ADOdbActiveRecord
+    {
+    }
+    class child extends \ADOdb\Resources\ActiveRecord\ADOdbActiveRecord
+    {
+    }
+    */
+    $GLOBALS['person']   = new person(false, false, $db);
+    $GLOBALS['child']    = new child('children', array('id'), $db);
+
+    ADODB_SetDatabaseAdapter($db);
+}
+
+$driverControl = sprintf(
+    '%s/DriverControl/%s/DriverControl.inc',
+    $GLOBALS['unitTestToolsDirectory'],
+    $GLOBALS['SqlProvider']
+);
+
+if (file_exists($driverControl)) {
+    require_once $driverControl;
+    $GLOBALS['DriverControl'] = new \DriverControl;
+} else {
+    $driverControl = sprintf(
+        '%s/DriverControl/CoreControl.inc',
+        $GLOBALS['unitTestToolsDirectory']
+    );  
+    require_once $driverControl;
+    $GLOBALS['DriverControl'] = new \CoreControl;
+}
+
+
+/**
+ * Set some global variables for the tests
+ */
+$ADODB_QUOTE_FIELDNAMES = false;
+$ADODB_FETCH_MODE       = ADODB_FETCH_ASSOC;
+$ADODB_GETONE_EOF       = null;
+$ADODB_COUNTRECS        = true;
+$ADODB_COMPAT_FETCH     = false;
+
+$GLOBALS['comparisonData'] = [];
