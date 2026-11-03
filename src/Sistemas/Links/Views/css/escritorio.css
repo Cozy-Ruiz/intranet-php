@@ -1,0 +1,285 @@
+#container{
+	background-color: #FFFFFF;
+	overflow: hidden;
+}
+
+#barraSuperior{
+	width: 100%;
+    height: 15%;
+	float: left;
+}
+
+#logo{
+	width: 140px;
+	height: 100%;
+	float: left;
+}
+
+#barra{
+	height: 100%;
+	float: left;
+}
+
+div#barra>div#modulo {
+	width: 100%;
+	height: 70%;
+	float: left;
+	border-bottom-left-radius: 140px;
+	background:#0586E2;
+	color:#FFFFFF;
+	font-size:40px;
+	display:flex;
+	justify-content:center;
+	align-content: center;
+    flex-direction: column;
+	font-family:Arial;
+}
+
+#breadCrumb{
+	width: 100%;
+	height: 30%;
+	float: left;
+	font-size:20px;
+	color:#0586E2;
+	font-family:Arial;
+}
+
+#breadCrumb a{
+	color:inherit;
+}
+
+
+#menuLateralIzquierdo{
+	width: 140px;
+	height: 85%;
+	float: left;
+	border-top-right-radius: 30px;
+	background: #62B2ED;
+	font-family:Arial;	
+}
+
+#sesion{
+	margin-top:1em;
+	width:80%;
+}
+
+#informacionUsuario{
+  	margin-top:1em;
+	margin-bottom:1em;
+	font-size:13px;
+	width:80%;
+}
+
+#navegacion{
+	width:80%;
+}
+
+#elemento{
+	width:49.5%; 
+	float:left;
+	margin-top:1em;
+}
+
+#elementoCFDI{
+	width:49.5%; 
+	float:center;
+	margin-top:1em;
+}
+
+#escritorio{
+	height: 85%;
+	overflow:auto;
+	float:left;
+	background:#FFFFFF;
+}
+
+.elementoLista{
+	width:300px; 
+	height:auto; 
+	background:#FFFFFF; 
+	float:left;
+}
+
+#whiteLine{
+	font-family:Lucida Sans;
+	font-size:20px;
+	color:white;
+	border-style:solid;
+	border-color:white;
+	border-top:none;
+	border-bottom-width:1px;
+	border-left:none;
+	border-right:none;
+}
+
+.overbox {
+	display: none;
+	position: absolute;
+	background: white;
+	width: 30%;
+	height: 20%;
+	top: 40%;
+	left: 40%;
+	border-radius: 30px;
+	z-index:1002;
+	overflow: auto;
+}
+.fadebox {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.75;
+	opacity:.75;
+	filter: alpha(opacity=80);
+}
+
+a:link{
+	color:inherit;
+	text-decoration:none;
+}
+
+@media screen and (max-width: 980px){
+	
+	#barraSuperior{
+		width: 100%;
+		height: 15%;
+		float: left;
+	}
+	
+	#logo{
+		width: 140px;
+		height: 100%;
+		float: left;
+		display:none;
+	}
+	
+	#barra{
+		height: 100%;
+		float: left;
+	}
+	
+	#modulo{
+		width: 100%;
+		height: 100%;
+		float: left;
+		border-bottom-left-radius: 0px;
+		background:#0586E2;
+		color:#FFFFFF;
+		font-size:40px;
+		display:flex;
+		justify-content:center;
+		align-content: center;
+		flex-direction: column;
+		font-family:Arial;
+	}
+	
+	#breadCrumb{
+		width: 100%;
+		height: 30%;
+		float: left;
+		font-size:20px;
+		color:#0586E2;
+		display:none;
+	}
+	
+	#menuLateralIzquierdo{
+		width: 100%;
+		height: 50px;
+		float: left;
+		border-top-right-radius: 0px;
+		background: #62B2ED;	
+		overflow-x:hidden;
+		overflow-y: hidden;
+	}
+	
+	#sesion{
+		margin-top:.5em;
+		width:30%;
+		float:left;
+	}
+	
+	#informacionUsuario{
+		margin-top:1em;
+		margin-bottom:1em;
+		font-size:9px;
+		width:80%;
+		display:none;
+	}
+	
+	#cadenaCodigo{
+		font-size:7px;
+	}
+	
+	#navegacion{
+		height: 50px;
+		float:left;
+		width:auto;
+		overflow-x:auto;
+		overflow-y:hidden;
+	}
+	
+	#elemento{
+		width:85px;
+		float:left;
+		margin-top:0em;
+	}
+
+	#elementoCFDI{
+		width:85px;
+		float:center;
+		margin-top:0em;
+	}
+	
+	#escritorio{
+		width:100%;
+		height: 78%;
+		overflow:auto;
+		float:left;
+		background:#FFFFFF;	
+	}
+	
+	#whiteLine{
+		font-family:Lucida Sans;
+		font-size:20px;
+		color:white;
+		border-style:solid;
+		border-color:white;
+		border-top:none;
+		border-bottom-width:1px;
+		border-left:none;
+		border-right:none;
+	}
+	
+	.overbox {
+		display: none;
+		position: absolute;
+		background: white;
+		width: 50%;
+		height: 50%;
+		top: 25%;
+		left: 25%;
+		border-radius: 30px;
+		z-index:1002;
+		overflow: auto;
+	}
+	.fadebox {
+		display: none;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		z-index:1001;
+		-moz-opacity: 0.75;
+		opacity:.75;
+		filter: alpha(opacity=80);
+	}
+}
+
+
