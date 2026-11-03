@@ -21,15 +21,15 @@ if (isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI") {
 
     $s = $MASTER_GE->Execute("select xn_sesionId from PERFILES.SESIONES_USUARIOS where xt_usuario = '$sesionUsuario' and xd_fechaEntrada = '$sesionFechaEntrada' and xt_horaEntrada = '$sesionHoraEntrada' ") or die("Error al seleccionar la session <br>");
     $r = $s->fetchRow();
-    echo "$sesionUsuario";
+    //echo "$sesionUsuario";
     $_SESSION["sesionId"] = $r[0];
-    echo $_SESSION["sesionId"];
+    //echo $_SESSION["sesionId"];
 
     $ultimoCambioPass = date('Y-m-d', strtotime($MASTER_GE->getOne("SELECT xd_fechaCambioPassword FROM PERFILES.USUARIOS WHERE xt_usuario = '$sesionUsuario' ")));
     $fechaActual = date('Y-m-d');
 
     $dias = abs((strtotime($ultimoCambioPass) - strtotime($sesionFechaEntrada)) / 86400);
-    echo "-$dias";
+    //echo "-$dias";
     if ($dias >= 180) {
         header("Location: Configuraciones/modificaPassword.php");
     } else {
@@ -61,7 +61,7 @@ if (isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI") {
     $password = str_replace($patrones, "", htmlspecialchars(trim($_POST['password']), ENT_QUOTES, 'UTF-8'));
 
     $status = false;
-    echo "SELECT u.xt_usuario, u.xt_categoria, u.xn_estilo, u.xt_estatus, u.xt_correo, u.xt_puesto, (SELECT cp.xt_categoria FROM perfiles.catalogo_puestos cp WHERE cp.xt_puesto = u.xt_puesto LIMIT 1) as xt_puestoCategoria, ( SELECT e.kp_personalId FROM intranetgea.sgi_empleados e WHERE e.kf_usuario = u.xt_usuario) AS xt_personalId  from PERFILES.USUARIOS u where u.xt_usuario='$usuario' and u.xt_password='$password' AND u.xt_estatus ='Activo' ";
+    //echo "SELECT u.xt_usuario, u.xt_categoria, u.xn_estilo, u.xt_estatus, u.xt_correo, u.xt_puesto, (SELECT cp.xt_categoria FROM perfiles.catalogo_puestos cp WHERE cp.xt_puesto = u.xt_puesto LIMIT 1) as xt_puestoCategoria, ( SELECT e.kp_personalId FROM intranetgea.sgi_empleados e WHERE e.kf_usuario = u.xt_usuario) AS xt_personalId  from PERFILES.USUARIOS u where u.xt_usuario='$usuario' and u.xt_password='$password' AND u.xt_estatus ='Activo' ";
     $query = "SELECT u.xt_usuario, u.xt_categoria, u.xn_estilo, u.xt_estatus, u.xt_correo, u.xt_puesto, (SELECT cp.xt_categoria FROM perfiles.catalogo_puestos cp WHERE cp.xt_puesto = u.xt_puesto LIMIT 1) as xt_puestoCategoria, ( SELECT e.kp_personalId FROM intranetgea.sgi_empleados e WHERE e.kf_usuario = u.xt_usuario) AS xt_personalId  from PERFILES.USUARIOS u where u.xt_usuario='$usuario' and u.xt_password='$password' AND u.xt_estatus ='Activo' ";
     $s = $MASTER_GE->Execute($query);
     $texto = "";
@@ -86,8 +86,8 @@ if (isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI") {
         //session_destroy();
 
         $status = true;
-        echo "a" . $sesionUsuario = $r[0];
-        echo "b" . $sesionCategoria = $r[1];
+        //echo "a" . $sesionUsuario = $r[0];
+        //echo "b" . $sesionCategoria = $r[1];
         $sesionEstilo = $r[2];
 
     }
@@ -144,7 +144,7 @@ if (isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI") {
         //session_destroy();
         unset($sesionUsuario);
         header("Location: index.php");
-        echo "Usuario Invalido";
+        //echo "Usuario Invalido";
     }
 
 }
