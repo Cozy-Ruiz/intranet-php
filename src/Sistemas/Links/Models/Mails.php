@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 //require_once("../Librerias/PHPMailer/class.phpmailer.php"); 
 
 use PHPMailer\PHPMailer\PHPMailer;

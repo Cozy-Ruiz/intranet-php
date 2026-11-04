@@ -36,6 +36,8 @@ sharedStorage:
     path: /var/www/html/SistemaGestionIntegral/ProcesoArchivos
   - name: preventiva-correctiva
     path: /var/www/html/SistemaGestionIntegral/PreventivaCorrectiva
+  - name: links-tmp
+    path: /var/www/html/Sistemas/Links/tmp/VALIDACION
 
 monitoring:
   enabled: false

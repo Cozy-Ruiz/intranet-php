@@ -52,7 +52,6 @@ class Session {
 			$_SESSION["sesionLinksId"] = null;
 			header("Location: ../../seleccionaSistema.php");
 		}
-		
     }
 	
 	function registraSession($User) {

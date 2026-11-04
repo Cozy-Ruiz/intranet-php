@@ -1,5 +1,4 @@
 <?php
-
 	ini_set('memory_limit', '20000M');
 	ini_set('max_execution_time', 300);
 
@@ -18,8 +17,6 @@
 		$breadCrumbModulos = "Módulos:modulosController.php";
 		$session->addBreadCrumb($breadCrumbModulos);
 	}
-	
-
 
 	$proceso = "K0021"; //Generar CFDI de exportación
 	$_SESSION["sesionLinks"]->obtenPermisosProceso($proceso);
