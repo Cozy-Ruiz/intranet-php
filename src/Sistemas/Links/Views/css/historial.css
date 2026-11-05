@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+#DropZOne {
+	 border: 2px dashed #6f6969;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: left;
+    font: 20pt bold 'Vollkorn';
+    color: #7e7b7b;
+	font-size: 12px;
+    height: 25px;
+
+}
+
+
+#tblHistorial{
+	
+	width:300px;
+	background-color:rgb(123,144,180); 
+	margin-top:38px; 
+	height:auto;
+	
+}
+
+#datHist{
+	
+	font-family:Arial; 
+	color:white;
+}
+
+
+#lineaBlanca{
+	
+	 color:white; 
+	 border-style:solid; 
+	 border-color:white; 
+	 border-top:none; 
+	 border-bottom-width:2px;
+	 border-left:none; 
+	 border-right:none;
+}
+
+#historial{
+margin-top:45px; 
+width:30%;
+float:left;
+height:550px;
+}
+
+#historial2{
+	width:330px;
+	background-color:rgb(123,144,180); 
+	height:550px;
+	overflow:auto;
+}
+
+#formularioParametros2{
+	width:330px;
+	background-color:rgb(123,144,180); 
+	height:550px;
+	float:left;
+	
+}
+
+@media only screen and (max-width: 1300px){
+	#historial{
+		margin-top:38px; 
+		clear:left;
+		width:100%;
+		align-content:center;
+	}
+	
+	#historial2{
+		clear:left;
+		width:310px;
+		
+		align-content:center;
+	}
+	
+	#tblHistorial{
+		width:35%;
+		
+	}
+	
+	
+	
+	
+}
+
+
+
