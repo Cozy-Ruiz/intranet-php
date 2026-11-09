@@ -58,8 +58,9 @@ require '../../Librerias/RpubMail/vendor/autoload.php';
 				$mail->Host       = 'smtp.office365.com';                     //Set the SMTP server to send through
 				$mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set 
 				$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-				$mail->Username   = 'calidad@escalante.com.mx';              //SMTP username
-				$mail->Password   = 'nvkyxyfmrknpnbxy';                               //SMTP password
+				$mail->Username   = 'calidad@escalante.com.mx';  
+				$mail->Password   = 'vvjgbgnkdpndqcjd';            //SMTP username
+				//$mail->Password   = 'nvkyxyfmrknpnbxy'; vvjgbgnkdpndqcjd                              //SMTP password
 				//$mail->Username   = 'operaciones@escalante.com.mx';                     //SMTP username
 				//$mail->Password   = '$xpT*bG6N^xBu&';                               //SMTP password
 				//$mail->Username   = 'archivos@escalante.com.mx';              //SMTP username

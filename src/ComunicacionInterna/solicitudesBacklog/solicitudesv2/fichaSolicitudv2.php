@@ -1,16 +1,16 @@
-<?php //error_reporting(0); ?>
+<?php error_reporting(0); ?>
 <?php
 $nombrephp='fichaSolicitudv2.php';
 require_once("../../../ConexionDBT.php");
 //require_once("../../../ConexionIntranet2.php");
 require_once("../../../compruebaUsuario.php");
-require_once("MailSolicitudAsignarAdm.php");
-require_once("MailSolicitudRevisar.php");
-require_once("MailSolicitudRechazar.php");
+//require_once("MailSolicitudAsignarAdm.php");
+//require_once("MailSolicitudRevisar.php");
+//require_once("MailSolicitudRechazar.php");
 error_reporting(E_PARSE);
 $gerenteSistemas = 'Gerente_Sistemas';
 $solicitudID = $_GET["codigo"];
-echo $solicitudID;
+//echo $solicitudID;
 
 $categoriaUsr = $INTRANET->getOne("SELECT kf_categoria FROM IntranetGEA_USUARIOS WHERE kp_usuario = '$usuarioId' ");
 $fecha_actual = date('Y-m-d');
@@ -1120,7 +1120,7 @@ echo"<div id='wrapperFicha' align='center'>";
 		echo "<tr>";
 			echo "<td align='right'>";
 				if(($solicitanteID == $usuarioId) || ($categoriaUsr == "Administrador")){
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaSolicitudModificar.php?id=$solicitudID' >
+				echo "<a href='fichaSolicitudModificar.php?id=$solicitudID' >
 					  	<img src='../../../Imagenes/ICN_BotonModificar.png' width='90' height='29'>
 					  </a>";
 				}

@@ -1,5 +1,4 @@
-<?php error_reporting(0); ?>
-﻿<?php
+<?php
 $nombrephp='fichaAltaBajaUsuario.php';
 require_once("../../../ConexionDBT.php");
 require_once("../../../ConexionIntranet2.php");
@@ -510,8 +509,8 @@ while($r = $s->fetchRow()){
 <?php
 
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'> Comunicación Interna / </a>
-<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes </a>";
+$breadcrumb="<a href='../../../Home.php' id='breadcrumbs'>Home / </a><a href='../../../ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'> Comunicación Interna / </a>
+<a href='tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes </a>";
 			
 echo"<div id='wrapperFicha' align='center'>";
 	echo "<table border='0' align='center' name='Encabezado' width='700px'>";
