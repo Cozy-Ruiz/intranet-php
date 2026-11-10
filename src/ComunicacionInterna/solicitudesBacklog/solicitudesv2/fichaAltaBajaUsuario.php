@@ -1221,7 +1221,7 @@ echo"<div id='wrapperFicha' align='center'>";
 											
 											echo "<tr>";
 												echo "<td align='left' width='250px' id = 'iconosTexto2'>".$tipoSistema."</td>";
-												//echo"SELECT xt_nombre FROM BACKLOG.STAKEHOLDERS WHERE xt_codigoEntregable = '$entregableSistema'";
+												///echo"SELECT xt_nombre FROM BACKLOG.STAKEHOLDERS WHERE xt_codigoEntregable = '$entregableSistema'";
 												$stakehorderE = $INTRANETV2->getOne("SELECT xt_nombre FROM BACKLOG.STAKEHOLDERS WHERE xt_codigoEntregable = '$entregableSistema'");
 												if(@$stakehorder == '' && $entregableSistema == ''){
 													if(@$perfil[0] == 'Jefe de Desarrollo' || @$perfil[0] == 'Asignador PDR'){

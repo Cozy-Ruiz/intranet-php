@@ -191,7 +191,7 @@ if ($contedescrip >= 205){
 		
 	
 		echo"<script>
-			window.opener.location = 'https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/backlogAsignaPdrAltaBaja.php?codigoE=".$codigoEntregable."&codigoS=".$solicitudId."&pdr=".$pdrAsignado."&stakeholder=".$catalogo."';
+			window.opener.location = 'backlogAsignaPdrAltaBaja.php?codigoE=".$codigoEntregable."&codigoS=".$solicitudId."&pdr=".$pdrAsignado."&stakeholder=".$catalogo."';
 			window.close();
 		</script>";
 		

@@ -9,7 +9,6 @@ session_start();
  */
 
 require_once("ConexionDBT.php");
-
 if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"]== "SI"){
 	
 	$sesionUsuario = $_SESSION["sesionUsuario"];
