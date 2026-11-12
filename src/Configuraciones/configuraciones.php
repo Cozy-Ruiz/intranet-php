@@ -1,11 +1,7 @@
+<?php error_reporting(0); ?>
 <?php
-ini_set('display_errors', 'On');
-error_reporting(E_ERROR | E_PARSE);
-
-$moduloScript = "Configuracion";
-$oficinaScrpt = "";
-
-require_once("../conexionMasterDB.php");
+$nombrephp="configuraciones.php";
+require_once("../ConexionDBT.php");
 require_once('../compruebaUsuario.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -14,9 +10,9 @@ require_once('../compruebaUsuario.php');
             <meta charset="utf-8">
             <title>Configuraciones</title>
             <?php
-			if($sesionEstilo == 1){
+			if($estiloUsuario == 1){
             	echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage.css'/>";
-			}else if($sesionEstilo == 2){
+			}else if($estiloUsuario == 2){
             	echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage2.css'/>";
 			}
 			?>
@@ -39,13 +35,13 @@ require_once('../compruebaUsuario.php');
         <body>
 <?php
 
-$breadcrumb="<a href='../seleccionaSistema.php' id='breadcrumbs'>Home </a>";
+$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home </a>";
 
 echo "<div id='wrapperFicha' align='center'>";
 	echo "<table border='0' align='center' name='Encabezado' width='800px'>";
 	
 		echo "<tr>";
-			echo "<td align='left' id='breadcrumbs'>Usuario: ".$sesionUsuario."</td>";
+			echo "<td align='left' id='breadcrumbs'>Usuario: ".$usuarioId."</td>";
 		echo "</tr>";
 		
 		echo"<tr height='80px'> </tr>";
@@ -75,7 +71,7 @@ echo "<div id='wrapperFicha' align='center'>";
 		//echo"<tr height='100'> </tr>";
 	echo "</table>"; 
 	
-	echo "<table border='0' align='center' id='mapaIntranet' style='display:none;'>";
+	/*echo "<table border='0' align='center' id='mapaIntranet' style='display:none;'>";
 		echo "<tr>";
 			echo "<td align='center'>";
 				//$archivo = $_SERVER['DOCUMENT_ROOT'];
@@ -133,9 +129,14 @@ echo "<div id='wrapperFicha' align='center'>";
                                         	Qué hacer
                                         </a>
                                     </li>
-                                    <li>
-                                    	<a href='../ComunicacionInterna/tableroSolicitudesyQuejas.php' id='breadcrumbs'>
-                                        	Solicitudes y Quejas
+                                   <li>
+                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                        	Solicitudes
+                                        </a>
+                                    </li>
+                                     <li>
+                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                        	Quejas
                                         </a>
                                     </li>
                                     <li>
@@ -318,7 +319,7 @@ echo "<div id='wrapperFicha' align='center'>";
                                 
                                 <ul style='list-style-type:square;'>
                                 	<li>
-                                    	<a href='../Configuraciones/modificaPassword.php' id='breadcrumbs'>
+                                    	<a href='../Configuraciones/ModificaPassword.php' id='breadcrumbs'>
                                         	Contraseñas
                                         </a>
                                     </li>
@@ -327,7 +328,13 @@ echo "<div id='wrapperFicha' align='center'>";
 							</td>
 						</tr>
 					</table>
-                <?php
+                <?php*/
+				
+				//banana de navegacion intranet
+			echo "<table border='0' align='center' id='mapaIntranet' style='display:none;'>";
+				include("../navegacion_banana.php");
+			echo "</table>";
+			
 			echo "</td>";
 		echo "</tr>";
 		
@@ -338,18 +345,18 @@ echo "<div id='wrapperFicha' align='center'>";
 
 	echo "<table border='0' align='center' name='Cuerpo'>";
 		echo "<tr >";
-			if(in_array("perfiles", $listaFuncionalidades)){
-				echo "<td align='center' width='200' >";
-					echo "<a href='administradorPerfiles.php'><img src='../Imagenes/ICN_Reuniones.png'> ";
-				echo "</td>";
-			}
-			if(in_array("listas", $listaFuncionalidades)){
-				echo "<td align='center' width='200' >";
-					echo "<a href='listasDisponibles.php'><img src='../Imagenes/ICN_ListaMaestra.png'></a> ";
-				echo "</td>";
+			if(($usuarioId == 'Gerente_Sistemas') ||($usuarioId == 'cozy')||($usuarioId == 'Ricardo_Garcia')|| ($usuarioId == 'Lizbeth_Guadarrama')|| ($usuarioId == 'Alberto_Martinez')|| ($usuarioId == 'Jorge_Ramirez')|| ($usuarioId == 'Carmina_Cruz')|| ($usuarioId == 'Eibar_Ponce')|| ($usuarioId == 'Ismael_Lopez')|| ($usuarioId == 'Guillermo_Quezada') || ($usuarioId == 'Saday_Hernandez')|| ($usuarioId == 'Leonel_Huerta')|| ($usuarioId == 'Cesar_Jeronimo')){
+			echo "<td align='center' width='200' >";
+				echo "<a href='AdministradorPerfiles.php'><img src='../Imagenes/ICN_Reuniones.png'> ";
+                //echo "<a href='Perfiles/tableroUsuarios.php'><img src='../Imagenes/ICN_Reuniones.png'> ";
+			echo "</td>";
+			
+			echo "<td align='center' width='200' >";
+				echo "<a href='ListasDisponibles.php'><img src='../Imagenes/ICN_ListaMaestra.png'></a> ";
+			echo "</td>";
 			}
 			echo "<td align='center' width='200' >";
-				echo "<a href='modificaPassword.php'><img src='../Imagenes/ICN_Password.png'> ";
+				echo "<a href='ModificaPassword.php'><img src='../Imagenes/ICN_Password.png'> ";
 			echo "</td>";
 				
 			echo"<td align='center' width='200'>";
@@ -362,15 +369,14 @@ echo "<div id='wrapperFicha' align='center'>";
 		echo "</tr>";
 		
 		echo"<tr id='iconosTexto'>";
-			if(in_array("perfiles", $listaFuncionalidades)){
-				echo"<td align='center' width='200' >";
-					echo "Perfiles";
-				echo"</td >";
-			}
-			if(in_array("listas", $listaFuncionalidades)){
-				echo"<td align='center' width='200' >";
-					echo "Listas";
-				echo"</td >";
+			if(($usuarioId == 'Gerente_Sistemas') ||($usuarioId == 'cozy')||($usuarioId == 'Ricardo_Garcia')|| ($usuarioId == 'Lizbeth_Guadarrama')|| ($usuarioId == 'Alberto_Martinez')|| ($usuarioId == 'Jorge_Ramirez')|| ($usuarioId == 'Carmina_Cruz')|| ($usuarioId == 'Eibar_Ponce')|| ($usuarioId == 'Ismael_Lopez')|| ($usuarioId == 'Guillermo_Quezada')|| ($usuarioId == 'Saday_Hernandez')){
+			echo"<td align='center' width='200' >";
+				echo "Perfiles";
+			echo"</td >";
+			
+			echo"<td align='center' width='200' >";
+				echo "Listas";
+			echo"</td >";
 			}
 			echo"<td align='center' width='200' >";
 				echo "Contraseñas";

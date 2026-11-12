@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+#tituloTablero{
+	font-size:40px; 
+	color:rgb(1,124,189); 
+	font-family:Arial;
+}
+
+#nombreCampos{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20;
+	
+}
+
+#nombreCamposEscaneo{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14;
+}
+
+#datosEscaneo{
+	text-align: center;
+	font-family:Arial;
+	font-size: 13;
+	
+}
+
+.datos{
+	font-family:Arial;
+	font-size: 13;
+	
+}
+
+#titleBlueLineBottom{
+	font-family:Arial;
+	font-size:20px;
+	color:rgb(146,212,238);
+	border-style:solid;
+	border-color:rgb(146,212,238);
+	border-top:none;
+	border-bottom-width:1px;
+	border-left:none;
+	border-right:none;
+}
+
+
+#tablero{
+float:left;
+height: 100%;
+width: 70%;
+}
+
+
+
+@media only screen and (max-width: 1300px){
+	#tablero{
+		clear:left;
+		
+		width:100%;
+	}
+	
+	
+	#TblTablero{
+		width:100%;
+	}
+	
+}

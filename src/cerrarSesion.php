@@ -17,7 +17,8 @@ $sesionHoraSalida = date('H:i:s');
 
 $INTRANET->Execute("update IntranetGEA_SESIONES_USUARIOS set xd_fechaSalida = '$sesionFechaSalida', xt_horaSalida = '$sesionHoraSalida' where kp_sesionId = $sesionId and kf_usuario = '$sesionUsuario' ");
 
-unset($_SESSION["sesionId"], $_SESSION["sesionUsuario"], $_SESSION["sesionCategoria"], $_SESSION["sesionHoraAcceso"], $_SESSION["sesionEstilo"]);
+$_SESSION = array();
+unset($_SESSION);
 
 header("Location: index.php");
 

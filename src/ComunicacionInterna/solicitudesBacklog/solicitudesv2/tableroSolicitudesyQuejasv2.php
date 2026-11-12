@@ -546,7 +546,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -682,7 +682,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -983,7 +983,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -1099,7 +1099,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";;
@@ -1344,7 +1344,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -1460,7 +1460,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";;
@@ -1709,7 +1709,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -1824,7 +1824,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -2070,7 +2070,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -2185,7 +2185,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -2429,7 +2429,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -2544,7 +2544,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -2789,7 +2789,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='fichaAltaBajaUsuario.php?codigo=".urlencode($claveQuejaSolicitud[$a])."' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";
@@ -2904,7 +2904,7 @@ WHERE xt_tipo = 'B'  AND xt_status = 'EN PROCESO') t order by xt_quejaSolicitud 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='left' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='left' valign='top'><a href='casoUsoBacklog.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";

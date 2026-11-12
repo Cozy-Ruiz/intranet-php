@@ -1,16 +1,11 @@
 <?php error_reporting(0); ?>
 <?php
-$moduloScript = "Configuracion";
-$oficinaScrpt = "";
+$nombrephp = 'altaNuevoUsuario.php';
+require_once("../ConexionDBT.php");
+require_once("../compruebaUsuario.php");
+require_once('MailAltaUsuario.php');
 
-require_once("../conexionMasterDB.php");
-require_once('../compruebaUsuario.php');
-/*
-if(! in_array("altaNuevoUsuario", $listaFuncionalidades)){
-	header("Location: https://escalante.com.mx/INTRA/error.php"); 
-}
-
-require_once('mailAltaUsuario.php');
+error_reporting(E_PARSE);
 
 $ciudades[1] = "Distrito Federal";
 $ciudades[2] = "Nuevo Laredo";
@@ -25,8 +20,8 @@ $cdValor[3] = "CUN";
 $cdValor[4] = "VER";
 $cdValor[5] = "TOL";
 $cdValor[6] = "LAR";
-*/
-if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'] == '' && $_POST['categoria']== ''){
+
+if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'] == '' && $_POST['categoria']== '' && $_POST['ciudad']== ''){
 	
 	?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -34,9 +29,9 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                 <?php
-			if($sesionEstilo == 1){
+			if($estiloUsuario == 1){
             	echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage.css'/>";
-			}else if($sesionEstilo == 2){
+			}else if($estiloUsuario == 2){
             	echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage2.css'/>";
 			}
 			?>
@@ -47,7 +42,7 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
     <?php
 	
 	echo "<div id='wrapperPopUp'>";
-		echo "<form name='altaNuevoUsuario' method='post' action=''>";
+		echo "<form name='nuevaCategoria' method='post' action=''>";
 	
 			echo "<table border='0' align='center' name='Encabezado'>";
 				echo"<tr>";
@@ -68,14 +63,14 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 				echo "</tr>";
 				
 				echo"<tr height='10'></tr>";
-				/*
+				
 				echo "<tr id='iconosTexto2'>";
 					echo "<td align='center'>";
 						echo "Nombre<br><br> ";
 						echo "<select name='nombreUsuario'>";
-							echo "<option value=''>Seleccionar...</option>";
+							echo "<option value=''>Seleccionar....</option>";
 							
-							$s= $MASTER_GE->Execute("SELECT kp_personalId, xt_nombre, xt_ApellidoPaterno, xt_ApellidoMaterno FROM IntranetGEA.SGI_Empleados ORDER BY xt_nombre ");
+							$s= $INTRANET->Execute("SELECT kp_personalId, xt_nombre, xt_ApellidoPaterno, xt_ApellidoMaterno FROM SGI_Empleados ORDER BY xt_nombre ");
 							
 							while($r = $s->fetchRow()){
 								$nombreU = $r[1]." ".$r[2]." ".$r[3];
@@ -88,7 +83,7 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 				echo"</tr>";
 				
 				echo"<tr height='10'></tr>";
-				*/
+				
 				echo "<tr id='iconosTexto2'>";
 					echo "<td align='center'>";
 						echo "Usuario <br><br>
@@ -109,22 +104,13 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 				
 				echo "<tr id='iconosTexto2'>";
 					echo "<td align='center'>";
-						echo "Nombre <br><br>
-							<input type='text' size=50 name='nombreUsuario'>";
-					echo "</td>";
-				echo "</tr>";
-				
-				echo"<tr height='10'></tr>";
-				
-				echo "<tr id='iconosTexto2'>";
-					echo "<td align='center'>";
 						echo "Correo <br><br>
 							<input type='text' size=50 name='email'>";
 					echo "</td>";
 				echo "</tr>";
 				
 				echo"<tr height='10'></tr>";
-				/*
+				
 				echo "<tr id='iconosTexto2'>";
 					echo "<td align='center'>";
 						echo "Ciudad <br><br>";
@@ -139,13 +125,13 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 				echo "</tr>";
 				
 				echo"<tr height='10'></tr>";
-				*/
+				
 				echo "<tr id='iconosTexto2'>";
 					echo "<td align='center'>";
 						echo "Categoria <br><br>";
 							echo "<select name='categoria'>";
 								echo '<option selected="selected" value="">Selecciona Categoria...</option>';
-								$s = $MASTER_GE->Execute("select xt_categoria from PERFILES.CATEGORIAS_USUARIOS");
+								$s = $INTRANET->Execute("select kp_categoria from IntranetGEA_CATEGORIAS_USUARIOS");
 								while($r = $s->fetchRow()){
 									$categoria = $r[0];
 									echo '<option value="'.$categoria.'">'.$categoria.'</option>';
@@ -179,37 +165,31 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 	
 	
 	
-}else if($_POST['nombreUsuario'] != '' && $_POST['usuario'] != '' && $_POST['password'] != '' && $_POST['categoria'] != ''){
+}else if($_POST['nombreUsuario'] != '' && $_POST['usuario'] != '' && $_POST['password'] != '' && $_POST['categoria'] != '' && $_POST['ciudad'] != ''){
 	
 	$nombreIdUsr 	= $_POST['nombreUsuario'];
 	$usuario 		= $_POST['usuario'];
 	$password 		= $_POST['password'];
 	$categoria 		= $_POST['categoria'];
 	$correo 		= $_POST['email'];
-	/*
-	$s= $MASTER_GE->Execute("SELECT xt_nombre, xt_ApellidoPaterno, xt_ApellidoMaterno FROM IntranetGEA.SGI_Empleados WHERE kp_personalId = $nombreIdUsr ");
+	$ciudad 		= $_POST['ciudad'];
+	$currentDate 	= date('Y-m-d');
+	
+	$s= $INTRANET->Execute("SELECT xt_nombre, xt_ApellidoPaterno, xt_ApellidoMaterno FROM SGI_Empleados WHERE kp_personalId = $nombreIdUsr ");
 						
 	while($r = $s->fetchRow()){
 		
 		$nombreUsuario = $r[0]." ".$r[1]." ".$r[2];
 		
 	} unset($r); unset ($s);
-	*/
-													 
-	if($MASTER_GE->Execute("INSERT INTO PERFILES.USUARIOS (xt_usuario, xt_password, xt_nombre, xt_categoria, xt_correo, xn_estilo, xt_estatus) 
-													 VALUES ('$usuario', '$password', '$nombreIdUsr', '$categoria', '$correo', 1, 'Activo') ")){
-	/*												 
-	echo "Carga Exitosa!! <br>";
-	}else{
-		echo "Error en la carga";
-	}
 	
-}
-			
-		$MASTER_GE->Execute("INSERT INTO IntranetGEA_Usuarios_Oficina (kf_usuarioId, xt_codigoCiudad)
+	if($INTRANET->Execute("INSERT INTO IntranetGEA_USUARIOS (kp_usuario, xt_password, xt_nombre, kf_categoria, xt_ciudad, xd_fechaCambioPass) 
+													 VALUES ('$usuario', '$password', '$nombreUsuario', '$categoria', '$ciudad', '$currentDate') ")){
+		
+		$INTRANET->Execute("INSERT INTO IntranetGEA_Usuarios_Oficina (kf_usuarioId, xt_codigoCiudad)
 															  VALUES ('$usuario', '$ciudad') ");
-		*/													
-		/*$MASTER_GE->Execute("UPDATE IntranetGEA.SGI_Empleados SET kf_usuario = '$usuario' WHERE kp_personalId = $nombreIdUsr ");
+															
+		$INTRANET->Execute("UPDATE SGI_Empleados SET kf_usuario = '$usuario' WHERE kp_personalId = $nombreIdUsr ");
 		
 		$listaPHPSG = array(
 							"AccionesPreventivasyCorrectivas.php",
@@ -244,7 +224,6 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 							"fichaRevisionCorrectiva.php",
 							"fichaRevisionPreventiva.php",
 							"fichaRevisionQuejaSolicitud.php",
-							"fichaSolicitud.php",
 							"fichaVisita.php",
 							"Home.php",
 							"homeSGI.php",
@@ -266,19 +245,52 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 							"TableroVisitas2.php",
 							"downloadRegistro.php",
 							"fichaRegistro.php",
-							"tableroRegistros.php"
+							"tableroRegistros.php",
+							"modificaEstilo.php",
+							"ModificaPassword.php",
+							"cerrarSesion.php",
+							"compruebaUsuario.php",
+							"altaSolicitudQuejaPopUp.php",
+							"AgregarSeguimientoSolicitud.php",
+							"tableroRiesgos2.php",
+							"tableroRiesgos.php",
+							"aplicaciones.php",
+							"Riesgos.php",
+							"fichaRiesgo.php",
+							"configuraciones.php",
+							"altaBaja_Usuario.php",
+							"downloadQuejaSolicitud.php",
+							"downloadRevisionSolicitudesQuejas.php",
+							"downloadSeguimientoSolicitudQueja.php",
+							"fichaAltaBajaUsuario.php",
+							"fichaCapturaEnvioArchivos.php",
+							"fichaCapturaSoporteTecnico.php",
+							"fichaEnvioArchivos.php",
+							"fichaMantenimiento_Sistema.php",
+							"fichaQueja.php",
+							"fichaRevisionQuejaSolicitud.php",
+							"fichaSolicitud.php",
+							"fichaSolicitudv2.php",
+							"fichaSoporteTecnico.php",
+							"SeguimientoSolicitudQueja.php",
+							"SolicitudesyQuejas.php",
+							"tableroSolicitudesyQuejas.php",
+							"tableroQuejas.php",
+							"ayudaSolicitud.php"
 						);
 						
 		foreach ($listaPHPSG as $pagina) {
 			//echo "INSERT INTO IntranetGEA_USUARIOS_CATALOGO_PHP(kf_phpId, kf_usuarioId) VALUES('$pagina','$nombreUsuario') <br>";
-			$MASTER_GE->Execute("INSERT INTO IntranetGEA.IntranetGEA_USUARIOS_CATALOGO_PHP(kf_phpId, kf_usuarioId) VALUES('$pagina','$usuario') ");
+			$INTRANET->Execute("INSERT INTO IntranetGEA_USUARIOS_CATALOGO_PHP(kf_phpId, kf_usuarioId) VALUES('$pagina','$usuario') ");
 		}
-				if($correo != ""){
 		
-			$MASTER_GE->Execute("UPDATE PERFILES.USUARIOS SET xt_correo = '$correo' 
+		if($correo != ""){
+		
+			$INTRANET->Execute("UPDATE IntranetGEA_USUARIOS SET xt_correo = '$correo' 
 								WHERE kp_usuario = '$usuario' AND xt_password = '$password' AND xt_nombre = '$nombreUsuario' AND kf_categoria = '$categoria' ");
 								
-			new MailAltaUsuario($usuario, $nombreUsuario, $categoria, $correo, $MASTER_GE);
+			$enviaMail = new MailAltaUsuario();
+			$enviaMail->mailAltaUsuarioIntra($usuario, $nombreUsuario, $categoria, $correo, $INTRANET);
 			
 		}
 		
@@ -288,9 +300,9 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
                 <head>
                     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                     <?php
-			if($sesionEstilo == 1){
+			if($estiloUsuario == 1){
             	echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage.css'/>";
-			}else if($sesionEstilo == 2){
+			}else if($estiloUsuario == 2){
             	echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage2.css'/>";
 			}
 			?>
@@ -299,28 +311,9 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
                 </head>
                 <body>
         <?php
-	*/	
-	?>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-        <html xmlns="http://www.w3.org/1999/xhtml">
-            <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-                <?php
-			if($sesionEstilo == 1){
-            	echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage.css'/>";
-			}else if($sesionEstilo == 2){
-            	echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage2.css'/>";
-			}
-			?>
-                <link rel="shortcut icon" type="image/x-icon" href="../Imagenes/ICN_PestanaWebGE.png">
-                <title>Nuevo Usuario</title>
-            </head>
-            <body>
-    <?php
-	
+		
 		echo "<div id='wrapperPopUp'>";
 			echo "<table border='0' align='center' name='Encabezado'>";
-			//echo "<form name='altaNuevoUsuario' method='post' action=''>";
 				echo"<tr>";
 					echo"<td align='center' id='titulo1'>";
 						echo "Nuevo Usuario";
@@ -342,7 +335,7 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 				echo "<tr id='iconosTexto2'>";
 					echo "<td width='30px'> </td>";
 					echo "<td width='70px' align='left'>Nombre:</td>";
-					echo "<td width='270px' align='left' id='iconosTexto'>".$nombreIdUsr."</td>";
+					echo "<td width='270px' align='left' id='iconosTexto'>".$nombreUsuario."</td>";
 					echo "<td width='30px'> </td>";
 				echo"</tr>";
 				
@@ -359,16 +352,6 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 				
 				echo "<tr id='iconosTexto2'>";
 					echo "<td> </td>";
-					echo "<td align='left'>Password:</td>";
-					echo "<td align='left' id='iconosTexto'>".$password."</td>";
-					echo "<td> </td>";
-				echo"</tr>";
-				
-				echo"<tr height='10px'><td colspan='4'> </td></tr>";
-				
-				
-				echo "<tr id='iconosTexto2'>";
-					echo "<td> </td>";
 					echo "<td align='left'>Correo:</td>";
 					echo "<td align='left' id='iconosTexto'>";
 						if($correo != ""){
@@ -380,26 +363,27 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 					echo "<td> </td>";
 				echo"</tr>";
 				
-				echo"<tr height='15px'><td colspan='4'> </td></tr>";
+				echo"<tr height='10px'><td colspan='4'> </td></tr>";
 				
 				echo "<tr id='iconosTexto2'>";
 					echo "<td> </td>";
-					echo "<td align='left'>Usuario:</td>";
-					echo "<td align='left' id='iconosTexto'>".$categoria."</td>";
+					echo "<td align='left'>Ciudad:</td>";
+					echo "<td align='left' id='iconosTexto'>";
+					for($o = 1; $o <= 6; $o++){
+						if($cdValor[$o] == $ciudad){
+							echo $ciudades[$o];
+						}
+					}
+					$nombreUsuario;
+					echo "</td>";
 					echo "<td> </td>";
 				echo"</tr>";
 				
 				echo"<tr height='15px'><td colspan='4'> </td></tr>";
 				
 				echo "<tr>";
-					echo "<td  align='center' colspan='4' id='titleBlueLineTop'> </td>";
+					echo "<td colspan='4' id='titleBlueLineTop'> </td>";
 				echo "</tr>";
-				
-				echo "<tr>";
-					echo "<td> </td>";
-					echo "<td> </td>";
-					echo "<td align='center' id='iconosTexto'>Cargado exitosamente!!!</td>";
-				echo"</tr>";
 				
 			echo "</table>";
 		echo "</div>";
@@ -408,8 +392,8 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
                 </body>
             </html>
         <?php
-	
-   }else{
+		
+	}else{
 		
 		?>
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -417,9 +401,9 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
                 <head>
                     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                     <?php
-			if($sesionEstilo == 1){
+			if($estiloUsuario == 1){
             	echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage.css'/>";
-			}else if($sesionEstilo == 2){
+			}else if($estiloUsuario == 2){
             	echo "<link type='text/css' rel='stylesheet' href='../css/styleHomePage2.css'/>";
 			}
 			?>
@@ -429,6 +413,101 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
                 <body>
         <?php
 		
+
+		
+
+			$listaPHPSG = array(
+							"AccionesPreventivasyCorrectivas.php",
+							"Auditorias.php",
+							"Boletines.php",
+							"busquedaPersonal.php",
+							"Capitulo.php",
+							"CapituloNorma.php",
+							"comunicacionInterna.php",
+							"Documento.php",
+							"downloadAuditoria.php",
+							"downloadBoletin.php",
+							"downloadItem.php",
+							"downloadPreventivasCorrectivas.php",
+							"downloadQuejaSolicitud.php",
+							"downloadReunion.php",
+							"downloadRevision.php",
+							"downloadRevisionSolicitudesQuejas.php",
+							"downloadSeguimiento.php",
+							"downloadSeguimientoSolicitudQueja.php",
+							"fichaAcuerdo.php",
+							"FichaAuditoria.php",
+							"fichaBoletin.php",
+							"fichaCorrectiva.php",
+							"fichaIssue.php",
+							"FichaItem.php",
+							"fichaPersonal.php",
+							"fichaPreventiva.php",
+							"fichaQueja.php",
+							"fichaReunion.php",
+							"fichaRevision.php",
+							"fichaRevisionCorrectiva.php",
+							"fichaRevisionPreventiva.php",
+							"fichaRevisionQuejaSolicitud.php",
+							"fichaVisita.php",
+							"Home.php",
+							"homeSGI.php",
+							"Mail.php",
+							"manuales.php",
+							"Modulos.php",
+							"Normas.php",
+							"Registros.php",
+							"ReunionesyAcuerdos.php",
+							"SolicitudesyQuejas.php",
+							"tableroAcuerdos.php",
+							"tableroAuditorias.php",
+							"TableroBoletines.php",
+							"tableroPersonal.php",
+							"tableroPreventivasCorrectivas.php",
+							"tableroReuniones.php",
+							"tableroSeguimientos.php",
+							"tableroSolicitudesyQuejas.php",
+							"TableroVisitas2.php",
+							"downloadRegistro.php",
+							"fichaRegistro.php",
+							"tableroRegistros.php",
+							"modificaEstilo.php",
+							"ModificaPassword.php",
+							"cerrarSesion.php",
+							"compruebaUsuario.php",
+							"altaSolicitudQuejaPopUp.php",
+							"AgregarSeguimientoSolicitud.php",
+							"tableroRiesgos2.php",
+							"tableroRiesgos.php",
+							"aplicaciones.php",
+							"Riesgos.php",
+							"fichaRiesgo.php",
+							"configuraciones.php",
+							"altaBaja_Usuario.php",
+							"downloadQuejaSolicitud.php",
+							"downloadRevisionSolicitudesQuejas.php",
+							"downloadSeguimientoSolicitudQueja.php",
+							"fichaAltaBajaUsuario.php",
+							"fichaCapturaEnvioArchivos.php",
+							"fichaCapturaSoporteTecnico.php",
+							"fichaEnvioArchivos.php",
+							"fichaMantenimiento_Sistema.php",
+							"fichaQueja.php",
+							"fichaRevisionQuejaSolicitud.php",
+							"fichaSolicitud.php",
+							"fichaSolicitudv2.php",
+							"fichaSoporteTecnico.php",
+							"SeguimientoSolicitudQueja.php",
+							"SolicitudesyQuejas.php",
+							"tableroSolicitudesyQuejas.php",
+							"tableroQuejas.php",
+							"ayudaSolicitud.php"
+						);
+			foreach ($listaPHPSG as $pagina) {
+			 echo "INSERT INTO IntranetGEA_USUARIOS_CATALOGO_PHP(kf_phpId, kf_usuarioId) VALUES('$pagina','$nombreUsuario'); <br>";
+			 
+		}
+		 
 		echo "<div id='wrapperPopUp'>";
 			echo "<table border='0' align='center' name='Encabezado'>";
 				echo"<tr>";
@@ -470,6 +549,4 @@ if($_POST['nombreUsuario'] == '' && $_POST['usuario'] == '' && $_POST['password'
 	}
 	
 }
-
-
 

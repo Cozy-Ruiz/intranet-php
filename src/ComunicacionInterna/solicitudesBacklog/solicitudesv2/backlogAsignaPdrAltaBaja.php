@@ -701,7 +701,7 @@ if($_GET['pdr'] != '' && $_GET['stakeholder']) {
 ?>
   <!-- recargo pagina -->
   <script language="javascript">
-      window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=<?php echo $solicitudId; ?>"
+      window.location="fichaAltaBajaUsuario.php?codigo=<?php echo $solicitudId; ?>"
 	  window.close();
   </script>
  <?php

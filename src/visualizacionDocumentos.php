@@ -10,7 +10,11 @@ $nombrephp='Home.php';
 require_once("ConexionDBT.php");
 require_once("compruebaUsuario.php");
 
+<<<<<<< HEAD
 if ($_POST["movimiento"] == "registraVisualizacion"){
+=======
+if (($_POST["movimiento"] ?? "")== "registraVisualizacion"){
+>>>>>>> dev
 
     $INTRANETV2->Execute("INSERT INTO sgi_control_de_cambios_documentos_copy1 (xt_codigoDocumento, xt_usuario, xn_version) values ('".$_REQUEST["documentoId"]."', '".$_SESSION["sesionUsuario"]."', '".$_REQUEST["version"]."') ");
 
@@ -56,7 +60,11 @@ if ($_POST["movimiento"] == "registraVisualizacion"){
 </head>
 <body>
 
+<<<<<<< HEAD
 	<iframe src="https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=<?php echo $_GET["documentoId"] ?>" width="100%" height="95%"></iframe>
+=======
+	<iframe src="SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=<?php echo $_GET["documentoId"] ?>" width="100%" height="95%"></iframe>
+>>>>>>> dev
 
 	<div align="center" style="height:5%; align-content:center;">
 		<button onclick="cerrarVentana('<?php echo $_GET['documentoId'] ?>', '<?php echo $_GET['version'] ?>')">Marcar como Leido</button>

@@ -5,14 +5,15 @@
  *@version 1.0
  *@copyright Copyright (c) 2014, Grupo Escalante Agencias Aduanales S.C.
  */
-//$nombrephp = 'modificaEstilo.php';
-require_once("../conexionMasterDB.php");
+$nombrephp = 'modificaEstilo.php';
+require_once("../ConexionDBT.php");
 require_once("../compruebaUsuario.php");
+
+error_reporting(E_PARSE);
 
 $confirma = $_POST['confirma'];
 
-if($confirma == ""){
-	
+if($confirma == ""){	
 	?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
@@ -43,7 +44,8 @@ if($confirma == ""){
 			echo "<table border='0' align='center' width='450px'>";
 					
 				echo"<tr height='30'><td colspan='2'> </td></tr>";
-				$estiloActual = $MASTER_GE->getOne("SELECT xn_estilo FROM PERFILES.USUARIOS WHERE xt_usuario = '$sesionUsuario' ");
+				//echo"SELECT xn_estilo FROM IntranetGEA_USUARIOS WHERE kp_usuario = '$usuarioId'";
+				$estiloActual = $INTRANET->getOne("SELECT xn_estilo FROM IntranetGEA_USUARIOS WHERE kp_usuario = '$usuarioId' ");
 				if($estiloActual == 1){
 					$color = "gris";
 				}else if($estiloActual == 2){
@@ -71,18 +73,20 @@ if($confirma == ""){
 			echo"</table>";
 		echo "</form>";
 	echo "</div>";
-	
+
 } else if($confirma == 'OK'){
 	
-	$estiloActual = $MASTER_GE->getOne("SELECT xn_estilo FROM PERFILES.USUARIOS WHERE xt_usuario = '$sesionUsuario' ");
+	$estiloActual = $INTRANET->getOne("SELECT xn_estilo FROM IntranetGEA_USUARIOS WHERE kp_usuario = '$usuarioId' ");
 	
 	if($estiloActual == 1){
-		$MASTER_GE->Execute("UPDATE PERFILES.USUARIOS SET xn_estilo = 2 WHERE xt_usuario = '$sesionUsuario'");
-		$_SESSION["estilo"] = 2;
+		$INTRANET->Execute("UPDATE IntranetGEA_USUARIOS SET xn_estilo = 2 WHERE kp_usuario = '$usuarioId'");
+		$INTRANET->Execute("UPDATE PERFILES.USUARIOS SET xn_estilo = 2 WHERE xt_usuario = '$usuarioId'");
+		$_SESSION["sesionIntranetEstilo"] = 2;
 		
 	}else if($estiloActual == 2){
-		$MASTER_GE->Execute("UPDATE PERFILES.USUARIOS SET xn_estilo = 1 WHERE xt_usuario = '$sesionUsuario'");
-		$_SESSION["estilo"] = 1;
+		$INTRANET->Execute("UPDATE IntranetGEA_USUARIOS SET xn_estilo = 1 WHERE kp_usuario = '$usuarioId'");
+		$INTRANET->Execute("UPDATE PERFILES.USUARIOS SET xn_estilo = 1 WHERE xt_usuario = '$usuarioId'");
+		$_SESSION["sesionIntranetEstilo"] = 1;
 	}
 	
 	?>
