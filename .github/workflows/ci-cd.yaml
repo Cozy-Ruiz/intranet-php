@@ -287,7 +287,7 @@ jobs:
           LINKS_DB_NAME: ${{ secrets.LINKS_DB_NAME }}
           LINKS_DB_NAME_V2: ${{ secrets.LINKS_DB_NAME_V2 }}
         run: |
-          required=(JWT_SECRET LINKS_DB_HOST LINKS_DB_PORT LINKS_DB_USER LINKS_DB_PASS LINKS_DB_NAME LINKS_DB_NAME_V2)
+          required=(LINKS_DB_HOST LINKS_DB_PORT LINKS_DB_USER LINKS_DB_PASS LINKS_DB_NAME LINKS_DB_NAME_V2)
           for name in "${required[@]}"; do
             if [[ -z "${!name}" ]]; then
               echo "Falta el secreto de GitHub Environment: $name"
