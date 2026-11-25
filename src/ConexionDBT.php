@@ -7,7 +7,7 @@
 	//$INTRANET -> Connect("master.escalante.com.mx:3306","sistemas", "gescalante1", "getenv('LINKS_DB_NAME')");
 	// $INTRANET->EXECUTE("set names 'utf8'");
 		//$INTRANET	 ->Connect(getenv('LINKS_DB_HOST').":".getenv('LINKS_DB_PORT'),getenv('LINKS_DB_USER'), getenv('LINKS_DB_PASS'), getenv('LINKS_DB_NAME_V2'), true);
-	$INTRANET -> Connect(getenv('LINKS_DB_HOST').":".getenv('LINKS_DB_PORT'),getenv('LINKS_DB_USER')), getenv('LINKS_DB_PASS'), getenv('LINKS_DB_NAME'));
+	$INTRANET -> Connect(getenv('LINKS_DB_HOST').":".getenv('LINKS_DB_PORT'), getenv('LINKS_DB_USER'), getenv('LINKS_DB_PASS'), getenv('LINKS_DB_NAME'));
 	//$INTRANET->EXECUTE("SET NAMES 'utf8'");
 	$INTRANET->setCharset('utf8');
 	
