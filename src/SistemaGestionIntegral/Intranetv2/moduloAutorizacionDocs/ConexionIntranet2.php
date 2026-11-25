@@ -6,7 +6,7 @@
 	$db->EXECUTE("set names 'utf8'"); */
 	
 	$INTRANETV2 = ADONewConnection('mysqli');
-	$INTRANETV2 -> Connect("71.144.19.152:3306","sistemas", "gescalante1", "INTRANET2", true);
+	$INTRANETV2 -> Connect("71.144.19.152:3306","sistemas", "gescalante1", getenv('LINKS_DB_NAME_V2'), true);
 	mysqli_set_charset( $INTRANETV2, 'utf8');
 	// $INTRANETV2->EXECUTE("set names 'utf8'");
 	

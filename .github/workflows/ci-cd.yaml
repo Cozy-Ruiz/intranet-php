@@ -153,6 +153,31 @@ jobs:
             crd/servicemonitors.monitoring.coreos.com \
             --timeout=120s
 
+      - name: Create runtime Secret (DEV)
+        env:
+          LINKS_DB_HOST: ${{ secrets.LINKS_DB_HOST }}
+          LINKS_DB_PORT: ${{ secrets.LINKS_DB_PORT }}
+          LINKS_DB_USER: ${{ secrets.LINKS_DB_USER }}
+          LINKS_DB_PASS: ${{ secrets.LINKS_DB_PASS }}
+          LINKS_DB_NAME: ${{ secrets.LINKS_DB_NAME }}
+          LINKS_DB_NAME_V2: ${{ secrets.LINKS_DB_NAME_V2 }}
+        run: |
+          required=(LINKS_DB_HOST LINKS_DB_PORT LINKS_DB_USER LINKS_DB_PASS LINKS_DB_NAME LINKS_DB_NAME_V2)
+          for name in "${required[@]}"; do
+            if [[ -z "${!name}" ]]; then
+              echo "Falta el secreto de GitHub Environment: $name"
+              exit 1
+            fi
+          done
+          kubectl create secret generic intranet-php-dev-env \
+            --from-literal=LINKS_DB_HOST="$LINKS_DB_HOST" \
+            --from-literal=LINKS_DB_PORT="$LINKS_DB_PORT" \
+            --from-literal=LINKS_DB_USER="$LINKS_DB_USER" \
+            --from-literal=LINKS_DB_PASS="$LINKS_DB_PASS" \
+            --from-literal=LINKS_DB_NAME="$LINKS_DB_NAME" \
+            --from-literal=LINKS_DB_NAME_V2="$LINKS_DB_NAME_V2" \
+            --dry-run=client -o yaml | kubectl apply -f -
+
       - name: Deploy with Helm (DEV)
         run: |
           helm upgrade --install intranet-php-dev ./helm/intranet-php \
@@ -252,6 +277,31 @@ jobs:
           kubectl wait --for=condition=Established \
             crd/servicemonitors.monitoring.coreos.com \
             --timeout=120s
+
+      - name: Create runtime Secret (DEV)
+        env:
+          LINKS_DB_HOST: ${{ secrets.LINKS_DB_HOST }}
+          LINKS_DB_PORT: ${{ secrets.LINKS_DB_PORT }}
+          LINKS_DB_USER: ${{ secrets.LINKS_DB_USER }}
+          LINKS_DB_PASS: ${{ secrets.LINKS_DB_PASS }}
+          LINKS_DB_NAME: ${{ secrets.LINKS_DB_NAME }}
+          LINKS_DB_NAME_V2: ${{ secrets.LINKS_DB_NAME_V2 }}
+        run: |
+          required=(LINKS_DB_HOST LINKS_DB_PORT LINKS_DB_USER LINKS_DB_PASS LINKS_DB_NAME LINKS_DB_NAME_V2)
+          for name in "${required[@]}"; do
+            if [[ -z "${!name}" ]]; then
+              echo "Falta el secreto de GitHub Environment: $name"
+              exit 1
+            fi
+          done
+          kubectl create secret generic intranet-php-prod-env \
+            --from-literal=LINKS_DB_HOST="$LINKS_DB_HOST" \
+            --from-literal=LINKS_DB_PORT="$LINKS_DB_PORT" \
+            --from-literal=LINKS_DB_USER="$LINKS_DB_USER" \
+            --from-literal=LINKS_DB_PASS="$LINKS_DB_PASS" \
+            --from-literal=LINKS_DB_NAME="$LINKS_DB_NAME" \
+            --from-literal=LINKS_DB_NAME_V2="$LINKS_DB_NAME_V2" \
+            --dry-run=client -o yaml | kubectl apply -f -
 
       - name: Deploy with Helm (PROD)
         run: |

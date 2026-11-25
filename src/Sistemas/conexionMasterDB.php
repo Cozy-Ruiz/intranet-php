@@ -10,7 +10,7 @@
 	$MASTER_GE = ADONewConnection('mysqli');
     //$MASTER_GE->Connect("master.escalante.com.mx:3306","kio", "kionetworks", "MASTER_GE");
 
-	$MASTER_GE->Connect("192.1.172.9:3306","GEA", "7b1QqK#m1F3m", "MASTER_GE");
+	$MASTER_GE->Connect(getenv('LINKS_DB_HOST').":".getenv('LINKS_DB_PORT'),getenv('LINKS_DB_USER'), getenv('LINKS_DB_PASS'), "MASTER_GE");
 	$MASTER_GE->setCharset('utf8');
 
 ?>

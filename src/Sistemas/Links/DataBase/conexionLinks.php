@@ -17,10 +17,10 @@ class ConexionLinks {
 	private static $db_pass = 'links';
 	private static $db_name = 'LINKS';*/
 
-	private static $db_host = '192.1.172.9:3306';
-    private static $db_user = 'GEA';
+	private static $db_host = getenv('LINKS_DB_HOST');
+    private static $db_user = getenv('LINKS_DB_USER');
     //private static $db_pass = 'links';
-	private static $db_pass = '7b1QqK#m1F3m';
+	private static $db_pass = getenv('LINKS_DB_PASS');
     private static $db_name = 'LINKS';
 	
 	

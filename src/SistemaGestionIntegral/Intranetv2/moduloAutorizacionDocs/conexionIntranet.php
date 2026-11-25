@@ -14,7 +14,7 @@ class ConexionIntranet {
 	private static $db_host = 'master.escalante.com.mx:3306';
 	private static $db_user = 'sistemas';
 	private static $db_pass = 'gescalante1';
-	private static $db_name = 'INTRANET2';
+	private static $db_name = getenv('LINKS_DB_NAME_V2');
 	
     function __Construct() {
     		$this->conexionDB = ADONewConnection("mysqli");

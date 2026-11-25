@@ -11,10 +11,10 @@ class Multiupload
     */
     public function upFiles($files = array(), $simulacro)
     {
-    $dbHost = '192.1.172.9:3306';
-    $dbUsername = 'GEA';
-    $dbPassword = '7b1QqK#m1F3m';
-    $dbName = 'INTRANET2';
+    $dbHost = getenv('LINKS_DB_HOST');
+    $dbUsername = getenv('LINKS_DB_USER');
+    $dbPassword = getenv('LINKS_DB_PASS');
+    $dbName = getenv('LINKS_DB_NAME_V2');
 
     $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName); 
     $conn->set_charset("utf_8");

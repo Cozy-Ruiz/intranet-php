@@ -24,3 +24,5 @@ autoscaling:
 
 monitoring:
   enabled: true
+
+envSecretName: intranet-php-prod-env
