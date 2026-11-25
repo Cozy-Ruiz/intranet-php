@@ -1,10 +1,10 @@
 
 <?php
 class Database {
-    private static $host = "192.1.172.9:3306"; // Cambia esto según tu configuración
+    private static $host = getenv('LINKS_DB_HOST').":".getenv('LINKS_DB_PORT'); // Cambia esto según tu configuración
     private static $dbname = "master_ge";
-    private static $username = "GEA"; // Usuario de MySQL
-    private static $password = "7b1QqK#m1F3m"; // Contraseña de MySQL
+    private static $username = getenv('LINKS_DB_USER'); // Usuario de MySQL
+    private static $password = getenv('LINKS_DB_PASS'); // Contraseña de MySQL
     private static $conn = null;
 
     public static function connect() {

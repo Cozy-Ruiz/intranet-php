@@ -8,7 +8,7 @@
 	$db->EXECUTE("set names 'utf8'"); */
 	
 	$INTRANET = ADONewConnection('mysql');
-	$INTRANET -> Connect("192.1.172.9:3306","GEA", "7b1QqK#m1F3m", "IntranetGEA");
+	$INTRANET -> Connect(getenv('LINKS_DB_HOST').":".getenv('LINKS_DB_PORT'),getenv('LINKS_DB_USER'), getenv('LINKS_DB_PASS'), "IntranetGEA");
 	//$INTRANET->EXECUTE("set names 'utf8'");
 	
 	
@@ -17,7 +17,7 @@
 
 	//Conexion Para Servidor Desarrollo
 	$MASTER_GE = ADONewConnection('mysql');
-    $MASTER_GE->Connect("192.1.172.9:3306","GEA", "7b1QqK#m1F3m", "MASTER_GE",true);
+    $MASTER_GE->Connect(getenv('LINKS_DB_HOST').":".getenv('LINKS_DB_PORT'),getenv('LINKS_DB_USER'), getenv('LINKS_DB_PASS'), "MASTER_GE",true);
 	
 	
 	
