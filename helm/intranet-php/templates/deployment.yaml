@@ -17,8 +17,13 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - name: APP_ENV
-              value: {{ .Values.appEnv | quote }}
+            {{- range $key, $value := .Values.env }}
+            - name: {{ $key }}
+              value: "{{ $value }}"
+            {{- end }}
+          envFrom:
+            - secretRef:
+                name: {{ .Values.envSecretName }}
           volumeMounts:
             {{- range .Values.sharedStorage }}
             - name: {{ .name | quote }}
