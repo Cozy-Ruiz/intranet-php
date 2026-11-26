@@ -61,7 +61,7 @@ if (($_POST["movimiento"] ?? "")== "registraVisualizacion"){
 <body>
 
 <<<<<<< HEAD
-	<iframe src="https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=<?php echo $_GET["documentoId"] ?>" width="100%" height="95%"></iframe>
+	<iframe src="/SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=<?php echo $_GET["documentoId"] ?>" width="100%" height="95%"></iframe>
 =======
 	<iframe src="SistemaGestionIntegral/Intranetv2/fichaDocumentov4.php?id=<?php echo $_GET["documentoId"] ?>" width="100%" height="95%"></iframe>
 >>>>>>> dev

@@ -36,7 +36,7 @@ require_once("../compruebaUsuario.php");
         <body>
 <?php
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home </a>";
+$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home </a>";
 
 echo "<div id='wrapperFicha' align='center'>";
 	echo "<table border='0' align='center' name='Encabezado' width='800px'>";

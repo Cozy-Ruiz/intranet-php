@@ -42,7 +42,7 @@ require_once("../compruebaUsuario.php");
 <body>
 <?php
 $breadcrumb="<a href='../Home.php' id='breadcrumbs'> Home / </a> <a href='homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a>
-			<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos</a>";
+			<a href='Modulos.php' id='breadcrumbs'> Módulos</a>";
 
 echo"<div id='wrapper' align='center'>";
 	echo "<table border='0' align='center' width='1160px' style='margin-top:-110px;'>";
@@ -140,12 +140,12 @@ echo"<div id='wrapper' align='center'>";
                                         </a>
                                     </li>
                                    <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>

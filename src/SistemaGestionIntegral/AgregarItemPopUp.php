@@ -670,7 +670,7 @@ echo "</div>";
 				}
 			}
 			
-			header("Location: https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/FichaItem.php?id=$itemID");
+			header("Location: FichaItem.php?id=$itemID");
 			
 			
 		} else{
@@ -1070,7 +1070,7 @@ echo "</div>";
 			}
 		}
 		
-		header("Location: https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/FichaItem.php?id=$itemID");
+		header("Location: FichaItem.php?id=$itemID");
 		
 	
 	} 

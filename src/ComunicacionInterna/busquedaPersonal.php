@@ -88,7 +88,7 @@ while($r = $s->fetchRow()){
 } unset($r); unset($s); unset($indice);
 
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home /</a> <a href='comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna</a>";
+$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home /</a> <a href='comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna</a>";
 
 $ciudadDefault= $INTRANET->getOne("SELECT xt_ciudad FROM IntranetGEA_USUARIOS WHERE kp_usuario = '$usuarioId'");
 
@@ -328,12 +328,12 @@ if($categoriaUsr == "Inhouse"){
 												</a>
 											</li>
 											<li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>
@@ -719,12 +719,12 @@ if($categoriaUsr == "Inhouse"){
 												</a>
 											</li>
 											<li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>
@@ -1100,12 +1100,12 @@ if($categoriaUsr == "Inhouse"){
 												</a>
 											</li>
 											<li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>
@@ -1653,12 +1653,12 @@ else if($categoriaUsr == "Administrador"){
 												</a>
 											</li>
 											<li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>
@@ -2101,12 +2101,12 @@ else if($categoriaUsr == "Administrador"){
 												</a>
 											</li>
 											<li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>
@@ -2539,12 +2539,12 @@ else if($categoriaUsr == "Administrador"){
 												</a>
 											</li>
 											<li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>

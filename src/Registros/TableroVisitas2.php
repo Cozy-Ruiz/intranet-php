@@ -96,7 +96,7 @@ while($r = $s->fetchRow()){
 } unset($r); unset($s); unset($indice);
 
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='Registros.php' id='breadcrumbs'> Registros</a> ";
+$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='Registros.php' id='breadcrumbs'> Registros</a> ";
 
 $fecha = $_POST['fecha']; 
 $hoy = date("Y-m-d");
@@ -275,11 +275,11 @@ if($categoriaUsr == "Administrador"){
 					if ($_SESSION["autentificado"] != "SI") {
 					    echo "<td width='330'></td><td align='left' width='620'><a href='#' onclick='location.reload(false);'> 
 						<img src='../Imagenes/ICN_BotonAgregar.png' width='90' height='29'> </a></td>";
-						// header("Location: https://escalante.com.mx/Sistemas/");
+						// header("Location: ../..//Sistemas/");
 						// exit();
 					}
 					if($_SESSION["autentificado"] == "SI"){
-				echo "<td width='330'></td><td align='left' width='620'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Registros/altaVisitaPopUp3.php?cd=$ciudadFiltro' target='popup' onclick=\"window.open(this.href,this.target,'width=750,height=700,scrollbars=yes')\"> 
+				echo "<td width='330'></td><td align='left' width='620'><a href='altaVisitaPopUp3.php?cd=$ciudadFiltro' target='popup' onclick=\"window.open(this.href,this.target,'width=750,height=700,scrollbars=yes')\"> 
 						<img src='../Imagenes/ICN_BotonAgregar.png' width='90' height='29'> </a></td>";
 					}
 			}
@@ -291,7 +291,7 @@ if($categoriaUsr == "Administrador"){
 
 			)
 			{
-				echo "<td width='330'></td><td align='left' width='620'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Registros/altaVisitaPopUp3.php?cd=$ciudadFiltro' target='popup' onclick=\"window.open(this.href,this.target,'width=750,height=700,scrollbars=yes')\"> 
+				echo "<td width='330'></td><td align='left' width='620'><a href='altaVisitaPopUp3.php?cd=$ciudadFiltro' target='popup' onclick=\"window.open(this.href,this.target,'width=750,height=700,scrollbars=yes')\"> 
 						<img src='../Imagenes/ICN_BotonAgregar.png' width='90' height='29'> </a></td>";
 			}
 		echo"</tr>";
@@ -554,7 +554,7 @@ else if($categoriaUsr == "Inhouse"){
 			if (($usuarioId == 'Rodrigo_Romo') ||($usuarioId == 'cozy')||($usuarioId == 'Alberto_Martinez')||($usuarioId == 'Maria_Garcia') ||($usuarioId == 'sdelap') ||($usuarioId == 'Norma_Tapia')	||($usuarioId == 'Itzel_Perez') || ($usuarioId == 'Fulgencio_Duran') || ($usuarioId == 'Eliane_Malpica') || ($usuarioId == 'Ruben_Solis') || ($usuarioId == 'Javier_Rosas') ||($usuarioId == 'Alfonso_Santiago') || ($usuarioId == 'Gustavo_Gracia') || ($usuarioId == 'Eduardo_Hernandez')||($usuarioId == 'Ana_Vargas')||($usuarioId == 'Erika_Muñoz')||($usuarioId == 'DENNISE_VAZQUEZ')||($usuarioId == 'Michel_Molina')||($usuarioId == 'Jernesto_Rodriguez')||($usuarioId == 'Karina_Vega')||($usuarioId == 'Carlos_Jimenez')||($usuarioId == 'Fernanda_Orduña')||($usuarioId == 'Stefany_Nieto')||($usuarioId == 'Rafael_Moral')||($usuarioId == 'Wendy_Palmeros')||($usuarioId == 'Christian_Martinez') ||($usuarioId == 'Priscilla_Romero')||($usuarioId == 'Veronica_Fernandez')||($usuarioId == 'Magda_Gonzalez')||($usuarioId == 'Esmeralda_Gomez')||($usuarioId == 'Dalia_Mosqueda')||($usuarioId == 'Adlemy_Tah')||($usuarioId == 'Saday_Hernandez')||($usuarioId == 'Luz_Arguelles')||($usuarioId == 'Alma_Rocio')	|| ($usuarioId == 'Monserrath_Sanchez')
 			|| ($usuarioId == 'Maria_Toledo') || ($usuarioId == 'Barbara_Cortes') || ($usuarioId == 'Pamela_Martinez')){
 					
-				echo "<td width='330'></td><td align='left' width='620'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Registros/altaVisitaPopUp3.php?cd=$ciudadFiltro' target='popup' onclick=\"window.open(this.href,this.target,'width=750,height=700,scrollbars=yes')\"> 
+				echo "<td width='330'></td><td align='left' width='620'><a href='altaVisitaPopUp3.php?cd=$ciudadFiltro' target='popup' onclick=\"window.open(this.href,this.target,'width=750,height=700,scrollbars=yes')\"> 
 				<img src='../Imagenes/ICN_BotonAgregar.png' width='90' height='29'> </a></td>";
 			}
 		echo"</tr>";

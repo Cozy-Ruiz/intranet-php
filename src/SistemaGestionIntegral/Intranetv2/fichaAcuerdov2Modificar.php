@@ -262,7 +262,7 @@ if($stats != ""){
 		}
 					
 		header("Location: fichaAcuerdov2.php?acuerdo=$codigoAcuerdo");											 
-	//echo"<script language='javascript'>window.location='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/fichaAcuerdov2.php?acuerdo=$codigoAcuerdo'</script>;";	
+	//echo"<script language='javascript'>window.location='../../../SistemagestionIntegral/fichaAcuerdov2.php?acuerdo=$codigoAcuerdo'</script>;";	
 																
 		
 	}  else if(($stats == "REVISION") && ($_POST['fechaRevision'] != "") && ($_POST['descripcionRevision'] != "")){
@@ -884,7 +884,7 @@ $cs = $INTRANETV2->Execute("
 													xt_quejaSolicitud = '$claveSeguimiento[$contador]'
 											");
 										if($tipoSolicitud == 'MT'){
-											$pagina = "https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?";
+											$pagina = "../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?";
 										} else if ($tipoSolicitud == 'PY'){
 											$pagina = "http://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaProyectoFuncionalidad.php?";
 										} else if ($tipoSolicitud == 'AV'){

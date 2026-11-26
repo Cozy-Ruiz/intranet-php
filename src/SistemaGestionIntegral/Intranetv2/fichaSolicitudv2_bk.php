@@ -436,8 +436,8 @@ if((@$stats == "ASIGNAR") && (@$_POST['pdr'] != "") && (@$_POST['fechaAsignar'] 
 
 ?>
 <?php
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='../../comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna / </a>
-			<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes</a>";
+$breadcrumb="<a href='../../../Home.php' id='breadcrumbs'>Home / </a><a href='../../comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna / </a>
+			<a href='../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes</a>";
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -1091,7 +1091,7 @@ echo"<div id='wrapperFicha' align='center'>";
 		echo "<tr>";
 			echo "<td align='right'>";
 				if(($solicitanteID == $usuarioId) || ($categoriaUsr == "Administrador")){
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaSolicitudModificar.php?id=$solicitudID' >
+				echo "<a href='../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaSolicitudModificar.php?id=$solicitudID' >
 					  	<img src='../../../Imagenes/ICN_BotonModificar.png' width='90' height='29'>
 					  </a>";
 				}

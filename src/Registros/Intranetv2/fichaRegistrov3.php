@@ -20,7 +20,7 @@ putenv("upload_tmp_dir");
 // restore old value 
 putenv("LD_LIBRARY_PATH=$saved");
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='../Registros.php' id='breadcrumbs'> Registros/</a><a href='tableroRegistrosv2.php' id='breadcrumbs'> Tablero Registro</a> ";
+$breadcrumb="<a href='../../../Home.php' id='breadcrumbs'>Home / </a><a href='../Registros.php' id='breadcrumbs'> Registros/</a><a href='tableroRegistrosv2.php' id='breadcrumbs'> Tablero Registro</a> ";
 function limpiar_caracter_especial($string){
 
     $string = trim($string);
@@ -253,12 +253,12 @@ echo "<div id='wrapperFicha' align='center'>";
                                         </a>
                                     </li>
                                    <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>

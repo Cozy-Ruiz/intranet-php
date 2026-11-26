@@ -69,7 +69,7 @@ if(isset($_POST['titulo'])){
 			?>
             <!-- recargo pagina -->
             <script language="javascript">
-                window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaProyectoFuncionalidad.php?codigo=<?php echo $codigoSolicitud; ?>"
+                window.location="fichaProyectoFuncionalidad.php?codigo=<?php echo $codigoSolicitud; ?>"
             </script>
  			<?php
 

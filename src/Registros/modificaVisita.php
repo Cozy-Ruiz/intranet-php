@@ -51,7 +51,7 @@ while($r = $s->fetchRow($s)){
 	$tipoVisita = $r[17];
 } unset($r); unset($s);
 
-$breadcrumb="<a href='https://escalante.com.mx/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='Registros.php' id='breadcrumbs'> Registros /</a><a href='TableroVisitas2.php' id='breadcrumbs'> Tablero Visitas</a> ";
+$breadcrumb="<a href='../../Home.php' id='breadcrumbs'>Home / </a><a href='Registros.php' id='breadcrumbs'> Registros /</a><a href='TableroVisitas2.php' id='breadcrumbs'> Tablero Visitas</a> ";
 
 echo "<div id='wrapper'>";
   echo "<form name='fichaVisitas' method='post' action='UpdateVisita.php'>";	

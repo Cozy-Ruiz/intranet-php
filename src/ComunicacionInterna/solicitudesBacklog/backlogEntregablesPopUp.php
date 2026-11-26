@@ -149,16 +149,16 @@ require_once('../../compruebaUsuario.php');
 				echo "<script>this.close();</script>"; 
 			}
 			if($tipoSolicitud == "MT"){
-				echo '<script>window.opener.top.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaMantenimiento_Sistema.php?codigo='.$solicitudId.'";</script>';
+				echo '<script>window.opener.top.location="fichaMantenimiento_Sistema.php?codigo='.$solicitudId.'";</script>';
 				echo "<script>this.close();</script>"; 
 			}
 			if($tipoSolicitud == "EA"){
-				echo '<script>window.opener.top.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaEnvioArchivos.php?codigo='.$solicitudId.'";</script>';
+				echo '<script>window.opener.top.location="fichaEnvioArchivos.php?codigo='.$solicitudId.'";</script>';
 				echo "<script>this.close();</script>"; 
 			}
 			
 			if($tipoSolicitud == "PY"){
-				echo '<script>window.opener.top.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaProyectoFuncionalidad.php?codigo='.$solicitudId.'";</script>';
+				echo '<script>window.opener.top.location="fichaProyectoFuncionalidad.php?codigo='.$solicitudId.'";</script>';
 				echo "<script>this.close();</script>"; 
 			}
 			

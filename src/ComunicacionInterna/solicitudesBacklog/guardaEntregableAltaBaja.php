@@ -84,7 +84,7 @@ require_once("MailSistemaAsignar.php");
 		?>
             <!-- recargo pagina -->
             <script language="javascript">
-                window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaAltaBajaUsuario.php?codigo=<?php echo $codigoAdmin; ?>"
+                window.location="fichaAltaBajaUsuario.php?codigo=<?php echo $codigoAdmin; ?>"
             </script>
 		<?php  														
   

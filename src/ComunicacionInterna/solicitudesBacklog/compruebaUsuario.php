@@ -11,7 +11,7 @@ session_start();
 
 //COMPRUEBA QUE EL USUARIO ESTA AUTENTIFICADO
 if ($_SESSION["autentificado"] != "SI") {
-	header("Location: https://escalante.com.mx/Sistemas/seleccionaSistema.php");
+	header("Location: ../../../Sistemas/seleccionaSistema.php");
 	exit();
 }else{
 	$sesionId = $_SESSION["sesionIntranetId"];
@@ -31,7 +31,7 @@ if ($_SESSION["autentificado"] != "SI") {
 		
 		$INTRANET->Execute("update IntranetGEA_SESIONES_USUARIOS set xd_fechaSalida = '$sesionFechaSalida', xt_horaSalida = '$sesionHoraSalida' where kp_sesionId = $sesionId and kf_usuario = '$usuarioId' ");
 		
-		header("Location: https://escalante.com.mx/Sistemas/cerrarSesion.php");
+		header("Location: ../../../Sistemas/cerrarSesion.php");
 	
 	}else{
 		
@@ -46,7 +46,7 @@ if ($_SESSION["autentificado"] != "SI") {
 		}
 		
 		if($status == 'false'){
-			header("Location: https://escalante.com.mx/Sistemas/INTRANET_GEA/error.php");
+			header("Location: ../../error.php");
 		}	
 	} 	
 }

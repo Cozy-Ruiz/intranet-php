@@ -158,8 +158,8 @@ if($tipoDocumento != 'K'){
    <a href='manuales.php' id='breadcrumbs'> Manuales / </a> <a href='Documento.php?manual=$codManual' id='breadcrumbs'> $nombreManual </a>";
 } else{
 
-	$breadcrumb = "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a> 
-	<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a> 
+	$breadcrumb = "<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a> 
+	<a href='Modulos.php' id='breadcrumbs'> Módulos / </a> 
 	<a href='Procesos.php' id='breadcrumbs'> Inventario de procesos / </a> <a href='tableroProcesos.php' id='breadcrumbs'> Tablero Inventario de Procesos </a>";
 }
 

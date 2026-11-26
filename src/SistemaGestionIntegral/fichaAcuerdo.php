@@ -352,7 +352,7 @@ if($stats != ""){
 			
 		}
 																 
-	echo"<script language='javascript'>window.location='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/fichaAcuerdo.php?acuerdo=$acuerdoId'</script>;";	
+	echo"<script language='javascript'>window.location='fichaAcuerdo.php?acuerdo=$acuerdoId'</script>;";	
 													 
 			
 	//	header("Location: fichaAcuerdo.php?acuerdo=$acuerdoID");

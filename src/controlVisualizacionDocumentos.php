@@ -50,7 +50,7 @@ require_once("compruebaUsuario.php");
 			<body>
 	
 	<?php
-	$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home /</a> <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/miCuenta.php' id='breadcrumbs'>Mi cuenta";
+	$breadcrumb="<a href='/Home.php' id='breadcrumbs'>Home /</a> <a href='/miCuenta.php' id='breadcrumbs'>Mi cuenta";
 	
 	echo"<div id='wrapperFicha' align='center'>";
 		echo "<table border='0' align='center' name='Encabezado' width='800px'>";
@@ -257,7 +257,7 @@ require_once("compruebaUsuario.php");
 					echo "<tr >";
 						echo "<td>".$expediente['xt_tipo_expediente']."</td>";
 						echo "<td align='center'>".$expediente['xt_estatus']."</td>";
-						echo "<td align='center'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/Personal/expedientePersonal.php'><img src='Imagenes/ICN_BotonNaranja.png' width='15' height='15'></a></td>";
+						echo "<td align='center'><a href='/ComunicacionInterna/Personal/expedientePersonal.php'><img src='Imagenes/ICN_BotonNaranja.png' width='15' height='15'></a></td>";
 					echo "</tr>";
 				}
 
@@ -265,7 +265,7 @@ require_once("compruebaUsuario.php");
 					echo "<tr >";
 						echo "<td>Datos Personales</td>";
 						echo "<td align='center'>".$datos['xt_estatusDatosPersonales']."</td>";
-						echo "<td align='center'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/Personal/datosPersonal.php'><img src='Imagenes/ICN_BotonNaranja.png' width='15' height='15'></a></td>";
+						echo "<td align='center'><a href='/ComunicacionInterna/Personal/datosPersonal.php'><img src='Imagenes/ICN_BotonNaranja.png' width='15' height='15'></a></td>";
 					echo "</tr>";
 				}
 

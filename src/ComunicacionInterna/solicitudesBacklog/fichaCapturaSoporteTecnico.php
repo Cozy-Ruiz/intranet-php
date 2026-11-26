@@ -749,14 +749,14 @@ if(isset($_POST['Enviar'])){
 	
 	$RESULTADO = fichaCaptura($usuarioId,"B","ST",$fecha,$grupo,$ciudad,"",$titulo,$descripcion,$_FILES['archivo']['tmp_name'],	$extension,$prioridad,$justificacion,"","",$INTRANET);
 	echo $codigoSolicitud = $RESULTADO;
-	//echo 'https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaSoporteTecnico.php?codigo='.$codigoSolicitud.'';
+	//echo 'fichaSoporteTecnico.php?codigo='.$codigoSolicitud.'';
 	if($codigoSolicitud != ''){
 		
 		
 		//mando llamar a scrip para envio de correo 
-		echo '<script>window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/mailST.php?codigo='.$codigoSolicitud.'&titulo='.urlencode($titulo).'&solicitante='.$usuarioId.'&descripcion='.urlencode($descripcion).'&fecha='.$hoy.'&prioridad='.$prioridad.'";</script>';
+		echo '<script>window.location="mailST.php?codigo='.$codigoSolicitud.'&titulo='.urlencode($titulo).'&solicitante='.$usuarioId.'&descripcion='.urlencode($descripcion).'&fecha='.$hoy.'&prioridad='.$prioridad.'";</script>';
 
-		/*echo '<script>window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaSoporteTecnico.php?codigo='.$codigoSolicitud.'";</script>';*/
+		/*echo '<script>window.location="fichaSoporteTecnico.php?codigo='.$codigoSolicitud.'";</script>';*/
 	}
 }
 

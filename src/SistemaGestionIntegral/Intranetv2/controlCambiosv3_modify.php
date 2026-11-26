@@ -157,7 +157,7 @@ $cod = substr($cod, 0, 1);
 	$INTRANETV2->Execute("INSERT INTO INTRANET2.SGI_Control_De_Cambios_Documentos (xt_codigoDocumento, xt_descripcion, xt_inicialesUsuario, xn_version) 
 							VALUES ('$codDco', '$descripcion', '$usuarioId', $maximo)");
 		?><script type="text/javascript">
-		window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov3.php?id=<?php echo $codDco; ?>";
+		window.location="fichaDocumentov3.php?id=<?php echo $codDco; ?>";
 	</script><?php 
 }
 	?>

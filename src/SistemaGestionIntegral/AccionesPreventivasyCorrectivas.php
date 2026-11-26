@@ -27,7 +27,7 @@ require_once("../compruebaUsuario.php");
 <body>
 <?php
 $breadcrumb="<a href='../Home.php' id='breadcrumbs'> Home / </a> <a href='homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a>
-			<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos</a>";
+			<a href='../../SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos</a>";
 
 echo"<div id='wrapper' align='center'>";
 	echo "<table border='0' align='center' name='Encabezado'>";

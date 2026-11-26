@@ -397,8 +397,8 @@ if((@$stats == "ASIGNAR") && (@$_POST['pdr'] != "") && (@$_POST['fechaAsignar'] 
 
 ?>
 <?php
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna / </a>
-			<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes y Quejas</a>";
+$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna / </a>
+			<a href='/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes y Quejas</a>";
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -540,28 +540,28 @@ echo"<div id='wrapperFicha' align='center'>";
 					<table border='0' align='center' id='breadcrumbs' style='border:1px solid #007cbd;'>
 						<tr>
 							<td valign='top'>
-                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'>
+                            	<a href='/comunicacionInterna.php' id='breadcrumbs'>
                                 	Comunicación Interna
                                 </a><br />
                                 
 								<ul style='list-style-type:square;'>
                                 	<li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/TableroBoletines.php' id='breadcrumbs'>
+                                    	<a href='/TableroBoletines.php' id='breadcrumbs'>
                                         	Boletines
                                         </a>
                                     </li>
                                     <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/listaQueHacer.php' id='breadcrumbs'>
+                                    	<a href='/listaQueHacer.php' id='breadcrumbs'>
                                         	Qué hacer
                                         </a>
                                     </li>
                                     <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/tableroSolicitudesyQuejas.php' id='breadcrumbs'>
+                                    	<a href='/tableroSolicitudesyQuejas.php' id='breadcrumbs'>
                                         	Solicitudes y Quejas
                                         </a>
                                     </li>
                                     <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/busquedaPersonal.php' id='breadcrumbs'>
+                                    	<a href='/busquedaPersonal.php' id='breadcrumbs'>
                                         	Acceso Autorizado
                                         </a>
                                     </li>
@@ -571,116 +571,116 @@ echo"<div id='wrapperFicha' align='center'>";
 						</tr>
                         <tr>
 							<td valign='top'>
-                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'>
+                            	<a href='homeSGI.php' id='breadcrumbs'>
                                 	Gestión Integral
                                 </a><br />
                                 
                                 <ul style='list-style-type:square;'>
                                 	<li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Normas.php' id='breadcrumbs'>
+                                    	<a href='Normas.php' id='breadcrumbs'>
                                         	Normas
                                         </a><br />
                                         
                                         <ul style='list-style-type: disc;'>
                                         	<li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/CapituloNorma.php?norma=ISO' id='breadcrumbs'>
+                                            	<a href='CapituloNorma.php?norma=ISO' id='breadcrumbs'>
                                                     ISO
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/CapituloNorma.php?norma=NMX' id='breadcrumbs'>
+                                            	<a href='CapituloNorma.php?norma=NMX' id='breadcrumbs'>
                                                     NMX
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/CapituloNorma.php?norma=NEEC' id='breadcrumbs'>
+                                            	<a href='CapituloNorma.php?norma=NEEC' id='breadcrumbs'>
                                                     NEEC
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/manuales.php' id='breadcrumbs'>
+                                    	<a href='manuales.php' id='breadcrumbs'>
                                         	Manuales
                                         </a><br />
                                         
                                         <ul style='list-style-type: disc;'>
                                         	<li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Documento.php?manual=GE-MC' id='breadcrumbs'>
+                                            	<a href='Documento.php?manual=GE-MC' id='breadcrumbs'>
                                                 	Manual de Gestión Integral
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Documento.php?manual=GE-CDR' id='breadcrumbs'>
+                                            	<a href='Documento.php?manual=GE-CDR' id='breadcrumbs'>
                                                     Manual de Control de Documentos y Registros
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Documento.php?manual=GE-AI' id='breadcrumbs'>
+                                            	<a href='Documento.php?manual=GE-AI' id='breadcrumbs'>
                                                     Manual de Auditorías Internas
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Documento.php?manual=GE-CC' id='breadcrumbs'>
+                                            	<a href='Documento.php?manual=GE-CC' id='breadcrumbs'>
                                                     Manual del Comité de Calidad
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Documento.php?manual=GE-DG' id='breadcrumbs'>
+                                            	<a href='Documento.php?manual=GE-DG' id='breadcrumbs'>
                                                     Manual de Dirección General
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Documento.php?manual=GE-ADM' id='breadcrumbs'>
+                                            	<a href='Documento.php?manual=GE-ADM' id='breadcrumbs'>
                                                     Manual de Administración
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Documento.php?manual=GE-RH' id='breadcrumbs'>
+                                            	<a href='Documento.php?manual=GE-RH' id='breadcrumbs'>
                                                     Manual de Recursos Humanos
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Documento.php?manual=GE-TI' id='breadcrumbs'>
+                                            	<a href='Documento.php?manual=GE-TI' id='breadcrumbs'>
                                                     Manual de Tecnologias de la Información
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Documento.php?manual=GE-OPE' id='breadcrumbs'>
+                                            	<a href='Documento.php?manual=GE-OPE' id='breadcrumbs'>
                                                     Manual de Operaciones
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'>
+                                    	<a href='Modulos.php' id='breadcrumbs'>
                                         	Módulos del SGI
                                         </a><br />
                                         
                                         <ul style='list-style-type: disc;'>
                                         	<li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Riesgos.php' id='breadcrumbs'>
+                                            	<a href='Riesgos.php' id='breadcrumbs'>
                                                 	Administración de Riesgos
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/ReunionesyAcuerdos.php' id='breadcrumbs'>
+                                            	<a href='ReunionesyAcuerdos.php' id='breadcrumbs'>
                                                     Reuniones y Acuerdos
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/tableroPreventivasCorrectivas.php' id='breadcrumbs'>
+                                            	<a href='tableroPreventivasCorrectivas.php' id='breadcrumbs'>
                                                     Acciones Preventivas y Correctivas
                                                 </a>
                                             </li>
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/tableroAuditorias.php' id='breadcrumbs'>
+                                            	<a href='tableroAuditorias.php' id='breadcrumbs'>
                                                     Auditorías
                                                 </a>
                                             </li>
                                             <!-- -->
                                             <li>
-                                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Procesos.php' id='breadcrumbs'>
+                                            	<a href='Procesos.php' id='breadcrumbs'>
                                                     Inventario de Procesos
                                                 </a>
                                             </li>
@@ -692,18 +692,18 @@ echo"<div id='wrapperFicha' align='center'>";
 						</tr>
                         <tr>
 							<td valign='top'>
-                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Aplicaciones/aplicaciones.php' id='breadcrumbs'>
+                            	<a href='../Aplicaciones/aplicaciones.php' id='breadcrumbs'>
                                 	Aplicaciones
                                 </a><br />
                                 
                                 <ul style='list-style-type:square;'>
                                 	<li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Aplicaciones/operaciones.php' id='breadcrumbs'>
+                                    	<a href='../Aplicaciones/operaciones.php' id='breadcrumbs'>
                                         	Operaciones
                                         </a>
                                     </li>
                                     <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/AdministracionProyectos/admonPro.php' id='breadcrumbs'>
+                                    	<a href='../AdministracionProyectos/admonPro.php' id='breadcrumbs'>
                                         	Administración de Proyectos
                                         </a>
                                     </li>
@@ -713,13 +713,13 @@ echo"<div id='wrapperFicha' align='center'>";
 						</tr>
                         <tr>
 							<td valign='top'>
-                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Registros/Registros.php' id='breadcrumbs'>
+                            	<a href='../Registros/Registros.php' id='breadcrumbs'>
                                 	Registros
                                 </a><br />
                                 
                                 <ul style='list-style-type:square;'>
                                     <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Registros/TableroVisitas2.php' id='breadcrumbs'>
+                                    	<a href='../Registros/TableroVisitas2.php' id='breadcrumbs'>
                                         	Visitas
                                         </a>
                                     </li>
@@ -729,13 +729,13 @@ echo"<div id='wrapperFicha' align='center'>";
 						</tr>
                         <tr>
 							<td valign='top'>
-                            	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Configuraciones/configuraciones.php' id='breadcrumbs'>
+                            	<a href='../Configuraciones/configuraciones.php' id='breadcrumbs'>
                                 	Configuraciones
                                 </a><br />
                                 
                                 <ul style='list-style-type:square;'>
                                 	<li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Configuraciones/ModificaPassword.php' id='breadcrumbs'>
+                                    	<a href='../Configuraciones/ModificaPassword.php' id='breadcrumbs'>
                                         	Contraseñas
                                         </a>
                                     </li>
@@ -1292,7 +1292,7 @@ echo"<div id='wrapperFicha' align='center'>";
 		echo "<tr>";
 			echo "<td align='right'>";
 				if(($solicitanteID == $usuarioId) || ($categoriaUsr == "Administrador")){
-				echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaSolicitudModificar.php?id=$solicitudID' >
+				echo "<a href='/solicitudesBacklog/fichaSolicitudModificar.php?id=$solicitudID' >
 					  	<img src='../../Imagenes/ICN_BotonModificar.png' width='90' height='29'>
 					  </a>";
 				}

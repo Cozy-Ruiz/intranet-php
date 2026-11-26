@@ -30,7 +30,7 @@ if($confirma == ""){
 			?>
                 <script type="text/javascript">
 					function redireccionar(){
-						opener.location.href="https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php";
+						opener.location.href="../Home.php";
 						window.close();
 					};
                 </script>
@@ -105,7 +105,7 @@ if($confirma == ""){
 			?>
                 <script type="text/javascript">
 					function redireccionar(){
-						opener.location.href="https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php";
+						opener.location.href="../Home.php";
 						window.close();
 					};
                 </script>

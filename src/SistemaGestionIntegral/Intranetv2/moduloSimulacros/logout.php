@@ -4,5 +4,5 @@
 
 	session_destroy();
 
-	header('Location: https://escalante.com.mx/Sistemas');
+	header('Location: ../../../../Sistemas');
 	?>

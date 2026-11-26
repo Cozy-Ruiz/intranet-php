@@ -293,8 +293,8 @@ $iso 	= NULL;
 //obtengo el status de modificar proceso
 $statusMod = $INTRANETV2->getOne("SELECT xn_modificando FROM SGI_Procesos WHERE xt_codigoCorto = '$procesoCodigo'");
 
-$breadcrumb = "<a href='../../Home.php' id='breadcrumbs'> Home / </a> <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a> 
-				   <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/manualesv3.php' id='breadcrumbs'> Manuales </a>";
+$breadcrumb = "<a href='../../Home.php' id='breadcrumbs'> Home / </a> <a href='../../../SistemagestionIntegral/homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a> 
+				   <a href='manualesv3.php' id='breadcrumbs'> Manuales </a>";
 
 
 $ciudades[1] = "Distrito Federal";

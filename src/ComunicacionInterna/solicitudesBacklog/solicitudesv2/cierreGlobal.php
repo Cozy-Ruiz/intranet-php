@@ -86,7 +86,7 @@ $breadcrumb = "<a href='../../../Home.php' id='breadcrumbs'> Home / </a><a href=
 				//var elemento= document.getElementById();
 
 				$("#step1_"+codigo).attr({
-					"src" : "https://escalante.com.mx/Sistemas/INTRANET_GEA/Imagenes/img_load.gif"
+					"src" : "../../Imagenes/img_load.gif"
 				});
 
 				 $.ajax({
@@ -104,7 +104,7 @@ $breadcrumb = "<a href='../../../Home.php' id='breadcrumbs'> Home / </a><a href=
                     console.log(dataResponse);
 
                    	$("#step1_"+codigo).attr({
-					"src" : "https://escalante.com.mx/Sistemas/INTRANET_GEA/Imagenes/ICN_BotonVerde.png"
+					"src" : "../../Imagenes/ICN_BotonVerde.png"
 				});
 
 
@@ -157,7 +157,7 @@ $breadcrumb = "<a href='../../../Home.php' id='breadcrumbs'> Home / </a><a href=
 			while($i= $l->fetchRow()){
 
 					echo "<tr style='height: 21px' id='fileItem'> <td> <a  target='_blank' href='fichaSolicitudv2.php?codigo=".$i[0]."'>  ".$i[0]." </a> </td> <td width='30px'>   </td>  <td> ".$i[1]."  </td>  <td> ".$i[2]." </td>  <td>".$i[3]." </td>  <td>".$i[4]." </td> <td>
-					<img id='step1_".$i[0]."'  src='https://escalante.com.mx/Sistemas/INTRANET_GEA/Imagenes/ICN_Boton_Azul.png' style='cursor: pointer; height: 15px;  idth='15px''' onclick=cerrarManual('".$i[0]."') > </td>   </tr>  ";
+					<img id='step1_".$i[0]."'  src='../../Imagenes/ICN_Boton_Azul.png' style='cursor: pointer; height: 15px;  idth='15px''' onclick=cerrarManual('".$i[0]."') > </td>   </tr>  ";
 				 
 			}
             

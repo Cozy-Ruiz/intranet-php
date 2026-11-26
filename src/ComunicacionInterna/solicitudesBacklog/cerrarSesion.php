@@ -18,6 +18,6 @@ $sesionHoraSalida = date('H:i:s');
 $INTRANET->Execute("update IntranetGEA_SESIONES_USUARIOS set xd_fechaSalida = '$sesionFechaSalida', xt_horaSalida = '$sesionHoraSalida' where kp_sesionId = $sesionId and kf_usuario = '$sesionUsuario' ");
 
 //session_destroy();
-header("Location: https://escalante.com.mx/Sistemas/seleccionaSistema.php");
+header("Location: ../../../Sistemas/seleccionaSistema.php");
 
 ?>

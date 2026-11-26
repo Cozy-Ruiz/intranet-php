@@ -90,7 +90,7 @@ require_once("MailEnvioAsignar.php");
 				?>
 				<!-- recargo pagina -->
 				<script language="javascript">
-					window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaEnvioArchivos.php?codigo=<?php echo $codigoAdmin; ?>"
+					window.location="fichaEnvioArchivos.php?codigo=<?php echo $codigoAdmin; ?>"
 				</script>
 				<?php
    												

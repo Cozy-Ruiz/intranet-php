@@ -97,7 +97,7 @@ echo "<div id='wrapperFicha' align='center'>";
 				echo "<a href='http://71.144.19.152:8000/reporteador/tablero_reportes.php?est=$estiloUsuario'><img src='../Imagenes/ICN_Reporteador.png'></a> ";
 			echo "</td>";
 			echo "<td align='center' width='150'>";
-				echo "<a href='https://escalante.com.mx/Sistemas/GRAPHICS/seleccionaCliente.php'><img src='../Imagenes/ICN_Estadisticas.png'></a> ";
+				echo "<a href='../Sistemas/GRAPHICS/seleccionaCliente.php'><img src='../Imagenes/ICN_Estadisticas.png'></a> ";
 			echo "</td>";
 			/*echo "<td align='center' width='150'>";
 				echo "<a href='FraccionesVulnerables/homeFracciones.php'><img src='../Imagenes/ICN_FraccVulnerables.png'></a> ";

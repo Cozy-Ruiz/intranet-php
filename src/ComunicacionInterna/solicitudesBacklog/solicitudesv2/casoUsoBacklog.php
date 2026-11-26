@@ -568,12 +568,12 @@ echo "<div id='wrapper'>";
                                         </a>
                                     </li>
                                     <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>
@@ -2447,13 +2447,13 @@ echo "<div id='wrapper'>";
 								//envio parametros necesarios
 								$prioriE = $INTRANET->getOne("SELECT xt_prioridad FROM BACKLOG.ENTREGABLES WHERE xt_codigoEntregable = '$lisEntg[0]'");
 								echo "<td>";
-								echo "<a href=https://escalante.com.mx/Sistemas/BackLog/iniciaSesion.php?codE=".base64_encode($lisEntg[0])."&prioridad=".base64_encode($prioriE)."&codS=".base64_encode($solicitudID)."&usu=".base64_encode($usuarioId)."> $lisEntg[0]</a>";
+								echo "<a href=../../../../Sistemas/BackLog/iniciaSesion.php?codE=".base64_encode($lisEntg[0])."&prioridad=".base64_encode($prioriE)."&codS=".base64_encode($solicitudID)."&usu=".base64_encode($usuarioId)."> $lisEntg[0]</a>";
 								echo "</td>";
 							
 							}else{
 								
 								echo "<td>";
-								echo "<a href='https://escalante.com.mx/Sistemas/BackLog/iniciaSesion.php'> $lisEntg[0]</a>";
+								echo "<a href='../../../../Sistemas/BackLog/iniciaSesion.php'> $lisEntg[0]</a>";
 								echo "</td>";
 								
 							}

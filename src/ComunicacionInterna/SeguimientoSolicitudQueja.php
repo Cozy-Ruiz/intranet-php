@@ -65,9 +65,9 @@ if($origen == "A"){
 		$etapaStatus = 'Cierre';
 	}
 	$breadcrumb="<a href='../Home.php' id='breadcrumbs'> Home / </a> <a href='homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a> 
-			<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
+			<a href='../../INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
 			<a href='tableroReuniones.php' id='breadcrumbs'> Reuniones / </a><a href='tableroAcuerdos.php' id='breadcrumbs'> Acuerdos </a><br><br>
-			<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/tableroSeguimientos.php' id='breadcrumbs'>Tablero de Seguimientos </a>";
+			<a href='../../INTRANET_GEA/SistemaGestionIntegral/tableroSeguimientos.php' id='breadcrumbs'>Tablero de Seguimientos </a>";
 			
 } else if($origen == "B"){
 	$tipoItem = "Solicitud";
@@ -80,10 +80,10 @@ if($origen == "A"){
 	}else if($etapaStatus == 4){
 		$etapaStatus = 'Cierre';
 	}
-	$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/INTRANET_GEA/ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'>
+	$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='../../INTRANET_GEA/ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'>
 			Comunicación Interna / </a>
-			<a href='https://escalante.com.mx/INTRANET_GEA/ComunicacionInterna/tableroSolicitudesyQuejas.php' id='breadcrumbs'> Solicitudes y Quejas</a><br><br>
-			<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/tableroSeguimientos.php' id='breadcrumbs'>Tablero de Seguimientos </a>";
+			<a href='../../INTRANET_GEA/ComunicacionInterna/tableroSolicitudesyQuejas.php' id='breadcrumbs'> Solicitudes y Quejas</a><br><br>
+			<a href='../../INTRANET_GEA/SistemaGestionIntegral/tableroSeguimientos.php' id='breadcrumbs'>Tablero de Seguimientos </a>";
 } else if($origen == "C"){
 	$tipoItem = "Queja";
 	if($etapaStatus == 1){
@@ -99,10 +99,10 @@ if($origen == "A"){
 	}else if($etapaStatus == 6){
 		$etapaStatus = 'Cierre';
 	}
-	$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/INTRANET_GEA/ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'>
+	$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='../../INTRANET_GEA/ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'>
 			Comunicación Interna / </a>
-			<a href='https://escalante.com.mx/INTRANET_GEA/ComunicacionInterna/tableroSolicitudesyQuejas.php' id='breadcrumbs'> Solicitudes y Quejas</a><br><br>
-			<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/tableroSeguimientos.php' id='breadcrumbs'>Tablero de Seguimientos </a>";
+			<a href='../../INTRANET_GEA/ComunicacionInterna/tableroSolicitudesyQuejas.php' id='breadcrumbs'> Solicitudes y Quejas</a><br><br>
+			<a href='../../INTRANET_GEA/SistemaGestionIntegral/tableroSeguimientos.php' id='breadcrumbs'>Tablero de Seguimientos </a>";
 } else if($origen == "D"){
 	$tipoItem = "Acción Preventiva";
 	
@@ -121,12 +121,12 @@ if($origen == "A"){
 	}else if($etapaStatus == 7){
 		$etapaStatus = 'Cierre';
 	}
-	$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'> 
+	$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='../../INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'> 
 		Sistema de Gestión Integral / </a>
-		<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
-		<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/AccionesPreventivasyCorrectivas.php' id='breadcrumbs'> Acciones Preventivas y Correctivas / </a>
-		<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/tableroPreventivasCorrectivas.php' id='breadcrumbs'> Tablero de Acciones Preventivas</a><br><br>
-		<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/tableroSeguimientos.php' id='breadcrumbs'>Tablero de Seguimientos </a>";
+		<a href='../../INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
+		<a href='../../INTRANET_GEA/SistemaGestionIntegral/AccionesPreventivasyCorrectivas.php' id='breadcrumbs'> Acciones Preventivas y Correctivas / </a>
+		<a href='../../INTRANET_GEA/SistemaGestionIntegral/tableroPreventivasCorrectivas.php' id='breadcrumbs'> Tablero de Acciones Preventivas</a><br><br>
+		<a href='../../INTRANET_GEA/SistemaGestionIntegral/tableroSeguimientos.php' id='breadcrumbs'>Tablero de Seguimientos </a>";
 	
 } else if($origen == "E"){
 	$tipoItem = "Acción Correctiva";
@@ -145,12 +145,12 @@ if($origen == "A"){
 		$etapaStatus = 'Cierre';
 	}
 	
-	$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'> 
+	$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='../../INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'> 
 		Sistema de Gestión Integral / </a>
-		<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
-		<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/AccionesPreventivasyCorrectivas.php' id='breadcrumbs'> Acciones Preventivas y Correctivas / </a>
-		<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/tableroPreventivasCorrectivas.php' id='breadcrumbs'> Tablero de Acciones Preventivas</a><br><br>
-		<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/tableroSeguimientos.php' id='breadcrumbs'>Tablero de Seguimientos </a>";	
+		<a href='../../INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
+		<a href='../../INTRANET_GEA/SistemaGestionIntegral/AccionesPreventivasyCorrectivas.php' id='breadcrumbs'> Acciones Preventivas y Correctivas / </a>
+		<a href='../../INTRANET_GEA/SistemaGestionIntegral/tableroPreventivasCorrectivas.php' id='breadcrumbs'> Tablero de Acciones Preventivas</a><br><br>
+		<a href='../../INTRANET_GEA/SistemaGestionIntegral/tableroSeguimientos.php' id='breadcrumbs'>Tablero de Seguimientos </a>";	
 }
 
 echo"<div id='wrapperFicha' align='center'>";
@@ -397,7 +397,7 @@ echo"<div id='wrapperFicha' align='center'>";
 		///Item relacionado
 			echo "<tr>";
 				echo "<td width='30px'> </td>";
-				echo "<td align='left' width='670px' id='fileItem'><a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/fichaAcuerdo.php?acuerdo=$ID' id='fileItem' style='text-decoration:none;'>$claveAcuerdo</a></td>";
+				echo "<td align='left' width='670px' id='fileItem'><a href='../../INTRANET_GEA/SistemaGestionIntegral/fichaAcuerdo.php?acuerdo=$ID' id='fileItem' style='text-decoration:none;'>$claveAcuerdo</a></td>";
 			echo "</tr>";
 			echo "<tr height='20px'> </tr>";
 		echo "</table>";
@@ -406,7 +406,7 @@ echo"<div id='wrapperFicha' align='center'>";
 		///Item relacionado
 			echo "<tr>";
 				echo "<td width='30px'> </td>";
-				echo "<td align='left' width='670px' id='fileItem'><a href='https://escalante.com.mx/INTRANET_GEA/ComunicacionInterna/fichaSolicitud.php?id=$ID' id='fileItem' style='text-decoration:none;'>$claveSolicitud</a></td>";
+				echo "<td align='left' width='670px' id='fileItem'><a href='../../INTRANET_GEA/ComunicacionInterna/fichaSolicitud.php?id=$ID' id='fileItem' style='text-decoration:none;'>$claveSolicitud</a></td>";
 			echo "</tr>";
 			echo "<tr height='20px'> </tr>";
 		echo "</table>";
@@ -415,7 +415,7 @@ echo"<div id='wrapperFicha' align='center'>";
 		///Item relacionado
 			echo "<tr>";
 				echo "<td width='30px'> </td>";
-				echo "<td align='left' width='670px' id='fileItem'><a href='https://escalante.com.mx/INTRANET_GEA/ComunicacionInterna/fichaQueja.php?id=$ID' id='fileItem' style='text-decoration:none;'>$claveQueja</a></td>";
+				echo "<td align='left' width='670px' id='fileItem'><a href='../../INTRANET_GEA/ComunicacionInterna/fichaQueja.php?id=$ID' id='fileItem' style='text-decoration:none;'>$claveQueja</a></td>";
 			echo "</tr>";
 			echo "<tr height='20px'> </tr>";
 		echo "</table>";
@@ -424,7 +424,7 @@ echo"<div id='wrapperFicha' align='center'>";
 		///Item relacionado
 			echo "<tr>";
 				echo "<td width='30px'> </td>";
-				echo "<td align='left' width='670px' id='fileItem'><a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/fichaPreventiva.php?id=$ID' id='fileItem' style='text-decoration:none;'>$clavePreventiva</a></td>";
+				echo "<td align='left' width='670px' id='fileItem'><a href='../../INTRANET_GEA/SistemaGestionIntegral/fichaPreventiva.php?id=$ID' id='fileItem' style='text-decoration:none;'>$clavePreventiva</a></td>";
 			echo "</tr>";
 			echo "<tr height='20px'> </tr>";
 		echo "</table>";
@@ -433,7 +433,7 @@ echo"<div id='wrapperFicha' align='center'>";
 		///Item relacionado
 			echo "<tr>";
 				echo "<td width='30px'> </td>";
-				echo "<td align='left' width='670px' id='fileItem'><a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/fichaCorrectiva.php?id=$ID' id='fileItem' style='text-decoration:none;'>$claveCorrectiva</a></td>";
+				echo "<td align='left' width='670px' id='fileItem'><a href='../../INTRANET_GEA/SistemaGestionIntegral/fichaCorrectiva.php?id=$ID' id='fileItem' style='text-decoration:none;'>$claveCorrectiva</a></td>";
 			echo "</tr>";
 			echo "<tr height='20px'> </tr>";
 		echo "</table>";

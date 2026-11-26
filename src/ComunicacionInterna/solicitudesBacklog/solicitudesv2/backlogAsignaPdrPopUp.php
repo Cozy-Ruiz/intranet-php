@@ -554,21 +554,21 @@ if ( isset($_POST['pdr'], $_POST['stakeholder']) ) {
 	}
 	if($tipoS == 'MT'){
 	echo"<script>
-			window.opener.location = 'https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?codigo=$solicitudId';
+			window.opener.location = 'fichaMantenimiento_Sistema.php?codigo=$solicitudId';
 			window.close();
 		</script>";
 	}
 	
 	if($tipoS == 'EA'){
 	echo"<script>
-			window.opener.location = 'https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaEnvioArchivos.php?codigo=$solicitudId';
+			window.opener.location = 'fichaEnvioArchivos.php?codigo=$solicitudId';
 			window.close();
 		</script>";
 	}
 	
 	if($tipoS == 'PY'){
 	echo"<script>
-			window.opener.location = 'https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaProyectoFuncionalidad.php?codigo=$solicitudId';
+			window.opener.location = 'fichaProyectoFuncionalidad.php?codigo=$solicitudId';
 			window.close();
 		</script>";
 	}

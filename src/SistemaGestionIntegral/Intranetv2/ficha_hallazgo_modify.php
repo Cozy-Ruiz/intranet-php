@@ -308,7 +308,7 @@ echo "<div id='wrapperFichaHallazgos' align='center'>";
 
 					
 					if($tipoSolicitud == 'MT'){
-						$pagina = "https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?";
+						$pagina = "../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?";
 					} else if ($tipoSolicitud == 'PY'){
 						$pagina = "http://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaProyectoFuncionalidad.php?";
 					} else if ($tipoSolicitud == 'AV'){

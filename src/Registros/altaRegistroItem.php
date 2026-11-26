@@ -25,7 +25,7 @@ putenv("LD_LIBRARY_PATH=$newld");
 // restore old value 
 putenv("LD_LIBRARY_PATH=$saved");
 
-//$breadcrumb="<a href='https://escalante.com.mx/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='Registros.php' id='breadcrumbs'> Registros/</a><a href='tableroRegistros.php' id='breadcrumbs'> Tablero Registro</a> ";
+//$breadcrumb="<a href='../../Home.php' id='breadcrumbs'>Home / </a><a href='Registros.php' id='breadcrumbs'> Registros/</a><a href='tableroRegistros.php' id='breadcrumbs'> Tablero Registro</a> ";
 
 function limpiar_caracter_especial($string){
 

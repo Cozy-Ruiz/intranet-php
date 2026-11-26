@@ -34,7 +34,7 @@ require_once("../compruebaUsuario.php");
     <body>
 <?php
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='configuraciones.php' id='breadcrumbs'> Configuraciones</a> ";
+$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='configuraciones.php' id='breadcrumbs'> Configuraciones</a> ";
 
 echo "<div id='wrapper' align='center'>";
 	echo "<table border='0' align='center' width='1160px' style='margin-top:-110px;'>";

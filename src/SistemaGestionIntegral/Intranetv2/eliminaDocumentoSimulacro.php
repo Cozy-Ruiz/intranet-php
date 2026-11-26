@@ -28,7 +28,7 @@ else
  	if($INTRANETV2->Execute("INSERT INTO SGI_Control_Eliminacion (xt_seccion,kf_actorID,xt_descripcion) VALUES ('$simulacro','$usuarioId','Eliminacion de $enlace')")) 
 	 		{	
 	    if($INTRANETV2->Execute("UPDATE SGI_Simulacros SET xt_rutaDesarrollo = NULL WHERE xt_codigoSimulacro = '".$simulacro."'")){
-			header ("Location: https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/simulacroElementoActualizar.php?simulacro=$simulacro");}
+			header ("Location: simulacroElementoActualizar.php?simulacro=$simulacro");}
 		}
 	}
 }

@@ -375,8 +375,8 @@ $tipoSolicitud = "";
 <body>
 
 <?PHP
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna / </a>
-			<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes </a>";
+$breadcrumb="<a href='../../Home.php' id='breadcrumbs'>Home / </a><a href='../../ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna / </a>
+			<a href='tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes </a>";
 
 echo "<div id='wrapper'>";
  // echo "<form name='fichaMantenimiento_Sistema' method='post' action='fichaMantenimiento_Sistema.php'>";	
@@ -1244,7 +1244,7 @@ if($perfil[0] == 'Jefe de Desarrollo' || $perfil[0] == 'Asignador PDR'){
 							echo "<td width='60px'></td>";
 							echo "<td>$programadorAsignado</td>";
 							echo "<td>";
-							echo "<a href='https://escalante.com.mx/Sistemas/BackLog/iniciaSesion.php'> $lisEntg[0]</a>";
+							echo "<a href='../../../../Sistemas/BackLog/iniciaSesion.php'> $lisEntg[0]</a>";
 							echo "</td>";
 							if($etapa != ''){
 								if($etapa == 'TERMINADA'){

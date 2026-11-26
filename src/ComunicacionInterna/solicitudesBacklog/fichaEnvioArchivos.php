@@ -438,8 +438,8 @@ $s = $INTRANET->Execute("SELECT IU.xt_nombre, SQS.xt_pdr FROM SGI_Quejas_Solicit
 <?php
 
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'> Comunicación Interna / </a> 
-			<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes </a>";
+$breadcrumb="<a href='../../Home.php' id='breadcrumbs'>Home / </a><a href='../../ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'> Comunicación Interna / </a> 
+			<a href='tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes </a>";
 			
 echo"<div id='wrapperFicha' align='center'>";
 	
@@ -1226,7 +1226,7 @@ echo"<div id='wrapperFicha' align='center'>";
 												echo "<tr height='5px'>";
 												echo "<tr>";
 													echo "<td align='left' width='200px' id='iconosTexto'>".$programador."</td>";
-													echo "<td align='left' width='200px' id='iconosTexto'><a href='https://escalante.com.mx/Sistemas/BackLog/iniciaSesion.php'>".$codigoE."</a></td>";
+													echo "<td align='left' width='200px' id='iconosTexto'><a href='../../../Sistemas/BackLog/iniciaSesion.php'>".$codigoE."</a></td>";
 													echo "<td align='left' width='200px' id='iconosTexto'>Lugar: ".$posicion."</td>";
 												echo "</tr>";
 												echo "<tr height='5px'>";
@@ -1280,9 +1280,9 @@ echo"<div id='wrapperFicha' align='center'>";
 													//envio parametros necesarios
 													@$lisEntg0 = $lisEntg[0];
 													$prioriE = $INTRANET->getOne("SELECT xt_prioridad FROM BACKLOG.ENTREGABLES WHERE xt_codigoEntregable = '$lisEntg0'");
-													echo "<td align='left' width='200px' id='iconosTexto'><a href=https://escalante.com.mx/Sistemas/BackLog/iniciaSesion.php?codE=".base64_encode($entragableEnvio)."&prioridad=".base64_encode($prioriE)."&codS=".base64_encode($codigo)."&usu=".base64_encode($usuarioId).">".$entragableEnvio."</a></td>";
+													echo "<td align='left' width='200px' id='iconosTexto'><a href=../../../Sistemas/BackLog/iniciaSesion.php?codE=".base64_encode($entragableEnvio)."&prioridad=".base64_encode($prioriE)."&codS=".base64_encode($codigo)."&usu=".base64_encode($usuarioId).">".$entragableEnvio."</a></td>";
 
-													//echo "<td align='left' width='200px' id='iconosTexto'><a href='https://escalante.com.mx/Sistemas/BackLog/iniciaSesion.php'>".$entragableEnvio."</a></td>";
+													//echo "<td align='left' width='200px' id='iconosTexto'><a href='../../../Sistemas/BackLog/iniciaSesion.php'>".$entragableEnvio."</a></td>";
 													echo "<td align='left' width='200px' id='iconosTexto'>".$etapaE."</td>";
 												echo "</tr>";
 												echo "<tr height='5px'>";

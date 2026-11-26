@@ -1490,7 +1490,7 @@ class Validacion_Pago{
 
 		}/*else if(trim($datos["RFC"]) == "BME0004112J6" || trim($datos["RFC"]) == "NCG131029SK3" || trim($datos["RFC"]) == "TME030710K69" || trim($datos["RFC"]) == "ZHM040609ES5"){
 
-			$response = file_get_contents('https://escalante.com.mx/Sistemas/radar/Reportes/reportes_2/reporte_excel_inditex.php?referencia='.$referencia.'&rfc='.trim($datos["RFC"]));
+			$response = file_get_contents('../../../radar/Reportes/reportes_2/reporte_excel_inditex.php?referencia='.$referencia.'&rfc='.trim($datos["RFC"]));
 			echo "La respuesta del script es: " . $response;
 
 		}*//*else if(trim($datos["RFC"]) == "DME9204099R6"){

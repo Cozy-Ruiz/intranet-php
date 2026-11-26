@@ -397,7 +397,7 @@ echo "<div id='wrapper'>";
             echo "<table border='0' cellspacing='0'>";
                 echo "<tr>";
                     echo "<td style='padding:0px 0px 0px 25px;'>";						
-                        echo "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/fichaProceso.php?proceso=$proceso' style='cursor:pointer;'><font size='4px'>$proceso: $nomProceso</font></a>";
+                        echo "<a href='fichaProceso.php?proceso=$proceso' style='cursor:pointer;'><font size='4px'>$proceso: $nomProceso</font></a>";
                     echo "</td>";
                 echo "</tr>";
     

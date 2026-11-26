@@ -228,10 +228,10 @@ if($codigo != ""){
 	}
 	
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'> Home / </a>
-			 <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a>
-			 <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
-			 <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/ReunionesyAcuerdos.php' id='breadcrumbs'> Reuniones y Acuerdos / </a>
+$breadcrumb="<a href='../../../Home.php' id='breadcrumbs'> Home / </a>
+			 <a href='../../../SistemagestionIntegral/homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a>
+			 <a href='../../../SistemagestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
+			 <a href='../../../SistemagestionIntegral/ReunionesyAcuerdos.php' id='breadcrumbs'> Reuniones y Acuerdos / </a>
 			 <a href='tableroReunionesv2.php' id='breadcrumbs'> Tablero de Reuniones </a>";
 
 

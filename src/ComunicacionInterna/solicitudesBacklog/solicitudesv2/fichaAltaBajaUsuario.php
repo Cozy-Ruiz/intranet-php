@@ -1274,7 +1274,7 @@ echo"<div id='wrapperFicha' align='center'>";
 												echo "<tr height='5px'>";
 												echo "<tr>";
 													echo "<td align='left' width='200px' id='iconosTexto'>".$nombreProgramador."</td>";
-													echo "<td align='left' width='200px' id='iconosTexto'><a href='https://escalante.com.mx/Sistemas/BackLog/iniciaSesionDirecta.php?usuario=".$usuarioId."&destino=".base64_encode("http://escalante.com.mx/Sistemas/BackLog/entregablesv2/fichaEntregable.php?codigoE=".base64_encode($codigoE)."&codigoS=".base64_encode($clave)."&prioridad=".base64_encode($prioridad)."&usuario=".base64_encode($usuarioId))."'>".$codigoE."</a></td>";
+													echo "<td align='left' width='200px' id='iconosTexto'><a href='../../../../Sistemas/BackLog/iniciaSesionDirecta.php?usuario=".$usuarioId."&destino=".base64_encode("http://escalante.com.mx/Sistemas/BackLog/entregablesv2/fichaEntregable.php?codigoE=".base64_encode($codigoE)."&codigoS=".base64_encode($clave)."&prioridad=".base64_encode($prioridad)."&usuario=".base64_encode($usuarioId))."'>".$codigoE."</a></td>";
 													echo "<td align='left' width='200px' id='iconosTexto'>Lugar: ".$posicion."</td>";
 												echo "</tr>";
 												echo "<tr height='5px'>";
@@ -1332,7 +1332,7 @@ echo"<div id='wrapperFicha' align='center'>";
 													//envio parametros necesarios
 													$prioriE = $INTRANET->getOne("SELECT xt_prioridad FROM BACKLOG.ENTREGABLES WHERE xt_codigoEntregable = '$listaEntg0'");
 													
-													echo "<td align='left' width='200px' id='iconosTexto'><a href=https://escalante.com.mx/Sistemas/BackLog/iniciaSesion.php?codE=".base64_encode($entregableSistema)."&prioridad=".base64_encode($prioriE)."&codS=".base64_encode($codigo)."&usu=".base64_encode($usuarioId).">".$entregableSistema."</a></td>";
+													echo "<td align='left' width='200px' id='iconosTexto'><a href=../../../../Sistemas/BackLog/iniciaSesion.php?codE=".base64_encode($entregableSistema)."&prioridad=".base64_encode($prioriE)."&codS=".base64_encode($codigo)."&usu=".base64_encode($usuarioId).">".$entregableSistema."</a></td>";
 													echo "<td align='left' width='200px' id='iconosTexto'>".$etapaE."</td>";
 													
 												echo "</tr>";

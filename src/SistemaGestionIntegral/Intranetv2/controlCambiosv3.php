@@ -103,7 +103,7 @@ if(($modifica == 0) || ($_POST['descripcion'] == "") ){
 	?>
 	
 	<script type="text/javascript">
-		window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaDocumentov3.php?id=<?php echo $codDco; ?>";
+		window.location="fichaDocumentov3.php?id=<?php echo $codDco; ?>";
 	</script>
 	
 	<?php

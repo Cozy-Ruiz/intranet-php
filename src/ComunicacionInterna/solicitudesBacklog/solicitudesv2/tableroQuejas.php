@@ -449,7 +449,7 @@ if($_POST['ciudad'] == '' && $_POST['tipoSolicitud'] == '' && $_POST['estatus'] 
 						echo"<table border='0' align='center'  width='1300px'>";
 						  echo"<tr id='fileItem'>";
 							echo"<td width='30px'></td>";
-							echo"<td width='150px' align='center' valign='top'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaQueja.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
+							echo"<td width='150px' align='center' valign='top'><a href='fichaQueja.php?codigo=$claveQuejaSolicitud[$a]' id='fileItem' style='text-decoration:none;'>".$claveQuejaSolicitud[$a]."</a></td>";
 							echo"<td width='350px' align='left'>".$titulo[$a]."</td>";
 							echo"<td width='10px'></td>";
 							echo"<td width='100px' align='center' valign='top'>".$fecha[$a]."</td>";

@@ -252,10 +252,10 @@ $valorTipoRiesgo[1] = "SEGURIDAD";
 $valorTipoRiesgo[2] = "CALIDAD";
 $valorTipoRiesgo[3] = "PROCESO";
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'> Home / </a>
-			 <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a>
-			 <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
-			 <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/tableroSimulacros.php' id='breadcrumbs'> Tablero simulacros </a>";
+$breadcrumb="<a href='../../../Home.php' id='breadcrumbs'> Home / </a>
+			 <a href='../../../SistemagestionIntegral/homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a>
+			 <a href='../../../SistemagestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
+			 <a href='tableroSimulacros.php' id='breadcrumbs'> Tablero simulacros </a>";
 
 
 header('Content-Type: text/html; charset=utf-8');
@@ -468,7 +468,7 @@ echo "<div id='wrapperFicha' align='center'>";
 					echo "<tr>";
 						echo "<td width='20px'></td>";
 							
-						echo "<td id='iconosTexto3' style='margin-left:1em'><a id='iconosTexto' href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaRiesgov2.php?id=".$codigoRiesgo[$o]."'>".$codigoRiesgo[$o]."</a></td>";
+						echo "<td id='iconosTexto3' style='margin-left:1em'><a id='iconosTexto' href='fichaRiesgov2.php?id=".$codigoRiesgo[$o]."'>".$codigoRiesgo[$o]."</a></td>";
 						
 						echo "<td id='iconosTexto3' style='margin-left:1em'>";
 							echo $tituloRiesgo[$o];
@@ -1432,7 +1432,7 @@ $cs = $INTRANETV2->Execute("
 													xt_quejaSolicitud = '$claveSeguimiento[$contador]'
 											");
 										if($tipoSolicitud == 'MT'){
-											$pagina = "https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?";
+											$pagina = "../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?";
 										} else if ($tipoSolicitud == 'PY'){
 											$pagina = "http://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaProyectoFuncionalidad.php?";
 										} else if ($tipoSolicitud == 'AV'){

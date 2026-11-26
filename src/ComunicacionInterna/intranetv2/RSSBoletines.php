@@ -51,7 +51,7 @@ echo '<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:itune
 //Datos generales del Canal. Edítalos conforme a tus necesidades
 echo "<channel>\n";
 echo "<title>Boletines</title>";
-echo "<link>https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/intranetv2/RSSBoletines.php</link>";
+echo "<link>/RSSBoletines.php</link>";
 echo "<description>Boletines Grupo Escalante.</description>";
 echo "<language>es-es</language>";
 echo "<copyright>Grupo Escalante</copyright>\n"; 

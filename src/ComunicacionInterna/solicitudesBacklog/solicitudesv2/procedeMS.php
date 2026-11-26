@@ -34,7 +34,7 @@ if($solicitudID != ''){
 			if($status == "RECHAZADA"){
 				
 				//mando llamar a scrip para envio de correo 
-				echo '<script>window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
+				echo '<script>window.location="mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
 			}
 		
 		}else{
@@ -68,7 +68,7 @@ if($solicitudID != ''){
 			if($statusVerifica == "RECHAZADA"){
 				
 				//mando llamar script de correo 
-				echo '<script>window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
+				echo '<script>window.location="mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
 			}
 		}
 	}else if($tipoSolicitud == 'AB'){
@@ -91,7 +91,7 @@ if($solicitudID != ''){
 			if($status == "RECHAZADA"){
 				
 				//mando llamar a scrip para envio de correo 
-				echo '<script>window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
+				echo '<script>window.location="mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
 			}
 		
 		}else{
@@ -125,7 +125,7 @@ if($solicitudID != ''){
 			if($statusVerifica == "RECHAZADA"){
 				
 				//mando llamar script de correo 
-				echo '<script>window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
+				echo '<script>window.location="mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
 			}
 		}
 		
@@ -149,7 +149,7 @@ if($solicitudID != ''){
 			if($status == "RECHAZADA"){
 				
 				//mando llamar a scrip para envio de correo 
-				echo '<script>window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
+				echo '<script>window.location="mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
 			}
 		
 		}else{
@@ -183,7 +183,7 @@ if($solicitudID != ''){
 			if($statusVerifica == "RECHAZADA"){
 				
 				//mando llamar script de correo 
-				echo '<script>window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
+				echo '<script>window.location="mailValidacion.php?codigo='.$solicitudID.'&usuarioV='.$usuario.'&descripcion='.urlencode($comentario).'";</script>';
 			}
 		}
 	}

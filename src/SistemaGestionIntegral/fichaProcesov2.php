@@ -341,8 +341,8 @@ $iso 	= NULL;
 
 
 
-$breadcrumb = "<a href='../../Home.php' id='breadcrumbs'> Home / </a> <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a> 
-				   <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/manualesv3.php' id='breadcrumbs'> Manuales </a>";
+$breadcrumb = "<a href='../../Home.php' id='breadcrumbs'> Home / </a> <a href='homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a> 
+				   <a href='Intranetv2/manualesv3.php' id='breadcrumbs'> Manuales </a>";
 
 
 $ciudades[1] = "Distrito Federal";

@@ -193,10 +193,10 @@ $valorTipoRiesgo[1] = "SEGURIDAD";
 $valorTipoRiesgo[2] = "CALIDAD";
 $valorTipoRiesgo[3] = "PROCESO";
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'> Home / </a>
-			 <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a>
-			 <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a>
-			 <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/tableroSimulacros.php' id='breadcrumbs'> Tablero simulacros </a>";
+$breadcrumb="<a href='../../../Home.php' id='breadcrumbs'> Home / </a>
+			 <a href='../homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a>
+			 <a href='../Modulos.php' id='breadcrumbs'> Módulos / </a>
+			 <a href='../Intranetv2/tableroSimulacros.php' id='breadcrumbs'> Tablero simulacros </a>";
 
 
 header('Content-Type: text/html; charset=utf-8');

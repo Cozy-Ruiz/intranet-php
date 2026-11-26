@@ -285,7 +285,7 @@ echo "<div id='wrapperFicha' align='center' style='width:100%'>
 					//dependiendo del tipo de solicitud obtengo la pagina
 					$pagina = Auditorias::obtenPagina($tipoSolicitud);
 					//creo el boton con link de pagina
-					$enlaceSolicitud = "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/".$pagina."codigo=".$value1["xt_claveTratamiento"]."' id='fileItem' style='text-decoration:none;'>".$value1["xt_claveTratamiento"]."</a>";
+					$enlaceSolicitud = "<a href='../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/".$pagina."codigo=".$value1["xt_claveTratamiento"]."' id='fileItem' style='text-decoration:none;'>".$value1["xt_claveTratamiento"]."</a>";
 
 			        $html .= "
 			        <td align='center' style='width:25%' id='fileItem'>No aplica</td>
@@ -317,7 +317,7 @@ echo "<div id='wrapperFicha' align='center' style='width:100%'>
 					        //obtengo pagina segun tipo de solicitud
 							$pagina = Auditorias::obtenPagina($tipoSolicitud);
 
-							$html .= "<tr><td><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/".$pagina."codigo=".$valueac["xt_codigoSolicitud"]."' id='fileItem' style='text-decoration:none;'>".$valueac["xt_codigoSolicitud"]."</a></td></tr>";
+							$html .= "<tr><td><a href='../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/".$pagina."codigo=".$valueac["xt_codigoSolicitud"]."' id='fileItem' style='text-decoration:none;'>".$valueac["xt_codigoSolicitud"]."</a></td></tr>";
 			        	}
 
 			        	$html .= "</table>";

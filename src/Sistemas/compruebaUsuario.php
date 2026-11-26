@@ -17,7 +17,7 @@ $listaOficinas = null;
 //COMPRUEBA QUE EL USUARIO ESTA AUTENTIFICADO
 if ($_SESSION["autentificado"] != "SI") {
 	//si no existe, envio a la página de autentificacion
-	header("Location: https://escalante.com.mx/Sistemas/");
+	header("Location: ");
 	//ademas salgo de este script
 	exit();
 }else{
@@ -34,7 +34,7 @@ if ($_SESSION["autentificado"] != "SI") {
 		$sesionFechaSalida = date('Y-m-d');
 		$sesionHoraSalida = date('H:i:s');
 		
-		header("Location: https://escalante.com.mx/Sistemas/cerrarSesion.php");
+		header("Location: cerrarSesion.php");
 	}else{
 		
 		$_SESSION["horaAcceso"] = $sesionHoraActual;
@@ -61,7 +61,7 @@ if ($_SESSION["autentificado"] != "SI") {
 		}
 		
 		if($status == 'false'){
-			header("Location: https://escalante.com.mx/Sistemas/error.php");
+			header("Location: error.php");
 		}
 	} 
 }

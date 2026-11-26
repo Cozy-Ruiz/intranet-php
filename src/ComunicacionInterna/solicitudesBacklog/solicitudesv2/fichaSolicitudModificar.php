@@ -13,8 +13,8 @@ if($_GET["id"] != ""){
 	$solicitudID = $_POST["id"];
 	
 }
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='../../comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna / </a>
-			<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes y Quejas</a>";
+$breadcrumb="<a href='../../Home.php' id='breadcrumbs'>Home / </a><a href='../../comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna / </a>
+			<a href='tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes y Quejas</a>";
 			
 ///
 

@@ -70,7 +70,7 @@ error_reporting(E_PARSE);
             <script type="text/javascript">
 				function reCargarPadre(){
 					<?php
-					echo"opener.location.href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/Personal/fichaPersonal.php?ID=$IDpersonal\';";
+					echo"opener.location.href='fichaPersonal.php?ID=$IDpersonal\';";
 					?>
 					window.close();
 				}
@@ -155,7 +155,7 @@ error_reporting(E_PARSE);
 <body>
 <?PHP
 $IDpersonal= $_GET['ID'];
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home /</a> <a href='../comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna /</a> <a href='../tableroPersonal.php' id='breadcrumbs'>Acceso Autorizado</a>";
+$breadcrumb="<a href='../../Home.php' id='breadcrumbs'>Home /</a> <a href='../comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna /</a> <a href='../tableroPersonal.php' id='breadcrumbs'>Acceso Autorizado</a>";
 
 //echo "SELECT xt_NumPersonal, xt_Nombre, xt_ApellidoPaterno,xt_ApellidoMaterno,xt_Estatus,xt_Tipo, xt_Empresa, xn_Foto, xt_extensionTel, xt_puesto,xt_ciudad,kf_usuario FROM SGI_Empleados WHERE kp_personalId=$IDpersonal";
 $s= $INTRANET->execute("SELECT xt_NumPersonal, xt_Nombre, xt_ApellidoPaterno,xt_ApellidoMaterno,xt_Estatus,xt_Tipo, xt_Empresa, xn_Foto, xt_extensionTel, (SELECT xt_puesto FROM perfiles.usuarios WHERE xt_usuario = kf_usuario), xt_ciudad,kf_usuario FROM SGI_Empleados WHERE kp_personalId=$IDpersonal");

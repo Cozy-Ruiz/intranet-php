@@ -46,8 +46,8 @@ require_once("../compruebaUsuario.php");
 
 $idRequerimiento = $_GET['id'];
 
-$breadcrumb = "<a href='https://escalante.com.mx/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a> 
-			<a href='https://escalante.com.mx/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a> 
+$breadcrumb = "<a href='../../Home.php' id='breadcrumbs'>Home / </a><a href='homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a> 
+			<a href='../../SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a> 
 			<a href='Procesos.php' id='breadcrumbs'> Inventario de procesos / </a> <a href='tableroProcesos.php' id='breadcrumbs'> Tablero Inventario de Procesos </a>";
 
 echo "<div id='wrapperFicha'>";

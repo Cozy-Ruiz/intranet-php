@@ -91,7 +91,7 @@ $breadcrumb = "<a href='../../Home.php' id='breadcrumbs'> Home / </a><a href='..
                 
                 <tr>
                     <td align="center">
-                        <a href="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/ayudaSolicitud.php">
+                        <a href="ayudaSolicitud.php">
                             <img src="../../Imagenes/ICN_BotonAgregar.png" width="90" height="29">
                         </a>
                     </td>

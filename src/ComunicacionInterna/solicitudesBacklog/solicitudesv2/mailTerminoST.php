@@ -99,7 +99,7 @@ $clase = new MailSolicitudTerminar($codigoSolicitudID, $correoS);
 
 //mando a la ficha de la solicitud
 
-	echo '<script>window.opener.top.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaSoporteTecnico.php?codigo='.$codigoSolicitudID.'";</script>';
+	echo '<script>window.opener.top.location="fichaSoporteTecnico.php?codigo='.$codigoSolicitudID.'";</script>';
 	echo "<script>this.close();</script>"; 
 
 ?>

@@ -68,7 +68,7 @@ if($INTRANETV2->Execute("INSERT INTO SGI_Quejas_Solicitudesv2(xt_tipoSolicitud, 
 		?>
 		<!-- recargo pagina-->
 		<script language="javascript">
-			window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaEnvioArchivos.php?codigo=<?php echo $codigoSolicitud; ?>"
+			window.location="fichaEnvioArchivos.php?codigo=<?php echo $codigoSolicitud; ?>"
 		</script>
 		<?php
 	}

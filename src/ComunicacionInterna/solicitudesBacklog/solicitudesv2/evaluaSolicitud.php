@@ -36,7 +36,7 @@
 			?>
 				<!-- recargo pagina -->
 				<script language="javascript">
-					window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?codigo=<?php echo $codigoS; ?>"
+					window.location="fichaMantenimiento_Sistema.php?codigo=<?php echo $codigoS; ?>"
 				</script>
 			<?php
 			
@@ -45,7 +45,7 @@
 				?>
 				<!-- recargo pagina -->
 				<script language="javascript">
-					window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaEnvioArchivos.php?codigo=<?php echo $codigoS; ?>"
+					window.location="fichaEnvioArchivos.php?codigo=<?php echo $codigoS; ?>"
 				</script>
 				<?php
 			
@@ -54,7 +54,7 @@
 				?>
 				<!-- recargo pagina -->
 				<script language="javascript">
-					window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=<?php echo $codigoS; ?>"
+					window.location="fichaAltaBajaUsuario.php?codigo=<?php echo $codigoS; ?>"
 				</script>
 				<?php
 			
@@ -73,7 +73,7 @@
 					?>
 						<!-- recargo pagina -->
 						<script language="javascript">
-							window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?codigo=<?php echo $codigoS; ?>"
+							window.location="fichaMantenimiento_Sistema.php?codigo=<?php echo $codigoS; ?>"
 						</script>
 					<?php
 			
@@ -82,7 +82,7 @@
 					?>
 					<!-- recargo pagina -->
 					<script language="javascript">
-						window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaEnvioArchivos.php?codigo=<?php echo $codigoS; ?>"
+						window.location="fichaEnvioArchivos.php?codigo=<?php echo $codigoS; ?>"
 					</script>
 					<?php
 			
@@ -91,7 +91,7 @@
 				?>
 				<!-- recargo pagina -->
 				<script language="javascript">
-					window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=<?php echo $codigoS; ?>"
+					window.location="fichaAltaBajaUsuario.php?codigo=<?php echo $codigoS; ?>"
 				</script>
 				<?php
 			
@@ -119,7 +119,7 @@
 			  ?>
 				  <!-- recargo pagina -->
 				  <script language="javascript">
-					  window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?codigo=<?php echo $codigoS; ?>"
+					  window.location="fichaMantenimiento_Sistema.php?codigo=<?php echo $codigoS; ?>"
 				  </script>
 			  <?php
 	  
@@ -128,7 +128,7 @@
 			  ?>
 			  <!-- recargo pagina -->
 			  <script language="javascript">
-				  window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaEnvioArchivos.php?codigo=<?php echo $codigoS; ?>"
+				  window.location="fichaEnvioArchivos.php?codigo=<?php echo $codigoS; ?>"
 			  </script>
 			  <?php
 	  
@@ -137,7 +137,7 @@
 				?>
 				<!-- recargo pagina -->
 				<script language="javascript">
-					window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=<?php echo $codigoS; ?>"
+					window.location="fichaAltaBajaUsuario.php?codigo=<?php echo $codigoS; ?>"
 				</script>
 				<?php
 			

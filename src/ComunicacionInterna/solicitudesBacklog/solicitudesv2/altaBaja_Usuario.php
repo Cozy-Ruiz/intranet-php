@@ -522,8 +522,8 @@ if($estiloUsuario == 1){
 <?php
 
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'> Comunicación Interna / </a> 
-			<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes </a>";
+$breadcrumb="<a href='../../Home.php' id='breadcrumbs'>Home / </a><a href='../../ComunicacionInterna/comunicacionInterna.php' id='breadcrumbs'> Comunicación Interna / </a> 
+			<a href='tableroSolicitudesyQuejasv2.php' id='breadcrumbs'> Solicitudes </a>";
 			
 echo"<div id='wrapperFicha' align='center'>";
 	

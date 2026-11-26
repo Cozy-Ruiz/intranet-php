@@ -29,7 +29,7 @@ require_once("../compruebaUsuario.php");
 <body>
 
 <?PHP
-$breadcrumb="<a href='https://escalante.com.mx/INTRANET_GEA/Home.php' id='breadcrumbs'>Home /</a><a href='comunicacionInterna.php' id='breadcrumbs'> Comunicación Interna</a>";
+$breadcrumb="<a href='../../INTRANET_GEA/Home.php' id='breadcrumbs'>Home /</a><a href='comunicacionInterna.php' id='breadcrumbs'> Comunicación Interna</a>";
 
 echo"<div id='wrapper' align='center'>";
 	echo "<table border='0' align='center' name='Encabezado'>";

@@ -12,7 +12,7 @@
 		if($session->iniciaSession($_POST['usuario'], $_POST['contraseña']) == true){
 			header("Location: homePageController.php");
 		}else{
-			header("Location: https://escalante.com.mx/Sistemas/Links");
+			header("Location: ../../Sistemas/Links");
 		}
 	
 	}else if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI"){
@@ -20,12 +20,12 @@
 		if($session->registraSession($_SESSION["sesionUsuario"]) == true){
 			header("Location: homePageController.php");
 		}else{
-			header("Location: https://escalante.com.mx/Sistemas/seleccionaSistema.php");
+			header("Location: ../../../Sistemas/seleccionaSistema.php");
 		}
 		
 	}else{
 		
-		header("Location: https://escalante.com.mx/Sistemas");
+		header("Location: ../../../");
 		
 	}
 ?>

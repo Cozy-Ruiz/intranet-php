@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Grupo Escalante</title>
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="https://escalante.com.mx/js/node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="../js/node_modules/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="js/interface.js"></script>
 <style>
 #login_logo{

@@ -1245,8 +1245,8 @@ if($perfil[0] == 'Jefe de Desarrollo' || $perfil[0] == 'Asignador PDR'){
 								//envio parametros necesarios
 								$prioriE = $INTRANETV2->getOne("SELECT xt_prioridad FROM BACKLOG.ENTREGABLES WHERE xt_codigoEntregable = '$lisEntg[0]'");
 								echo "<td>";
-								//echo "<a href=https://escalante.com.mx/Sistemas/BackLog/iniciaSesion.php?codE=".base64_encode($lisEntg[0])."&prioridad=".base64_encode($prioriE)."&codS=".base64_encode($solicitudID)."&usu=".base64_encode($usuarioId)."> $lisEntg[0]</a>";
-								echo "<a href='https://escalante.com.mx/Sistemas/BackLog/iniciaSesionDirecta.php?usuario=".$usuarioId."&destino=".base64_encode("http://escalante.com.mx/Sistemas/BackLog/entregablesv2/fichaEntregable.php?codigoE=".base64_encode($lisEntg[0])."&codigoS=".base64_encode($solicitudID)."&prioridad=".base64_encode($prioriE)."&usuario=".base64_encode($usuarioId))."'>".$lisEntg[0]."</a>";
+								//echo "<a href=../../../../Sistemas/BackLog/iniciaSesion.php?codE=".base64_encode($lisEntg[0])."&prioridad=".base64_encode($prioriE)."&codS=".base64_encode($solicitudID)."&usu=".base64_encode($usuarioId)."> $lisEntg[0]</a>";
+								echo "<a href='../../../../Sistemas/BackLog/iniciaSesionDirecta.php?usuario=".$usuarioId."&destino=".base64_encode("http://escalante.com.mx/Sistemas/BackLog/entregablesv2/fichaEntregable.php?codigoE=".base64_encode($lisEntg[0])."&codigoS=".base64_encode($solicitudID)."&prioridad=".base64_encode($prioriE)."&usuario=".base64_encode($usuarioId))."'>".$lisEntg[0]."</a>";
 								echo "</td>";
 							
 							}else{

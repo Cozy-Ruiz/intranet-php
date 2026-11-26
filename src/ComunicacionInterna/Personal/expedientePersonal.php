@@ -70,7 +70,7 @@ error_reporting(E_PARSE);
             <script type="text/javascript">
 				function reCargarPadre(){
 					<?php
-					echo"opener.location.href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/Personal/fichaPersonal.php?ID=$IDpersonal\';";
+					echo"opener.location.href='fichaPersonal.php?ID=$IDpersonal\';";
 					?>
 					window.close();
 				}
@@ -168,7 +168,7 @@ error_reporting(E_PARSE);
 <body>
 <?PHP
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home /</a> <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/miCuenta.php' id='breadcrumbs'>Mi cuenta";
+$breadcrumb="<a href='../../Home.php' id='breadcrumbs'>Home /</a> <a href='../../miCuenta.php' id='breadcrumbs'>Mi cuenta";
 
 
 //$IDpersonal= $_GET['ID'];

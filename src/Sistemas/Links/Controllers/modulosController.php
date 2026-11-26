@@ -29,7 +29,7 @@
 	$rutaDocDigitaliza = "http://192.1.171.49:9090/Convertidor-Archivos/#/Sistemas/Links/Controllers/Convertidor_Digitalizacion?usuario=".$usuario;
 	
 
-	//$rutaDocDigitaliza = "https://escalante.com.mx/Sistemas/Links/Views/proceso/DigitalizacionArchivos/Digitalizacion.php?usuario=".$usuario;
+	//$rutaDocDigitaliza = "../../../Links/Views/proceso/DigitalizacionArchivos/Digitalizacion.php?usuario=".$usuario;
 	$tituloEscritorio = "Modulos";
 	
 	if(isset($_REQUEST["evento"])){

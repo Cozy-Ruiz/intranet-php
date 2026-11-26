@@ -41,7 +41,7 @@ if($_SESSION["categoria"] == 'Administrador'){
 	echo '<a href="administradorPerfiles.php"></a>';
 }
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='configuraciones.php' id='breadcrumbs'> Configuraciones /</a>
+$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home / </a><a href='configuraciones.php' id='breadcrumbs'> Configuraciones /</a>
 <a href='AdministradorPerfiles.php' id='breadcrumbs'> Administrador de Perfiles</a> ";
 
 echo "<div id='wrapper'>";
@@ -96,7 +96,7 @@ echo "<div id='wrapper'>";
                                     </a>
                                 </li>
                                 <li>
-                                    <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    <a href='../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         Solicitudes y Quejas
                                     </a>
                                 </li>

@@ -65,7 +65,7 @@ while($r = $s->fetchRow()){
 } unset($r); unset($s); unset($indice);
 
 
-$breadcrumb="<a href='https://escalante.com.mx/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='Registros.php' id='breadcrumbs'> Registros</a> ";
+$breadcrumb="<a href='../../Home.php' id='breadcrumbs'>Home / </a><a href='Registros.php' id='breadcrumbs'> Registros</a> ";
 $fecha= $_POST['fecha']; 
 $hoy = date("Y-m-d");
 

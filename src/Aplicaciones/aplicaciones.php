@@ -40,7 +40,7 @@ require_once("../compruebaUsuario.php");
         
         <body>
 <?php
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home</a>";
+$breadcrumb="<a href='/Home.php' id='breadcrumbs'>Home</a>";
 
 echo "<div id='wrapperFicha' align='center'>";
 	echo "<table border='0' align='center' name='Encabezado' width='800px'>";
@@ -135,12 +135,12 @@ echo "<div id='wrapperFicha' align='center'>";
                                         </a>
                                     </li>
                                   <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>
@@ -382,7 +382,7 @@ echo "<div id='wrapperFicha' align='center'>";
 		
 		echo"<tr>"; 
 			echo "<td align='right' width='550px'>";
-				echo "<a href='https://escalante.com.mx/INTRANET_GEA/BusquedaAvanzada.php' id='nota_al_pie' style='text-decoration:none;'>
+				echo "<a href='../../INTRANET_GEA/BusquedaAvanzada.php' id='nota_al_pie' style='text-decoration:none;'>
 						<img src='../Imagenes/ICN_Busqueda.png' width='10px' height='10px'> Búsqueda
 					  </a>";
 			echo "</td>";

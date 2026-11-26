@@ -62,7 +62,7 @@ require 'Librerias/RpubMail/vendor/autoload.php';
 				$titulo = "Acceso Intranet";
 				$body 	= "Saludos, $nombre<br><br>
 						   Estos son los datos para que puedas entrar a la Intranet de Grupo Escalante:<br><br>
-						   URL: https://escalante.com.mx/INTRANET_GEA/Login.php <br>
+						   URL: INTRANET_GEA/Login.php <br>
 						   Usuario: $userIntranet <br>
 						   Contraseña: $passRecuperada <br><br><br>";
 				

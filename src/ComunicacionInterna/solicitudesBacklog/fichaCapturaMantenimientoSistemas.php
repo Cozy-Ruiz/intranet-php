@@ -738,7 +738,7 @@ if(isset($_POST['Enviar'])){
 	$codigoSolicitud = $RESULTADO;
 	if($codigoSolicitud != ''){
 
-		echo '<script>window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaMantenimiento_Sistema.php?codigo='.$codigoSolicitud.'";
+		echo '<script>window.location="fichaMantenimiento_Sistema.php?codigo='.$codigoSolicitud.'";
         </script>';
 	}
 	

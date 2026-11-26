@@ -443,8 +443,8 @@ if($stats != ""){
 }
 
 
-$breadcrumb = "<a href='../../Home.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a>
-			   <a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a><a href='tableroPreventivasCorrectivasv2.php' id='breadcrumbs'> Tablero de Acciones Correctivas </a>";
+$breadcrumb = "<a href='../../Home.php' id='breadcrumbs'>Home / </a><a href='../../../SistemagestionIntegral/homeSGI.php' id='breadcrumbs'> Sistema de Gestión Integral / </a>
+			   <a href='../../../SistemagestionIntegral/Modulos.php' id='breadcrumbs'> Módulos / </a><a href='tableroPreventivasCorrectivasv2.php' id='breadcrumbs'> Tablero de Acciones Correctivas </a>";
 
 ?>
 
@@ -1391,7 +1391,7 @@ echo "<div id='wrapperFicha' align='center'>";
 					//si solicitud es de Tipo Administrativa
 					if($tipoSolicitud == 'AV'){
 						
-						$claveSol	= "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaSolicitudv2.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
+						$claveSol	= "<a href='../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaSolicitudv2.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
 						
 					//si es diferente de Administrativa
 					}else if($tipoSolicitud == 'DS'){
@@ -1400,17 +1400,17 @@ echo "<div id='wrapperFicha' align='center'>";
 						
 					}else if($tipoSolicitud == 'MT'){
 
-						$claveSol	= "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
+						$claveSol	= "<a href='../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaMantenimiento_Sistema.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
 						
 					}else if($tipoSolicitud == 'AB'){
-						$claveSol	= "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
+						$claveSol	= "<a href='../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaAltaBajaUsuario.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
 						
 					}else if($tipoSolicitud == 'EA'){
 
-						$claveSol	= "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaEnvioArchivos.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
+						$claveSol	= "<a href='../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaEnvioArchivos.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
 						
 					}else if($tipoSolicitud == 'ST'){
-						$claveSol	= "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaSoporteTecnico.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
+						$claveSol	= "<a href='../../../ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaSoporteTecnico.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
 						
 					}
 

@@ -162,7 +162,7 @@ $anio = date('Y', strtotime($_POST['fecha']));
 	?>
       <!-- recargo pagina -->
       <script language="javascript">
-          window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/solicitudesv2/fichaSolicitudv2.php?codigo=<?php echo $solicitudID; ?>"
+          window.location="fichaSolicitudv2.php?codigo=<?php echo $solicitudID; ?>"
       </script>
   <?php  
   }
@@ -226,7 +226,7 @@ if($INTRANET->Execute("INSERT INTO SGI_Quejas_Solicitudesv2(xt_tipoSolicitud, xt
 ?>
       <!-- recargo pagina -->
       <script language="javascript">
-          window.location="https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaSolicitudv2.php?coodigo=<?php echo $solicitudID; ?>"
+          window.location="../../ComunicacionInterna/solicitudesBacklog/fichaSolicitudv2.php?coodigo=<?php echo $solicitudID; ?>"
       </script>
   <?php  	
 

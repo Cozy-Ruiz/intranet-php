@@ -39,7 +39,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	<body>
 <?php
 
-$breadcrumb="<a href='https://escalante.com.mx/INTRANET_GEA/Home.php' id='breadcrumbs'>Home /</a><a href='../aplicaciones.php' id='breadcrumbs'>Módulos /</a><a href='../operaciones.php' id='breadcrumbs'>Operaciones</a>";
+$breadcrumb="<a href='../../../INTRANET_GEA/Home.php' id='breadcrumbs'>Home /</a><a href='../aplicaciones.php' id='breadcrumbs'>Módulos /</a><a href='../operaciones.php' id='breadcrumbs'>Operaciones</a>";
 
 echo "<div id='wrapper'>";
 	echo "<table border='0' align='center' name='Encabezado'>";//Encabezado

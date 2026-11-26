@@ -73,7 +73,7 @@ error_reporting(E_PARSE);
             <script type="text/javascript">
 				function reCargarPadre(){
 					<?php
-					echo"opener.location.href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/Personal/fichaPersonal.php?ID=$IDpersonal\';";
+					echo"opener.location.href='fichaPersonal.php?ID=$IDpersonal\';";
 					?>
 					window.close();
 				}
@@ -442,7 +442,7 @@ error_reporting(E_PARSE);
 <body>
 <?PHP
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home /</a>";
+$breadcrumb="<a href='../../Home.php' id='breadcrumbs'>Home /</a>";
 
 
 $ciudades = ["'AICM', 'CDMX', 'CMX', 'DF'", "'CUN'", "'NLR', 'NLRD'", "'TOL'", "'VER'"];
@@ -709,7 +709,7 @@ echo"<div id='wrapperFicha' align='center'>";
 								echo "<td align='center'><a href='datosPersonal.php?usuario=".$empleado['kf_usuario']."' target='_blank'>".$empleado["estatusDatosActualizados"]."</a></td>";
 								echo "<td align='center'>".$empleado["estatusIdentificacion"]."</td>";
 								echo "<td align='center'>".$empleado["estatusComprobanteDomicilio"]."</td>";
-								echo "<td align='center'><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/controlVisualizacionDocumentos.php?usuario=".$empleado['kf_usuario']."' target='_blank'>".$empleado["estatusVisualizacionDocumentos"]."</a></td>";
+								echo "<td align='center'><a href='../../controlVisualizacionDocumentos.php?usuario=".$empleado['kf_usuario']."' target='_blank'>".$empleado["estatusVisualizacionDocumentos"]."</a></td>";
 								echo "<td align='center'>".$empleado["estatusFotoActualizada"]."</td>";
 								echo "<td align='center'><a href='cartaCompromiso.php?usuario=".$empleado['kf_usuario']."' target='_blank'>".$empleado["estatusCartaCompromiso"]."</a></td>";
 								echo "<td align='center'><a href='fichaPersonal.php?ID=".$empleado['kp_personalId']."' target='_blank'>".$empleado["estatusResguardo"]."</a></td>";

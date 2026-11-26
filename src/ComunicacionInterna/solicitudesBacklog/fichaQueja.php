@@ -907,7 +907,7 @@ echo "<div id='wrapper'>";
 						echo "<td width='50px'></td>";
 					echo "</tr>";
 					
-					$fichaCorrectiva	= "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaCorrectivav2.php?id=".$claveCorrectiva."' style='text-decoration:none;' >".$claveCorrectiva."</a>";
+					$fichaCorrectiva	= "<a href='../../SistemaGestionIntegral/Intranetv2/fichaCorrectivav2.php?id=".$claveCorrectiva."' style='text-decoration:none;' >".$claveCorrectiva."</a>";
 	
 					
 					echo "<tr height='5px'>";

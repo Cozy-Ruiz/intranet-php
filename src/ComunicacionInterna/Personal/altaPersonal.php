@@ -352,7 +352,7 @@ echo "</div>";
                     <script type="text/javascript">
                         function redireccionar(){
 						<?php
-							echo "opener.location.href=\"https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/Personal/fichaPersonal.php?ID=$IDpersonal\";";
+							echo "opener.location.href=\"fichaPersonal.php?ID=$IDpersonal\";";
 						?>
                             window.close();
                         };

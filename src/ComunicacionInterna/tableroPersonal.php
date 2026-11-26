@@ -43,7 +43,7 @@ require_once("../compruebaUsuario.php");
 
 <body>
 <?PHP
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home /</a> <a href='comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna</a>";
+$breadcrumb="<a href='../Home.php' id='breadcrumbs'>Home /</a> <a href='comunicacionInterna.php' id='breadcrumbs'>Comunicación Interna</a>";
 
 echo"<div id='wrapperFicha' align='center'>";
 	echo "<form name='tableroEmpleado' method='POST' action='busquedaPersonal.php'>";	

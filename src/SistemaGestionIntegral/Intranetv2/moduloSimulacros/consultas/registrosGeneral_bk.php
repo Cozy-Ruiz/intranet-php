@@ -55,7 +55,7 @@ class RegistrosGenerales
     		}//fin de while ?>
     		<tr><tr style="height: 20px width: 50px"></tr>
     		<td style='width:10%;'></td>
-    		<td colspan="3" id='iconosTexto' style='word-wrap: break-word;'><a id='fileItem' href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaRiesgov2.php?id=<?php echo $codigor ?>'><?php echo $codigor; ?></a></td>
+    		<td colspan="3" id='iconosTexto' style='word-wrap: break-word;'><a id='fileItem' href='../../../fichaRiesgov2.php?id=<?php echo $codigor ?>'><?php echo $codigor; ?></a></td>
 			<td style="width:50px; word-wrap: break-word;" colspan="5"  id='fileItem'><?php $this->nombreRiesgo($codigor); ?></td>
 			</tr><?php
     	}else{

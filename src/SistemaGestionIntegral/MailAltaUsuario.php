@@ -52,7 +52,7 @@ require '../Librerias/RpubMail/vendor/autoload.php';
 						Tu usuario ha sido dado de alta para el acceso a Sistemas Grupo Escalante.<br><br><br>
 
 						Los datos para que puedas entrar son los siguientes:<br><br>
-						URL: https://escalante.com.mx/Sistemas/<br>
+						URL: ../..//Sistemas/<br>
 						Usuario: $usuario<br>
 						Contraseña: $contraseña<br><br>";
 					

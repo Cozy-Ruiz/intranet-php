@@ -161,7 +161,7 @@ for($o = 0; $o <count($cdValor); $o++){
 	
 }
 
-$breadcrumb="<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Home.php' id='breadcrumbs'>Home / </a><a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/Registros/Registros.php' id='breadcrumbs'> Registros</a> ";
+$breadcrumb="<a href='../../../Home.php' id='breadcrumbs'>Home / </a><a href='../Registros.php' id='breadcrumbs'> Registros</a> ";
 
 echo "<div id='wrapperFicha' align='center'>";
 	echo "<form method='post' action='tableroRegistrosv2.php'>";

@@ -31,7 +31,7 @@ else
 	 		 		 
 	 		 		if($INTRANETV2->Execute("UPDATE SGI_Evidencia SET xt_ruta = NULL WHERE xn_codigoEvidencia = '".$evidencia."' and xt_codigoSimulacro ='".$simulacro."'")){
 	 		 		    	unlink($enlace); 
-	 		 				header ("Location: https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/simulacroElementoActualizar.php?simulacro=$simulacro");
+	 		 				header ("Location: simulacroElementoActualizar.php?simulacro=$simulacro");
 	 		 		}
 	 			}
 	 		}

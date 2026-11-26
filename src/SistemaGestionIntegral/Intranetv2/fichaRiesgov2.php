@@ -538,12 +538,12 @@ echo "<div id='wrapperRiesgos'>";
                                         </a>
                                     </li>
                                    <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
+                                    	<a href='../../../ComunicacionInterna/solicitudesBacklog/tableroSolicitudesyQuejasv2.php' id='breadcrumbs'>
                                         	Solicitudes
                                         </a>
                                     </li>
                                      <li>
-                                    	<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
+                                    	<a href='../../../ComunicacionInterna/solicitudesBacklog/tableroQuejas.php' id='breadcrumbs'>
                                         	Quejas
                                         </a>
                                     </li>
@@ -2166,7 +2166,7 @@ echo "<div id='wrapperRiesgos'>";
 		while($t = $s->fetchRow()){
 
 
-			echo "<tr><td><a id='iconosTexto' href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/simulacroElementoActualizar.php?simulacro=".$t[0]."'>".$t[0]."</a></td><td>".$t[1]."</td></tr>";
+			echo "<tr><td><a id='iconosTexto' href='simulacroElementoActualizar.php?simulacro=".$t[0]."'>".$t[0]."</a></td><td>".$t[1]."</td></tr>";
 			
 
 		}

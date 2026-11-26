@@ -1394,17 +1394,17 @@ echo "<div id='wrapperFicha' align='center'>";
 						
 					}else if($tipoSolicitud == 'MT'){
 
-						$claveSol	= "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaMantenimiento_Sistema.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
+						$claveSol	= "<a href='../ComunicacionInterna/solicitudesBacklog/fichaMantenimiento_Sistema.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
 						
 					}else if($tipoSolicitud == 'AB'){
 						$claveSol	= "<a href='escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaAltaBajaUsuario.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
 						
 					}else if($tipoSolicitud == 'EA'){
 
-						$claveSol	= "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaEnvioArchivos.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
+						$claveSol	= "<a href='../ComunicacionInterna/solicitudesBacklog/fichaEnvioArchivos.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
 						
 					}else if($tipoSolicitud == 'ST'){
-						$claveSol	= "<a href='https://escalante.com.mx/Sistemas/INTRANET_GEA/ComunicacionInterna/solicitudesBacklog/fichaSoporteTecnico.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
+						$claveSol	= "<a href='../ComunicacionInterna/solicitudesBacklog/fichaSoporteTecnico.php?codigo=".$x[0]."' id='iconosTexto3' style='text-decoration:none;' >".$r[1]."</a>";
 						
 					}
 					$solicitud  = $r[1];

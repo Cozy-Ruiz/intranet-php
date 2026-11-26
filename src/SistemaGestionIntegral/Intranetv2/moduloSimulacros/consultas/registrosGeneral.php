@@ -104,7 +104,7 @@ class RegistrosGenerales
     		}//fin de while ?>
     		<tr><tr style="height: 20px width: 50px"></tr>
     		<td style='width:10%;'></td>
-    		<td  id='iconosTexto' style='word-wrap: break-word;'><a id='fileItem' href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaRiesgov2.php?id=<?php echo $codigor ?>'><?php echo $codigor; ?></a></td>
+    		<td  id='iconosTexto' style='word-wrap: break-word;'><a id='fileItem' href='../../../fichaRiesgov2.php?id=<?php echo $codigor ?>'><?php echo $codigor; ?></a></td>
 			<td style="width:50px; word-wrap: break-word;" colspan="5"  id='fileItem'><?php $this->nombreRiesgo($codigor); ?></td>
 			</tr><?php
     	}else{
@@ -493,12 +493,12 @@ class RegistrosGenerales
             if ($tipo == 2) { ?>
             <input type="text" name="idTratamiento" value="<?php echo $id ?>" hidden>
             <input style="cursor: pointer; background-color: transparent; border: 0;" id='breadcrumbs' type="submit" name="eliminarTratamiento" value="Eliminar" /></td><td>
-            <a id='fileItem' href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaCorrectivav2.php?id=<?php echo $clave ?>'><?php echo $clave ?></a>
+            <a id='fileItem' href='../../../fichaCorrectivav2.php?id=<?php echo $clave ?>'><?php echo $clave ?></a>
             <?php }
             if ($tipo == 3) { ?>
             <input type="text" name="idTratamiento" value="<?php echo $id ?>" hidden>
             <input style="cursor: pointer; background-color: transparent; border: 0;" id='breadcrumbs' type="submit" name="eliminarTratamiento" value="Eliminar" /></td><td>
-            <a id='fileItem' href='https://escalante.com.mx/Sistemas/INTRANET_GEA/SistemaGestionIntegral/Intranetv2/fichaPreventivav2.php?id=<?php echo $clave ?>'><?php echo $clave ?></a>
+            <a id='fileItem' href='../../../fichaPreventivav2.php?id=<?php echo $clave ?>'><?php echo $clave ?></a>
             <?php }
             if ($tipo == 4) { ?>
             <input type="text" name="idTratamiento" value="<?php echo $id ?>" hidden>
